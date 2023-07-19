@@ -1,0 +1,277 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>一对一聊天窗口</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+
+    <script type="text/javascript">
+
+        var start = function () {
+            //var inc = document.getElementById('incomming');
+            var wsImpl = window.WebSocket || window.MozWebSocket;
+            //var form = document.getElementById('sendForm');
+            //var input = document.getElementById('sendText');
+
+            //inc.innerHTML += "connecting to server ..<br/>";
+
+            // create a new websocket and connect
+            var emp = JSON.parse(sessionStorage.getItem("emp"));
+            var empid = emp.ID;
+            window.ws = new wsImpl('ws://1.117.195.24:2017/?empid=' + empid); //连接WebSocket服务器 //入员工ID   编码
+			console.log(window.ws);
+			console.log(window);
+            // when data is comming from the server, this metod is called
+            ws.onmessage = function (evt) {
+
+                console.log(evt.data);
+
+
+                //页面上加一行刚发的消息
+                var tr = "";
+                tr += '  <tr><td>' + toName + ':' + new Date().format("yyyy-MM-dd"); + '<br />  ';
+                tr += '      <span>' + evt.data + '</span>   ';
+                tr += '      <hr />                               ';
+                tr += '  </td></tr>                               ';
+
+                $("#meslist").append(tr);
+
+
+               // inc.innerHTML += evt.data + '<br/>';  //显示 服务端发送的消息
+                //eval('location.href="http://www.baidu.com"');
+            };
+
+            // when the connection is established, this method is called
+            ws.onopen = function () {
+                // inc.innerHTML += '.. connection open<br/>';
+                console.log("WebSorcket服务器正常运行中。。。");
+            };
+
+            // when the connection is closed, this method is called
+            ws.onclose = function () {
+                // inc.innerHTML += '.. connection closed<br/>';
+                console.log("WebSocket服务器正常运行中。。。");
+            }
+
+            //form.addEventListener('submit', function (e) {
+            //    e.preventDefault();
+            //    var val = input.value;
+            //    ws.send(val);
+            //    input.value = "";
+            //});
+
+        }
+        window.onload = start;
+    </script>
+ 
+    
+    <script>
+
+        $(function () {
+
+            load();
+
+
+        });
+
+
+        var toID;//登录人ID
+        var formid;//聊天人ID
+        var toName; //登录人名称
+        var formName;//聊天人名称
+
+
+        function load() {
+            //显示我是谁  登录时就保存到了sessionStorage中了
+            var emp = JSON.parse(sessionStorage.getItem("emp"));
+            $("#myname").html(emp.EName);
+            console.log(emp);
+
+            //显示要和谁聊天 打这个窗口时，地址栏中已经传递了对方的ID
+            var urlPar = location.search;
+
+            var ps = urlPar.split('&');
+            var id = ps[0].split('=')[1];
+            var ename = ps[1].split('=')[1];
+
+            console.log(id + "==>" + ename);
+            $("#toname").html(ename);
+
+
+            //我和对方曾经的聊天记录   有我的ID，有对方的ID，去聊天记录表中查询就可以了
+            toID = emp.ID;
+            formid = id;
+            toName = emp.EName;
+            formName = ename;
+
+            //  加载两人的聊天记录
+            loadMes();
+        }
+
+
+        function loadMes() {
+            // /Hom/QueryList(int To_empid, int form_empid)
+
+            $.ajax({
+                url: '/Home/QueryList',
+                type: 'get',
+                dataType: 'json',
+                data: { To_empid: toID, form_empid: formid },
+                success: function (res) {
+                    console.log(res);
+
+                    $("#meslist").empty();
+                    $(res.Data).each(function (i, item) {
+                        var tr = "";
+                        tr += '  <tr><td>' + item.To_ename + ':' + item.Addtime + '<br />  ';
+                        tr += '      <span>' + item.Mes_content + '</span>   ';
+                        tr += '      <hr />                               ';
+                        tr += '  </td></tr>                               ';
+
+                        $("#meslist").append(tr);
+                    });
+                }
+            });
+
+        }
+
+
+        // 使用WebSorcket对像发消息给 WebSorcket服务器
+        function ToSendMes_ws() {
+
+            // 开始 收集要发送的消息
+            var contentmes = $("#sendMes").val();
+            var mes = {
+                To_empid:toID,
+                Form_empid: formid,
+                Mes_content: contentmes
+            };
+            var mesbody = JSON.stringify(mes);  
+             // 结束 收集要发送的消息
+             
+            window.ws.send(mesbody);  //这行是通过WebSocekt对象发消息给WebSocekt服务器
+
+            //页面上加一行刚发的消息
+            var tr = "";
+            tr += '  <tr><td>' + toName + ':' + new Date().format("yyyy-MM-dd"); + '<br />  ';
+            tr += '      <span>' + contentmes + '</span>   ';
+            tr += '      <hr />                               ';
+            tr += '  </td></tr>                               ';
+
+            $("#meslist").append(tr);
+        }
+
+        function ToSendMes() {
+            var contentmes = $("#sendMes").val();
+
+            $.ajax({
+                url: '/Home/ToSendMes',
+                type: 'get',
+                dataType: 'json',
+                data: { To_empid: toID, form_empid: formid, contentmes: contentmes },
+                success: function (res) {
+                    console.log(res);
+
+                    var tr = "";
+                    tr += '  <tr><td>' + toName + ':' + new Date().format("yyyy-MM-dd"); + '<br />  ';
+                    tr += '      <span>' + contentmes + '</span>   ';
+                    tr += '      <hr />                               ';
+                    tr += '  </td></tr>                               ';
+
+                    $("#meslist").append(tr);
+                }
+            });
+
+        }
+
+        //日期格式化
+        Date.prototype.format = function (fmt) {
+
+            var o = {
+
+                "M+": this.getMonth() + 1,                 //月份
+
+                "d+": this.getDate(),                    //日
+
+                "h+": this.getHours(),                   //小时
+
+                "m+": this.getMinutes(),                 //分
+
+                "s+": this.getSeconds(),                 //秒
+
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+
+                "S": this.getMilliseconds()             //毫秒
+
+            };
+
+            if (/(y+)/.test(fmt)) {
+
+                fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+
+            }
+
+            for (var k in o) {
+
+                if (new RegExp("(" + k + ")").test(fmt)) {
+
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+
+                }
+
+            }
+
+            return fmt;
+
+        }
+
+    </script>
+
+</head>
+<body>
+    <div> 
+        <table border="1" width="500px">
+            <tr>
+
+                <td>
+                    <span id="myname">
+                        Tom
+                    </span>
+                </td>
+                <td>
+                    <span id="toname">
+                        Tom
+                    </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <table id="meslist">
+                       
+                       
+                    </table>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    聊天输入框和发送按钮
+                    <textarea id="sendMes" style="height:60px; width:200px"></textarea><br />
+                    <input type="button" value="发送" onclick="ToSendMes_ws()" />
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+</body>
+</html>

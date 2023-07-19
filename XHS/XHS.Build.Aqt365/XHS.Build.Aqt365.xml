@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XHS.Build.Aqt365</name>
+    </assembly>
+    <members>
+        <member name="T:XHS.Build.Aqt365.Attributes.PermissionAttribute">
+            <summary>
+            启用权限
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Auth.IPermissionHandler.ValidateAsync(System.String,System.String)">
+            <summary>
+            接口权限验证
+            </summary>
+            <param name="api"></param>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Auth.PermissionHandler.ValidateAsync(System.String,System.String)">
+            <summary>
+            api接口权限验证
+            </summary>
+            <param name="api">接口路径</param>
+            <param name="ip">请求ip</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Aqt365.Controllers.SiteController">
+            <summary>
+            项目数据动态考核
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Controllers.SiteController.GetSiteConnectURL(System.String,System.String,System.String,System.String)">
+            <summary>
+            获得对接网址
+            </summary>
+            <param name="appkey"></param>
+            <param name="secret"></param>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Controllers.SiteController.GetSiteCurrentWorkInfo(System.String,System.String,System.String)">
+            <summary>
+            获得当前在场人员数量
+            </summary>
+            <param name="token"></param>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Controllers.SiteController.GetSiteCurrentManagerInfo(System.String,System.String,System.String)">
+            <summary>
+            获得项目当前时间安管人员在岗信息
+            </summary>
+            <param name="token"></param>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Controllers.SiteController.GetSiteCurrentDustInfo(System.String,System.String,System.String)">
+            <summary>
+            获得当前时间扬尘噪声监测数据
+            </summary>
+            <param name="token"></param>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Controllers.SiteController.GetSiteEdgeAlarm(System.String,System.String,System.String)">
+            <summary>
+            获得一段时间内的临边防护报警次数
+            </summary>
+            <param name="token"></param>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Controllers.SiteController.GetSiteCraneAlarm(System.String,System.String,System.String,System.String)">
+            <summary>
+            获得塔吊的预警、报警次数
+            </summary>
+            <param name="token"></param>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="deviceId">设备唯一id</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Controllers.SiteController.GetSiteElevatorAlarm(System.String,System.String,System.String,System.String)">
+            <summary>
+            获得施工升降机的预警、报警次数
+            </summary>
+            <param name="token"></param>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="deviceId">设备唯一id</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Controllers.SiteController.GetSiteUploadAlarm(System.String,System.String,System.String,System.String)">
+            <summary>
+            获得卸料平台的预警、报警次数
+            </summary>
+            <param name="token"></param>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="deviceId">设备唯一id</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Controllers.SiteController.GetInSiteURL(System.String,System.String,System.String)">
+            <summary>
+            获得智慧工地集成平台URL跳转地址的有效性
+            </summary>
+            <param name="token"></param>
+            <param name="recordNumber"></param>
+            <param name="belongedTo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Aqt365.Controllers.SiteController.GetBoardURL(System.String,System.String,System.String)">
+            <summary>
+            查询所有看板URL地址的有效性
+            </summary>
+            <param name="token"></param>
+            <param name="recordNumber"></param>
+            <param name="belongedTo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Auth.ResponseAuthenticationHandler">
+            <summary>
+            响应认证处理器
+            </summary>
+        </member>
+        <member name="T:xhs.build.app.Enums.StatusCodes">
+            <summary>
+            状态码枚举
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status0NotOk">
+            <summary>
+            操作失败
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status1Ok">
+            <summary>
+            操作成功
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status401Unauthorized">
+            <summary>
+            未登录（需要重新登录）
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status4001Unauthorized">
+            <summary>
+            登录超时
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status403Forbidden">
+            <summary>
+            权限不足
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status404NotFound">
+            <summary>
+            资源不存在
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status500InternalServerError">
+            <summary>
+            系统内部错误（非业务代码里显式抛出的异常，例如由于数据不正确导致空指针异常、数据库异常等等）
+            </summary>
+        </member>
+        <member name="T:xhs.build.Aqt365.Controllers.WaterAndWattController">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="M:xhs.build.Aqt365.Controllers.WaterAndWattController.qjpq">
+            <summary>
+            清江浦区
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

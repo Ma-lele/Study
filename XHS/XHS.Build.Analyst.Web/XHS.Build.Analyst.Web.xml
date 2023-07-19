@@ -1,0 +1,572 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XHS.Build.Analyst.Web</name>
+    </assembly>
+    <members>
+        <member name="T:XHS.Build.Analyst.Web.Attributes.LoginAttribute">
+            <summary>
+            登录后不走权限
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Attributes.PermissionAttribute">
+            <summary>
+            启用权限
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Auth.IPermissionHandler">
+            <summary>
+            权限处理接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Auth.IPermissionHandler.ValidateAsync(System.String)">
+            <summary>
+            权限验证
+            </summary>
+            <param name="api"></param>
+            <param name="httpMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Auth.PermissionHandler">
+            <summary>
+            权限处理
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Auth.PermissionHandler.ValidateAsync(System.String)">
+            <summary>
+            权限验证
+            </summary>
+            <param name="api">接口路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Auth.ResponseAuthenticationHandler">
+            <summary>
+            响应认证处理器
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Controllers.CommonController">
+            <summary>
+            通用接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.CommonController.#ctor(XHS.Build.Services.Event.IEventService,XHS.Build.Common.Auth.IUser,XHS.Build.Services.Group.IGroupService,XHS.Build.Services.Weather.IWeatherService,XHS.Build.Services.Menus.IMenuService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="commonService"></param>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.CommonController.GroupSelect(System.String)">
+            <summary>
+            Group下拉框
+            </summary>
+            <param name="cityCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.CommonController.Weather(System.String)">
+            <summary>
+            天气信息
+            </summary>
+            <param name="cityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.CommonController.SetGroup(System.String)">
+            <summary>
+            切换区/市
+            </summary>
+            <param name="regionid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.CommonController.GetMenu">
+            <summary>
+            获取菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.CommonController.GetParentEventType">
+            <summary>
+            获取事件类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Controllers.EventController">
+            <summary>
+            事件分析
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.Analyse.IEventService)">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EventRadar(System.Int32,System.String)">
+            <summary>
+            事件类型雷达图
+            </summary>
+            <param name="SITEID"></param>
+            <param name="cityCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EventStatisticNToday(System.String)">
+            <summary>
+            事件统计+今日事件
+            </summary>
+            <param name="cityCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EventCurve(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            事件曲线图
+            </summary>
+            <param name="eventStatus"></param>
+            <param name="days"></param>
+            <param name="typecode"></param>
+            <param name="cityCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.UntreatedEvent(System.String,System.String,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            事件列表
+            </summary>
+            <param name="keyword"></param>
+            <param name="siteid"></param>
+            <param name="status"></param>
+            <param name="eventlevel"></param>
+            <param name="cityCode"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EventDetail(System.Int32)">
+            <summary>
+            事件详情
+            </summary>
+            <param name="EVENTID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EventTypeStatistic(System.String,System.Int32,System.String)">
+            <summary>
+            事件分析-类型子菜单-风险统计
+            </summary>
+            <param name="typecode"></param>
+            <param name="eventlevel"></param>
+            <param name="citycode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.ProjectRiskRank(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            项目风险排行
+            </summary>
+            <param name="typecode"></param>
+            <param name="citycode"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EnterpriseRiskRank(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            企业风险排行
+            </summary>
+            <param name="typecode"></param>
+            <param name="citycode"></param>
+            <param name="companytype"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EventContentStatistic(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            触发事件内容统计
+            </summary>
+            <param name="typecode"></param>
+            <param name="eventlevel"></param>
+            <param name="days"></param>
+            <param name="citycode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.DistrictTrend(System.Int32,System.String)">
+            <summary>
+            区域发展趋势
+            </summary>
+            <param name="days"></param>
+            <param name="citycode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.ProjRiskStatistic">
+            <summary>
+            当前项目风险统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EnterpriseRiskStatistic">
+            <summary>
+            当前企业风险统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.ProjectList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            项目列表
+            </summary>
+            <param name="typecode"></param>
+            <param name="citycode"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.ProjectListCount(System.String,System.String)">
+            <summary>
+            项目列表上面的统计
+            </summary>
+            <param name="typecode"></param>
+            <param name="citycode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.GroupRisk(System.String)">
+            <summary>
+            当前区域风险统计
+            </summary>
+            <param name="citycode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.ProjectDetail(System.Int32)">
+            <summary>
+            项目信息看板-基本信息
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.PenaltyList(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            项目信息看板-行政处罚
+            </summary>
+            <param name="SITEID"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.RiskTrend(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            项目信息看板-风险趋势
+            </summary>
+            <param name="SITEID"></param>
+            <param name="year"></param>
+            <param name="month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EventCurveYear(System.String,System.String)">
+            <summary>
+            事件分析-子类-事件风险年统计
+            </summary>
+            <param name="typecode"></param>
+            <param name="citycode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EnterpriseRiskList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            企业风险列表
+            </summary>
+            <param name="typecode"></param>
+            <param name="citycode"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EnterpriseRiskListCount(System.String,System.String)">
+            <summary>
+            企业风险列表上面的统计
+            </summary>
+            <param name="typecode"></param>
+            <param name="citycode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EnterpriseDetail(System.String,System.String)">
+            <summary>
+            企业信息看板-基本信息
+            </summary>
+            <param name="companycode"></param>
+            <param name="companyname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EnterpriseSiteList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            企业信息看板-承接项目
+            </summary>
+            <param name="companycode"></param>
+            <param name="companyname"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EnterpriseEventList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            企业信息看板-发生事件
+            </summary>
+            <param name="companycode"></param>
+            <param name="companyname"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EnterpriseEventRadar(System.String,System.String)">
+            <summary>
+            企业信息看板-发生事件-雷达图
+            </summary>
+            <param name="companycode"></param>
+            <param name="companyname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EnterprisePenalty(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            企业信息看板-行政处罚
+            </summary>
+            <param name="companycode"></param>
+            <param name="companyname"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.SiteScoreRank(System.String,System.Int32,System.Int32)">
+            <summary>
+            综合评分-项目评分排行
+            </summary>
+            <param name="key"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.EventController.EnterpriseScoreRank(System.String,System.Int32,System.Int32)">
+            <summary>
+            综合评分-企业评分排行
+            </summary>
+            <param name="key"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Controllers.LoginController">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.LoginController.#ctor(XHS.Build.Services.User.ISysUserService,XHS.Build.Common.Auth.IUserToken,AutoMapper.IMapper,XHS.Build.Services.Role.IUserRoleService,XHS.Build.Common.Cache.ICache,Microsoft.Extensions.Configuration.IConfiguration,XHS.Build.Services.UserService.IUserService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="sysUserService"></param>
+            <param name="userToken"></param>
+            <param name="mapper"></param>
+            <param name="userRoleService"></param>
+            <param name="cache"></param>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.LoginController.Login(XHS.Build.Model.ModelDtos.LoginUserInput)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="input">登录信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.LoginController.ApiLogin(System.String)">
+            <summary>
+            API登录
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.LoginController.ApiLoginTest(System.String)">
+            <summary>
+            test
+            </summary>
+            <param name="uuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.LoginController.Refresh(System.String)">
+            <summary>
+            刷新Token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.LoginController.GetToken(XHS.Build.Model.ModelDtos.LoginUserOutput)">
+            <summary>
+            获得token
+            </summary>
+            <param name="output"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Controllers.PermissionController">
+            <summary>
+            模块菜单
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.PermissionController.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            所有列表
+            </summary>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.PermissionController.GetTreeTable(System.String,System.String,System.String)">
+            <summary>
+            查询树形 Table
+            </summary>
+            <param name="parentid">父节点</param>
+            <param name="key">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.PermissionController.GetPermissionTree(System.String,System.Boolean)">
+            <summary>
+            获取菜单树
+            </summary>
+            <param name="pid"></param>
+            <param name="needbtn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.PermissionController.Post(XHS.Build.Model.ModelDtos.PermissionAddInput)">
+            <summary>
+            添加
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.PermissionController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.PermissionController.Put(XHS.Build.Model.ModelDtos.PermissionUpdateInput)">
+            <summary>
+            修改信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.PermissionController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.PermissionController.Assign(XHS.Build.Model.ModelDtos.AssignView)">
+            <summary>
+            保存菜单权限分配
+            </summary>
+            <param name="assignView"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.PermissionController.GetPermissionIdByRoleId(System.String)">
+            <summary>
+            通过角色获取菜单【无权限】
+            </summary>
+            <param name="rid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.PermissionController.GetNavigationBar(System.String)">
+            <summary>
+            获取路由树
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Controllers.UserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.UserController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            用户列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.UserController.Groups">
+            <summary>
+            用户列表分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.UserController.Post(XHS.Build.Model.ModelDtos.UserAddInput)">
+            <summary>
+            添加
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.UserController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.UserController.Put(XHS.Build.Model.ModelDtos.UserAddInput)">
+            <summary>
+            修改信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Controllers.UserController.GetInfoByToken">
+            <summary>
+            获取用户详情
+            【无权限】
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Filters.ExceptionFilter">
+            <summary>
+            Admin异常错误过滤
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Filters.ExceptionFilter.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILogger{XHS.Build.Analyst.Web.Filters.ExceptionFilter})">
+            <summary>
+            异常
+            </summary>
+            <param name="env"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Filters.ExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Filters.ExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Filters.InternalServerErrorResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Logs.ILogHandler">
+            <summary>
+            操作日志处理接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Analyst.Web.Logs.ILogHandler.LogAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            写操作日志
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Analyst.Web.Logs.LogHandler">
+            <summary>
+            操作日志处理
+            </summary>
+        </member>
+    </members>
+</doc>

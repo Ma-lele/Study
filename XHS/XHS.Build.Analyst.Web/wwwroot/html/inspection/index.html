@@ -1,0 +1,498 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover"
+    />
+    <meta
+      name="format-detection"
+      content="telephone=no,email=no,date=no,address=no"
+    />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/inspection.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"
+    />
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <!-- 生产环境版本，优化了尺寸和速度 -->
+    <script src="../js/vue-2.6.12.min.js"></script>
+    <script src="../js/vant-2.10.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <van-sticky>
+        <van-nav-bar :title="title+'详情'"></van-nav-bar>
+        <van-notice-bar
+          v-if="!isPreviewImg && +inspInfo.overhour"
+          left-icon="volume-o"
+          v-text="showHour(inspInfo.overhour)"
+          class="notice-bar"
+        >
+        </van-notice-bar>
+      </van-sticky>
+      <div v-if="inspInfo" class="container">
+        <div class="base-info">
+          <div v-if="inspInfo.inspcode" class="item">
+            <div class="name"><span class="insp-code">单号</span>：</div>
+            <div class="value">
+              <span v-text="inspInfo.inspcode"></span>
+              <span
+                v-if="inspInfo.processstatus"
+                v-text="getStatusName(inspInfo.processstatus)"
+                class="status"
+                :class="getStatusClass(+inspInfo.processstatus)"
+              ></span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="name"><span class="user-name">创建人</span>：</div>
+            <div class="value">
+              <div class="cell-value">
+                <van-icon name="manager" class="manager-icon"></van-icon>
+                <span v-text="inspInfo.username"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="name">创建时间：</div>
+            <div class="value" v-text="inspInfo.createdate"></div>
+          </div>
+
+          <div class="item">
+            <div class="name">整改目标：</div>
+            <div class="value" v-text="inspInfo.siteshortname"></div>
+          </div>
+        </div>
+        <van-cell-group v-model="activeNames" :border="false" class="base-info">
+            <van-cell
+            title="检查形式"
+            value-class="cell-edit"
+            :value="
+                    inspInfo.inspType
+                        ? inspInfo.inspType.name
+                        : ''
+                "
+          ></van-cell>  
+          <van-cell
+            title="检查类型"
+            value-class="cell-edit"
+            :value="
+                    inspInfo.reformType
+                        ? inspInfo.reformType.name
+                        : ''
+                "
+          ></van-cell>
+          <van-cell
+            title="整改期限"
+            :value="
+                    inspInfo.limitdate
+                        ? inspInfo.limitdate
+                        : ''
+                "
+          ></van-cell>
+          <van-cell
+            title="负责人"
+            value-class="cell-edit"
+            :value="
+                    inspInfo.chargeruser
+                        ? inspInfo.chargeruser
+                        :  ''
+                "
+          ></van-cell>
+          <van-cell title="问题检查项" :border="false"> </van-cell>
+          <van-collapse v-model="activeName" accordion>
+            <van-collapse-item
+              v-for="(item, index) in items"
+              :key="index"
+              :title="item[2] ? item[2] : item[1]"
+              :name="index"
+            >
+              <div class="item-content">
+                <div v-text="item[0]" class="first-type"></div>
+                <van-divider></van-divider>
+                <div v-text="item[1]" class="second-type"></div>
+                <van-divider v-if="item[2]"></van-divider>
+                <div v-if="item[2]" v-text="item[2]" class="third-type"></div>
+              </div>
+            </van-collapse-item>
+          </van-collapse>
+        </van-cell-group>
+        <van-cell-group class="base-info" :border="false">
+          <van-field
+            v-model="inspInfo.insppoint"
+            type="number"
+            label="检查扣分"
+            :readonly="true"
+          ></van-field>
+          <van-field
+            v-model="inspInfo.desc"
+            label="检查描述"
+            autosize
+            type="textarea"
+            maxlength="200"
+            :show-word-limit="false"
+            :formatter="formatter"
+            :readonly="true"
+          ></van-field>
+        </van-cell-group>
+        <van-cell-group :border="false" class="base-info">
+          <van-cell title="整改记录">
+            <template #right-icon>
+              扣分合计：<span
+                v-text="+inspInfo.insppoint + +inspInfo.reformpoint"
+                class="total-score"
+              >
+              </span>
+            </template>
+          </van-cell>
+          <div class="reform-record">
+            <template v-for="(item, index) in recordList">
+              <div
+                class="record-item"
+                :class="{ right: item.processtype == 2 }"
+                :key="index"
+              >
+                <div class="content-wraper">
+                  <div class="create-user">
+                    <div
+                      v-if="item.processtype == 2"
+                      v-text="item.datatime"
+                      class="time"
+                    ></div>
+                    <div class="icon-name">
+                      <van-icon name="manager" class="manager-icon"></van-icon>
+                      <div v-text="item.user" class="name"></div>
+                    </div>
+                    <div
+                      v-if="item.processtype == 1"
+                      v-text="item.datatime"
+                      class="time"
+                    ></div>
+                  </div>
+                  <div
+                    class="content"
+                    v-text="item.remark ? item.remark : ''"
+                  ></div>
+                  <div class="grid-images">
+                    <van-grid
+                      :column-num="3"
+                      :gutter="0"
+                      :square="true"
+                      :border="false"
+                      class="content"
+                    >
+                      <van-grid-item
+                        v-for="(_item, index) in getImages(item.imgs)"
+                        :key="index"
+                      >
+                        <van-image
+                          width="100%"
+                          height="100%"
+                          :src="_item.tmbpath"
+                          fit="cover"
+                          @click.prevent="previewImg(_item)"
+                        />
+                      </van-grid-item>
+                    </van-grid>
+                  </div>
+                  <div
+                    v-if="item.deductpoint && item.deductpoint != 0"
+                    class="overtime-score"
+                  >
+                    <!-- <div>已超时：1天3小时23分</div> -->
+                    <div v-text="'扣分：'+item.deductpoint"></div>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+        </van-cell-group>
+      </div>
+      <van-image-preview
+        v-model="isPreviewImg"
+        :images="images"
+        :start-position="index"
+        @change="onChange"
+        @close="onClose"
+      >
+        <template v-slot:index>
+          {{ +index+1 }}/{{ imageList.length }}
+        </template>
+        <template v-slot:cover
+          ><div
+            v-if="currentRecord"
+            class="cover"
+            :class="{ right: currentRecord.processtype == 2 }"
+          >
+            <div class="content-wraper">
+              <div class="create-user">
+                <div
+                  v-if="currentRecord.processtype == 2"
+                  v-text="currentRecord.datatime"
+                  class="time"
+                ></div>
+                <div class="icon-name">
+                  <van-icon name="manager" class="manager-icon"></van-icon>
+                  <div v-text="currentRecord.user" class="name"></div>
+                </div>
+                <div
+                  v-if="currentRecord.processtype == 1"
+                  v-text="currentRecord.datatime"
+                  class="time"
+                ></div>
+              </div>
+              <div
+                class="content"
+                v-text="currentRecord.remark ? currentRecord.remark : ''"
+              ></div>
+              <div
+                v-if="currentRecord.deductpoint && currentRecord.deductpoint != 0"
+                class="overtime-score"
+              >
+                <!-- <div>已超时：1天3小时23分</div> -->
+                <div v-text="'扣分：'+currentRecord.deductpoint"></div>
+              </div>
+            </div></div
+        ></template>
+      </van-image-preview>
+    </div>
+  </body>
+  <script>
+    const handleStatus = [
+      { name: "未发布", value: 1 },
+      { name: "等待整改", value: 2 },
+      { name: "等待确认", value: 3 },
+      { name: "整改完成", value: 4 },
+    ];
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        title:"",
+        inspcode: "",
+        index: 0,
+        isPreviewImg: false,
+        activeNames: ["1"],
+        activeName: "0",
+        inspTypeList:[
+            { name: "企业检查", value: "1" },
+            { name: "项目检查", value: "2" },
+        ],
+        reformTypeList: [
+          {
+            value: 1,
+            name: "检查单",
+          },
+          {
+            value: 2,
+            name: "隐患整改",
+          },
+          {
+            value: 3,
+            name: "停工整改",
+          },
+        ],
+        items: [],
+        imageList: [],
+        images: [],
+        currentRecord: {},
+        recordList: [],
+        inspInfo: {},
+      },
+      mounted() {
+        let url = new URL(window.location.href);
+        this.inspcode = url.searchParams.get("inspcode");
+        this.title=decodeURI(url.searchParams.get("menuName"));
+        this.title=this.title=='null'?'':this.title;
+        document.title = this.title+"详情";  
+        this.getOne();
+      },
+      methods: {
+        getOne() {
+          let formData = new FormData();
+          //参数
+          formData.append("inspcode", this.inspcode);
+          axios({
+            //baseURL: "http://test.hb.xhs-sz.com",
+            baseURL: "",
+            timeout: 10000,
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+            },
+            method: "post",
+            url: "/handler/HInspection.ashx?Action=getone",
+            data: formData,
+          }).then((response) => {
+            console.log(response);
+            if (response.status === 200) {
+              this.handleResponse(response);
+            }
+          });
+        },
+        handleResponse(ret) {
+          let Table1 = ret.data["0"][0] || {};
+          let {
+            inspcode,
+            processstatus,
+            username,
+            createdate,
+            siteshortname,
+            chargeruser,
+            CHARGERID,
+            limitdate,
+            insppoint,
+            reformpoint,
+            overhour,
+          } = Table1;
+
+          let reformType = this.reformTypeList.find((item) => {
+            if (Table1 && item.value == Table1.insplevel) {
+              return true;
+            }
+          });
+          let inspType = this.inspTypeList.find((item) => {
+                  if (Table1 && item.value == Table1.insptype) {
+                    return true;
+                  }
+                });
+          this.items = Array.isArray(
+            JSON.parse(Table1.items.replace(/“/g, '"'))
+          )
+            ? JSON.parse(Table1.items.replace(/“/g, '"'))
+            : [];
+
+          let recordListStr = Table1.processjson
+            ? this.htmlDecodeByRegExp("[" + Table1.processjson + "]").replace(
+                /“/g,
+                '"'
+              )
+            : "[]";
+          let recordArray = JSON.parse(recordListStr);
+          this.recordList = Array.isArray(recordArray) ? recordArray : [];
+
+          let desc =
+            this.recordList[0] && this.recordList[0].remark
+              ? this.recordList[0].remark
+              : "";
+
+          this.inspInfo = {
+            inspcode,
+            processstatus,
+            username,
+            createdate,
+            siteshortname,
+            chargeruser,
+            CHARGERID,
+            reformType,
+            inspType,
+            limitdate,
+            insppoint,
+            reformpoint,
+            desc,
+            overhour,
+          };
+
+          this.imageList = ret.data["1"] || [];
+          this.images = this.imageList.map((_) => _.path);
+        },
+        getImages(exparam) {
+          return this.imageList.filter((_) => _.exparam == exparam);
+        },
+        htmlDecodeByRegExp(str) {
+          var temp = "";
+          if (str.length == 0) return "";
+          temp = str.replace(/&amp;/g, "&");
+          temp = temp.replace(/&lt;/g, "<");
+          temp = temp.replace(/&gt;/g, ">");
+          temp = temp.replace(/&nbsp;/g, " ");
+          temp = temp.replace(/&#39;/g, "'");
+          temp = temp.replace(/&quot;/g, '"');
+          temp = temp.replace(/[\n]/g, "\\n");
+          temp = temp.replace(/[\r]/g, "\\r");
+          return temp;
+        },
+        isJSON(str) {
+          str = this.htmlDecodeByRegExp(str);
+          if (typeof str == "string") {
+            try {
+              var obj = JSON.parse(str);
+              if (typeof obj == "object" && obj) {
+                return true;
+              } else {
+                return false;
+              }
+            } catch (e) {
+              return false;
+            }
+          } else {
+            return false;
+          }
+        },
+        specialCharFormat(str) {
+          return str
+            .replace(/\'/g, "‘")
+            .replace(/\"/g, "”")
+            .replace(/\\/g, "");
+        },
+        showHour(overHour) {
+          let pre = "";
+          if (overHour > 0) {
+            pre = "逾期 ";
+          } else if (overHour < 0) {
+            pre = "剩余 ";
+          } else {
+            return "";
+          }
+          let day = Math.floor(Math.abs(overHour) / 24);
+          let hour = Math.abs(overHour) % 24;
+          return pre + day + "天" + hour + "小时";
+        },
+        previewImg(_image) {
+          this.index = this.imageList.findIndex(
+            (_) => _.filerealname == _image.filerealname
+          );
+          this.isPreviewImg = true;
+          this.currentRecord = this.recordList.find(
+            (_) => _.imgs == _image.exparam
+          );
+        },
+        onChange(index) {
+          this.index = index;
+          this.currentRecord = this.recordList.find(
+            (_) => _.imgs == this.imageList[index].exparam
+          );
+          console.log(this.currentRecord);
+        },
+        onClose() {
+          this.isPreviewImg = false;
+        },
+        formatter(value) {
+          return this.specialCharFormat(value);
+        },
+        getStatusClass(val) {
+          switch (val) {
+            case 1:
+              return "unpublished";
+            case 2:
+              return "wati-reform";
+            case 3:
+              return "wati-confirm";
+            case 4:
+              return "reform-complete";
+          }
+        },
+        getStatusName(val) {
+          return handleStatus.find((s) => s.value == val).name;
+        },
+      },
+    });
+  </script>
+</html>

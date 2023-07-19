@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover"
+    />
+    <meta
+      name="format-detection"
+      content="telephone=no,email=no,date=no,address=no"
+    />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/security.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"
+    />
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/dayjs.min.js"></script>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <!-- 生产环境版本，优化了尺寸和速度 -->
+    <script src="../js/vue-2.6.12.min.js"></script>
+    <script src="../js/vant-2.10.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.0&type=webgl&ak=C3d083fd3fadf8d3a829fdeb8feb3b21"></script>
+  </head>
+  <body>
+    <div id="app">
+      <van-sticky>
+        <van-nav-bar :title="title+'详情'"></van-nav-bar>
+      </van-sticky>
+      <div class="container">
+        <div id="containerGL" class="allmap"></div>
+        <div v-if="info" class="content">
+            <p class="name" v-text="info.username"></p>
+            <p class="date"><span v-text="info.scname"></span>|<span v-text="info.createddate"></span></p>
+            <p class="desc" v-text="info.remark"></p>
+            <van-grid
+                v-if="imageList&& imageList.length"
+                :column-num="6"
+                :border="false"
+                >
+                    <van-grid-item
+                        v-for="(file, idx) in imageList"
+                        @click="previewImg(file)"
+                        :key="idx"
+                    >
+                    <template #icon>
+                        <van-image
+                            width="60"
+                            height="60"
+                            fit="cover"
+                            :src="file.tmbpath"
+                        />
+                    </template>
+                    </van-grid-item>
+            </van-grid>
+        </div>
+      </div>
+      <van-image-preview
+        v-model="isPreviewImg"
+        :images="images"
+        :start-position="index"
+        @change="onChange"
+        @close="onClose"
+      >
+        <template v-slot:index>
+          {{ +index+1 }}/{{ images.length }}
+        </template>
+      </van-image-preview>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        title:"",
+        schisid: "",
+        index: 0,
+        isPreviewImg: false,
+        imageList: [],
+        images: [],
+        info:null,
+        map:null,
+        point:{},
+      },
+      computed: {},
+      mounted() {
+        let url = new URL(window.location.href);
+        this.schisid = url.searchParams.get("schisid");
+        this.title=decodeURI(url.searchParams.get("menuName"))||"";
+        this.title=this.title=='null'?'':this.title;
+        document.title = this.title+"详情";  
+        this.getOne();
+      },
+      methods: {
+        getOne() {
+          let formData = new FormData();
+          //参数
+          formData.append("schisid", this.schisid);
+          axios({
+            // baseURL: "http://test.hb.xhs-sz.com",
+            baseURL: "",
+            timeout: 10000,
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+            },
+            method: "post",
+            url: "/handler/njjy/HNjjySiteSecurity.ashx?Action=getone",
+            data: formData,
+          }).then((response) => {
+            // console.log(response);
+            if (response.status === 200&&response.data) {
+              this.handleResponse(response.data);
+            }
+          });
+        },
+        handleResponse(ret) {
+            this.info = ret["0"][0];
+            this.info.createddate = dayjs(this.info.createddate).format("YYYY-MM-DD HH:00");
+
+            this.imageList=ret["1"];
+            this.images=this.imageList.map((item)=>item.path);
+            this.initMap();
+        },
+        initMap() {
+            console.log("map", this.map);
+            if (this.map) {
+                return;
+            }
+            this.map = new BMapGL.Map("containerGL"); // 创建地图实例
+
+            // 添加比例尺控件
+            this.map.addControl(
+                new BMapGL.ScaleControl({
+                    anchor: BMAP_ANCHOR_BOTTOM_LEFT,
+                    offset: new BMapGL.Size(10, 10),
+                })
+            );
+
+            // 添加缩放控件
+            this.map.addControl(
+                new BMapGL.ZoomControl({
+                    anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+                    offset: new BMapGL.Size(10, 10),
+                })
+            );
+            let point={};
+            // 创建点坐标 axios => res 获取的初始化定位坐标
+            if (this.info.shlng&&this.info.shlng!='0' && this.info.shlat&& this.info.shlat!='0') {
+                console.log('tag', '111')
+                this.map.clearOverlays();
+                point = new BMapGL.Point(this.info.shlng, this.info.shlat);
+                const marker = new BMapGL.Marker(point); // 创建标注
+                this.map.addOverlay(marker);
+            } else {
+                point = new BMapGL.Point(this.info.sitelng, this.info.sitelat);
+                console.log('tag', '222')
+            }
+            // 初始化地图，设置中心点坐标和地图级别
+            // this.$nextTick(() => {
+            this.map.centerAndZoom(point, 18);
+            // });
+            console.log('tag', '333')
+            //开启鼠标滚轮缩放
+            this.map.enableScrollWheelZoom(true);
+            console.log('tag', '444')
+            // this.map.setHeading(64.5);//设置地图旋转角度
+            // this.map.setTilt(73); //设置地图的倾斜角度
+
+            // map.setMapStyleV2({ styleJson: styleJson });
+
+            // this.map.addEventListener("click", (e) => {
+            //     // alert("点击的经纬度：" + e.latlng.lng + ", " + e.latlng.lat);
+            //     this.point.lng = e.latlng.lng;
+            //     this.point.lat = e.latlng.lat;
+            //     console.log("point", this.point);
+            //     this.$emit("click", this.point);
+            //     this.map.clearOverlays();
+            //     const marker = new BMapGL.Marker(e.latlng); // 创建标注
+            //     this.map.addOverlay(marker);
+            // });
+        },
+        previewImg(_image) {
+          this.index = this.imageList.findIndex(
+            (_) => _.filename == _image.filename
+          );
+          this.isPreviewImg = true;
+        },
+        onChange(index) {
+          this.index = index;
+        },
+        onClose() {
+          this.isPreviewImg = false;
+        },
+      },
+    });
+  </script>
+</html>

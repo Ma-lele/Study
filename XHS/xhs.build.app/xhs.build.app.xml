@@ -1,0 +1,1945 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>xhs.build.app</name>
+    </assembly>
+    <members>
+        <member name="T:xhs.build.app.Attributes.RouteVersionAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:xhs.build.app.Attributes.RouteVersionAttribute.GroupName">
+            <summary>
+            分组名称,是来实现接口 IApiDescriptionGroupNameProvider
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Attributes.RouteVersionAttribute.#ctor(System.String)">
+            <summary>
+            自定义路由构造函数，继承基类路由
+            </summary>
+            <param name="actionName"></param>
+        </member>
+        <member name="M:xhs.build.app.Attributes.RouteVersionAttribute.#ctor(xhs.build.app.Attributes.ApiVersions,System.String)">
+            <summary>
+            自定义版本+路由构造函数，继承基类路由
+            </summary>
+            <param name="actionName"></param>
+            <param name="version"></param>
+        </member>
+        <member name="T:xhs.build.app.Attributes.ApiVersions">
+            <summary>
+            接口版本
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Attributes.ApiVersions.V1">
+            <summary>
+            V1 版本
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Attributes.ApiVersions.THXC">
+            <summary>
+            太湖新城
+            </summary>
+        </member>
+        <member name="T:xhs.build.app.AuthHelp.ResponseAuthenticationHandler">
+            <summary>
+            响应认证处理器
+            </summary>
+        </member>
+        <member name="T:xhs.build.app.Controllers.AttendController">
+            <summary>
+            考勤
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.AttendController.#ctor(XHS.Build.Services.Attend.IAttendService,XHS.Build.Services.Attend.IHpAttend)">
+            <summary>
+            
+            </summary>
+            <param name="attendService"></param>
+        </member>
+        <member name="M:xhs.build.app.Controllers.AttendController.AttendWithPhoto(System.Int32,System.Single,System.Single,System.String,System.String,System.String,System.String)">
+            <summary>
+            插入考勤记录带照片
+            </summary>
+            <param name="SITEID">SITEID</param>
+            <param name="longitude">经度</param>
+            <param name="latitude">维度</param>
+            <param name="address">地址</param>
+            <param name="filename">文件名</param>
+            <param name="fileString">文件</param>
+            <param name="remark">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.AttendController.Attend(System.Int32,System.Single,System.Single,System.String,System.String)">
+            <summary>
+            插入考勤记录
+            </summary>
+            <param name="siteid">考勤种类 0：签到，1：上班，2：下班</param>
+            <param name="longitude">经度</param>
+            <param name="latitude">维度</param>
+            <param name="address">地址</param>
+            <param name="remark">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.AttendController.GetListById(System.UInt64)">
+            <summary>
+            获取考勤数据
+            </summary>
+            <param name="ATTENDID">考勤ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.AttendController.Note(System.DateTime,System.String)">
+            <summary>
+            插入考勤便签
+            </summary>
+            <param name="attenddate">考勤日期</param>
+            <param name="operatenote">便签内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.AttendController.GetNoteList(System.DateTime)">
+            <summary>
+            获取考勤
+            </summary>
+            <param name="operatedate">操作日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.AttendController.GetAttendTime">
+            <summary>
+            获取服务器时间和是否签到过
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.AttendController.UserAttends(System.DateTime)">
+            <summary>
+            获取打卡记录
+            </summary>
+            <param name="billdate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.CableController">
+            <summary>
+            钢丝绳监测
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CableController.GetListForSite(System.Int32)">
+            <summary>
+            获取监测点下钢丝绳监测设备
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <returns>实时值数据集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CableController.GetMaxDamage(System.String)">
+            <summary>
+             获取最大损伤数据
+            </summary>
+            <param name="sensorid">设备id</param>
+            <returns>数据集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CableController.GetAllDamage(System.String)">
+            <summary>
+            获取完整的损伤数据
+            </summary>
+            <param name="sensorid">设备id</param>
+            <returns>数据集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CableController.GetBroken(System.String)">
+            <summary>
+            获取完整断丝预测
+            </summary>
+            <param name="sensorid">设备id</param>
+            <returns>数据集</returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.CaRoundController">
+            <summary>
+            资产巡检
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CaRoundController.Create(XHS.Build.Model.Models.CARound.CARoundEntityParam)">
+            <summary>
+            资产巡检插入
+            </summary>
+            <param name="param">资产巡检参数</param>
+            <returns>资产巡检单号</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CaRoundController.GetCheckListItems(System.Int32)">
+            <summary>
+            获取检查项列表
+            </summary>
+            <param name="teid">租户ID</param>
+             <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CaRoundController.GetTenantTypeList">
+            <summary>
+            获取租户类型
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CaRoundController.Delete(System.String)">
+            <summary>
+            删除巡检
+            </summary>
+            <param name="roundcode">资产巡检单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CaRoundController.ToCheck(XHS.Build.Model.Models.CARound.CARoundDetailEntity)">
+            <summary>
+            资产巡检问题验收
+            </summary>
+            <param name="roundcode">资产巡检单号</param>
+            <param name="SITEID">监测点ID</param>
+            <param name="limitdate">限时整改日期</param>
+            <param name="deductpoint">整改扣分</param>
+            <param name="remark">备注</param>
+            <param name="files">新追加图片信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CaRoundController.ToDeal(XHS.Build.Model.Models.CARound.CARoundDetailEntity)">
+            <summary>
+            资产巡检问题处理
+            </summary>
+            <param name="roundcode">资产巡检单号</param>
+            <param name="SITEID">监测点ID</param>
+            <param name="solvedremark">处理日志</param>
+            <param name="files">新追加图片信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CaRoundController.Finish(XHS.Build.Model.Models.CARound.CARoundDetailEntity)">
+            <summary>
+            结束资产巡检问题
+            </summary>
+            <param name="roundcode">资产巡检单号</param>
+            <param name="SITEID">监测点ID</param>
+            <param name="deductpoint">整改扣分</param>
+            <param name="remark">解决日志</param>
+            <param name="files">新追加图片信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CaRoundController.GetOne(System.String)">
+            <summary>
+            获取资产巡检信息
+            </summary>
+            <param name="roundcode">资产巡检单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CaRoundController.GetOrderList(System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            资产巡检单（待验收或租户别）
+            </summary>
+            <param name="teid">租户ID</param>
+            <param name="status">状态 0：所有1：待整改2：待验收3：整改合格4：检查合格</param>
+            <param name="keyword">巡检单号</param>
+            <param name="isoverhouronly">超期巡检单 0：所有 1：只显示超期巡检单</param>
+            <param name="startdate">开始时间</param>
+            <param name="enddate">结束时间</param>
+            <param name="pageindex">页码</param>
+            <param name="pagesize">每页记录数默认10</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.CaRoundController.GetOrderTenantList(System.DateTime,System.DateTime,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            资产巡检统计列表
+            </summary>
+            <param name="siteid">项目ID</param>
+            <param name="teid">租户ID</param>
+            <param name="keyword">租户名称模糊查询</param>
+            <param name="sort">综合排序</param>
+            <param name="tenanttype">租户类型</param>
+            <param name="startdate">开始时间</param>
+            <param name="enddate">结束时间</param>
+            <param name="pageindex">页码</param>
+            <param name="pagesize">每页记录数默认10</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.DefenceController">
+            <summary>
+            临边围挡
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DefenceController.#ctor(XHS.Build.Services.Defence.IDefenceService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+            <param name="defenceService"></param>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DefenceController.GetList(System.Int32)">
+            <summary>
+            获取监测点下临边围挡
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DefenceController.Shield(System.String)">
+            <summary>
+            布防
+            </summary>
+            <param name="dfcode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DefenceController.Unshield(System.String)">
+            <summary>
+            撤防
+            </summary>
+            <param name="dfcode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DefenceController.ZoneShield(System.Int32,System.String)">
+            <summary>
+            区域布防
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="dfzone">片区</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DefenceController.ZoneUnshield(System.Int32,System.String)">
+            <summary>
+            区域撤防
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="dfzone">片区</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DefenceController.Create(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            临边围挡插入
+            </summary>
+            <returns>结果集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DefenceController.Update(System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            设置临边围挡信息
+            </summary>
+            <returns>设置结果</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DefenceController.Delete(System.Int32)">
+            <summary>
+            删除临边围挡
+            </summary>
+            <param name="DEFENCEID">临边围挡ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.DustController">
+            <summary>
+            扬尘
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DustController.GetDeviceTypeList(System.Int32)">
+            <summary>
+            根据设备种类获取监测对象
+            </summary>
+            <param name="linktype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DustController.GetFlyVideoList">
+            <summary>
+            施工扬尘 工程航拍
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DustController.GetWarningList(System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            临边围挡 预警列表
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="type">种类(0:全部,1:离线报警,2:超标报警,31:车辆冲洗设备离线报警,32:车辆未冲洗报警,4:特种设备报警,5:临边围挡报警)</param>
+            <param name="startdate">开始日期</param>
+            <param name="enddate">结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.DustController.GetFogListByUser">
+            <summary>
+            获取用户负责的所有雾泡
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.ExamController">
+            <summary>
+            培训考试
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ExamController.#ctor(XHS.Build.Services.Exam.IExamService,XHS.Build.Common.Auth.IUser,XHS.Build.Services.SystemSetting.IHpSystemSetting)">
+            <summary>
+            
+            </summary>
+            <param name="examService"></param>
+            <param name="user"></param>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ExamController.GetRandomQuestionList">
+            <summary>
+            获取考题
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ExamController.GetRandomQuestionListByTag(System.Int32,System.String)">
+            <summary>
+            获取考题
+            </summary>
+            <param name="SITEID">监测点编号</param>
+            <param name="examtype">考试类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ExamController.GetExamResultListByUser">
+            <summary>
+            获取用户考试记录
+            </summary>
+            
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ExamController.getExamTag">
+            <summary>
+            获取考试类别
+            </summary>
+            
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ExamController.DoExamResultSave(System.Int32,System.String,System.Int32,System.Single,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            提交考试结果
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="examtype">考试类型</param>
+            <param name="usetime">考试用时（秒）</param>
+            <param name="score">得分</param>
+            <param name="totalcount">总题数</param>
+            <param name="wrongcount">答错题数</param>
+            <param name="rightcount">答对题数</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.FileController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.FileController.Post(XHS.Build.Model.Models.FileEntity.FileEntityParam,System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            上传文件
+            </summary>
+            <param name="fileEntityParam">文件参数</param>
+            <param name="formFiles">文件对象。一次只允许上传1个文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.FileController.Delete(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="FILEID">文件ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.FlyerController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.FlyerController.GetPhotoList(System.Int32,System.DateTime)">
+            <summary>
+            获取照片列表
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="createddate">拍摄日</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.FlyerController.GetVideoList">
+            <summary>
+            获取视频列表
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:xhs.build.app.Controllers.FlyerController.GetUavDataList(System.Int32,System.DateTime)" -->
+        <member name="T:xhs.build.app.Controllers.FogController">
+            <summary>
+            雾泡联动
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.FogController.GetList(System.Int32)">
+            <summary>
+            获取监测点下雾泡
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.FogController.GetListByUser">
+            <summary>
+            获取用户负责的所有雾泡
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.FogController.SendCommand(XHS.Build.Common.Helps.HpFog.BnCmd)">
+            <summary>
+            发送指令给雾炮
+            </summary>
+            <param name="bc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.GroupController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.GroupController.GetSetting">
+            <summary>
+            获取组设置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.HelmetController">
+            <summary>
+            安全帽定位
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.HelmetController.GetListBySiteId(System.Int32)">
+            <summary>
+            获取楼宇，区域，安全帽信息列表
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.HighFormworkController">
+            <summary>
+            高支模
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.HighFormworkController.GetSiteHighFormworkList(System.Int32)">
+            <summary>
+            获取项目区域，设备信息
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.HighFormworkController.GetSiteHighFormworkWarnCount(System.Int32)">
+            <summary>
+            获取告警统计
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.HighFormworkController.GetSiteHighFormworkWarnList(System.String,System.DateTime)">
+            <summary>
+            获取告警记录
+            </summary>
+            <param name="hfwcode">设备编号</param>
+            <param name="date">日期(yyyy-mm-dd)</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.HighFormworkController.GetSiteHighFormworkAppChart(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            获取项目高支模图表信息app
+            </summary>
+            <param name="SITEID"></param>
+            <param name="HFWAID"></param>
+            <param name="hfwcode"></param>
+            <param name="spotcode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.HighFormworkController.GetSiteHighFormworkHisData(System.Int32,System.Int32,System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            获取项目高支模历史数据
+            </summary>
+            <param name="SITEID"></param>
+            <param name="HFWAID"></param>
+            <param name="hfwcode"></param>
+            <param name="spotcode"></param>
+            <param name="startdate"></param>
+            <param name="enddate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.InspectionController">
+            <summary>
+            移动执法
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.Create(XHS.Build.Model.Models.InspectionEntity.InspectionEntityParam)">
+            <summary>
+            移动执法插入
+            </summary>
+            <param name="param">移动执法参数</param>
+            <returns>移动执法单号</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.Update(XHS.Build.Model.Models.InspectionEntity.InspectionEntityParam)">
+            <summary>
+            移动执法更新
+            </summary>
+            <param name="param">移动执法参数</param>
+            <returns>移动执法单号</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.GetItemList">
+            <summary>
+            获取问题类型
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.ReformAdd(System.String)">
+            <summary>
+            创建整改单（整改单限时整改日期修改）
+            </summary>
+            <param name="inspcode">移动执法单号</param>
+            <returns>移动执法单号</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.Delete(System.String)">
+            <summary>
+            删除巡检
+            </summary>
+            <param name="inspcode">移动执法单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.RemarkAdd(System.String,System.Int32,System.Nullable{System.DateTime},System.Int32,System.String,System.String)">
+            <summary>
+            移动执法问题添加批示
+            </summary>
+            <param name="inspcode">移动执法单号</param>
+            <param name="SITEID">监测点ID</param>
+            <param name="limitdate">限时整改日期</param>
+            <param name="deductpoint">整改扣分</param>
+            <param name="remark">备注</param>
+            <param name="files">新追加图片信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.Solve(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            移动执法问题处理
+            </summary>
+            <param name="inspcode">移动执法单号</param>
+            <param name="SITEID">监测点ID</param>
+            <param name="solvedremark">处理日志</param>
+            <param name="files">新追加图片信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.Finish(System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            结束移动执法问题
+            </summary>
+            <param name="inspcode">移动执法单号</param>
+            <param name="SITEID">监测点ID</param>
+            <param name="deductpoint">整改扣分</param>
+            <param name="remark">解决日志</param>
+            <param name="files">新追加图片信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.GetOne(System.String)">
+            <summary>
+            获取移动执法信息
+            </summary>
+            <param name="inspcode">移动执法单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.GetOrderListCount">
+            <summary>
+            获取用户有权限移动执法工地别统计信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.GetOrderList(System.Int32,System.Int64,System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            移动执法，待办工单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.InspectionController.GetOrderSiteList(System.Int32,System.Int64,System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取站点下的移动执法单
+            </summary>
+            <param name="siteid"></param>
+            <param name="INSPID"></param>
+            <param name="datetype"></param>
+            <param name="insplevel"></param>
+            <param name="status"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.LogController">
+            <summary>
+            测试MongoDB增删改查
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LogController.Delete(System.String)">
+            <summary>
+            删
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LogController.Update(System.String)">
+            <summary>
+            改
+            </summary>
+            <param name="testEntity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LogController.Pages(System.String,System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="name"></param>
+            <param name="pageindex"></param>
+            <param name="pagesize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LogController.GetListNyName(System.String)">
+            <summary>
+            根据name搜索
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LogController.GetList">
+            <summary>
+            所有
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LogController.AddJson(System.String)">
+            <summary>
+            不固定属性？
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LogController.AddJsons(System.String)">
+            <summary>
+            批量插入 不固定属性？
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.LoginController">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LoginController.Login(XHS.Build.Model.ModelDtos.LoginRequest)">
+            <summary>
+            登录
+            </summary>
+            <param name="loginRequest"></param>
+            <param name="logintype">0:智慧工地用户；1:租户</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LoginController.doSingleLogin(System.String)">
+            <summary>
+            单点登录
+            </summary>
+            <param name="encrptstr">RSA加密字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LoginController.Refresh(System.String)">
+            <summary>
+            刷新token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.LoginController.ChangePwd(XHS.Build.Model.PasswordInput)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="pwd"></param>
+            <param name="pwdNew"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.MenuController">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.MenuController.GetUserMenus">
+            <summary>
+            当前用户的APP Menus
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.NetDataController">
+            <summary>
+            请求网络数据
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.NetDataController.WashCount(System.String)">
+            <summary>
+            车辆冲洗抓拍
+            </summary>
+            <param name="parkkey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.NetDataController.ParkOrderRecords(System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="parkKey"></param>
+            <param name="starttime"></param>
+            <param name="endtime"></param>
+            <param name="washResult"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.NetDataController.GetMeetingData(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="projId"></param>
+            <param name="date">时间格式（yyyy-MM-dd）</param>
+            <param name="page"></param>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.NetDataController.CountMeetingData(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="projId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.NoticeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.NoticeController.GetList(System.DateTime)">
+            <summary>
+            获取公告
+            </summary>
+            <param name="operatedate">操作时间</param>
+        </member>
+        <member name="M:xhs.build.app.Controllers.NoticeController.GetListByGroup">
+            <summary>
+            通过分组获取公告列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.NoticeController.Send(XHS.Build.Model.ModelDtos.BnNoticePollute)">
+            <summary>
+            发送污染超标公告
+            </summary>
+            <param name="bnp">污染数据公告Bean</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.NoticeController.GetOne(System.Int32)">
+            <summary>
+            获取单个公告及图像资源
+            </summary>
+            <param name="NOTICEID">公告ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.NoticeController.GetWebNoticeOne(System.Int32)">
+            <summary>
+            获取单个公告及图像资源
+            </summary>
+            <param name="WEBNOTICEID">公告ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.NoticeController.GetWebNoticeActiveListByGroup">
+            <summary>
+            通过分组获取有效公告列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.PhaseController">
+            <summary>
+            阶段
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.PhaseController.GetList">
+            <summary>
+            获取施工阶段
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.PhaseController.GetHisList(System.Int32,System.DateTime)">
+            <summary>
+            获取监测对象的施工阶段的修改履历
+            </summary>
+            <param name="SITEID">监测对象ID</param>
+            <param name="operatedate">最后更新时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.PhaseController.GetNjjyHisList(System.Int32,System.DateTime)">
+            <summary>
+            获取监测对象的施工阶段的修改履历(njjy版)
+            </summary>
+            <param name="SITEID">监测对象ID</param>
+            <param name="operatedate">最后更新时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.PhaseController.GetNjjyHisUpdated(System.Int32)">
+            <summary>
+            获取监测对象的施工阶段的修改履历(建邺专用)
+            </summary>
+            <param name="SITEID">监测对象ID</param>
+            <returns>结果集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.PhaseController.GetPhotoList(System.Int64)">
+            <summary>
+            获取照片列表
+            </summary>
+            <param name="PHASEHISID">进度历史ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.PhaseController.SetSitePhase(System.Int32,System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            更新监测点施工阶段
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="constructphase">施工阶段ID</param>
+            <param name="phasepercent">施工进度百分比</param>
+            <param name="phasepercent">施工进度日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.PhaseController.GetSitePhaseList(System.Int32)">
+            <summary>
+            获取监测对象的施工进度
+            </summary>
+            <param name="SITEID">监测对象ID</param>
+            <returns>结果集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.PhaseController.UpdateSitePhase(System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            更新监测对象的施工进度
+            </summary>
+            <param name="SITEID">监测对象ID</param>
+            <param name="PHASEIDS">进度ID</param>
+            <param name="phasedates">更新时间</param>
+            <param name="phasedatetype">更新类型</param>
+            <returns>结果集</returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.RealNameController">
+            <summary>
+            请求网络数据
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RealNameController.GetInAndOutByPeopleAndDay(System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            获取工地当日人员实时考勤信息
+            </summary>
+            <param name="type">实名制类型(1：群耀  2：大运  4：都驰  )</param>
+            <param name="itemId">项目编号</param>
+            <param name="stTm">开始时间（yyyy-MM-dd）</param>
+            <param name="SITEID">监测点ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.ReportController">
+            <summary>
+            报告
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ReportController.GetNoiseNightReport(System.Int32,System.DateTime)">
+            <summary>
+            获取距离截止日期最近一周的夜间噪声数据
+            </summary>
+            <param name="SITEID">监测对象ID</param>
+            <param name="enddate">一周的截止日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ReportController.GetNoiseDistributionReport(System.DateTime,System.Int16)">
+            <summary>
+            获取距离截止日期最近一周的噪声分布数据
+            </summary>
+            <param name="enddate">一周的截止日期</param>
+            <param name="type">数据周期种类</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ReportController.GetNoiseWeek(System.DateTime)">
+            <summary>
+            噪声周报
+            </summary>
+            <param name="startdate">开始日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ReportController.GetPmMonth(System.String)">
+            <summary>
+            PM10/PM2.5平均浓度月报
+            </summary>
+            <param name="yearmonth">年月 例：2017-01</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ReportController.GetAppSimpleReport">
+            <summary>
+            获取App简报数据
+            </summary>   
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ReportController.GetSitePmDistribution(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            获取监测点颗粒物分布
+            </summary>   
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ReportController.GetPmDistributionReport(System.DateTime,System.Int16)">
+            <summary>
+            获取距离截止日期最近一周的PM10/PM2.5分布数据
+            </summary>
+            <param name="enddate">一周的截止日期</param>
+            <param name="type">数据周期种类</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.RoundController">
+            <summary>
+            移动巡检
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.GetRoundChart(System.Int32,System.Int32)">
+            <summary>
+            移动巡检 
+            </summary>
+            <param name="GROUPID"></param>
+            <param name="SITEID"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.Create(System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.String,System.DateTime,System.String,System.String)">
+            <summary>
+            巡查插入
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="PHASEID">阶段ID</param>
+            <param name="fellow">检查人员</param>
+            <param name="solveduserid">解决用户ID</param>
+            <param name="RTHID">问题类型历史ID</param>
+            <param name="limit">解决时限,单位小时</param>
+            <param name="roundtype">问题ID</param>
+            <param name="createtime">日期</param>
+            <param name="remark">备注</param>
+            <param name="roundlevel">巡查等级</param>
+            <returns>巡查单号</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.Delete(System.Int32,System.Int32)">
+            <summary>
+            删除巡检
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="ROUNDID">巡检ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.RemarkAdd(System.Int64,System.String)">
+            <summary>
+            巡查问题添加批示
+            </summary>
+            <param name="ROUNDID">巡查ID</param>
+            <param name="remark">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.Solve(System.Int64,System.String)">
+            <summary>
+            巡查问题解决
+            </summary>
+            <param name="ROUNDID">巡查ID</param>
+            <param name="solveduser">解决用户名</param>
+            <param name="solvedremark">解决日志</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.DoRoundTypeInsert(System.Int32,System.String)">
+            <summary>
+            修改监测点问题项
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="rtcontent">问题项</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.Finish(System.Int64,System.String)">
+            <summary>
+            结束巡查问题
+            </summary>
+            <param name="ROUNDID">巡查ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.GetListByDate(System.Int32,System.DateTime)">
+            <summary>
+            检索巡查
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="updatedate">最后更新时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.GetRoundType(System.Int32,System.Int32)">
+            <summary>
+            检索问题类型
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="RTHID">问题类型历史ID（-1时，最新有效）</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.GetListByUser(System.DateTime)">
+            <summary>
+            根据用户检索巡查
+            </summary>
+            <param name="updatedate">最后更新时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.GetMobileCountList(System.Int32,System.Int32)">
+            <summary>
+            移动巡检 移动端统计列表
+            </summary>
+            <param name="datetype">0:全部，1：天，2：周，3：月，4：3月</param>
+            <param name="orderby">0:综合排序，1：待整改，2：检查单，3：整改次数，4：累计问题</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.UploadProff(XHS.Build.Model.ModelDtos.RoundFileInput)">
+            <summary>
+            上传任务相关文件
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.SetSmsQueue(System.Int32,System.UInt64,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            设置短信提醒
+            </summary>
+            <param name="GROUPID">GROUPID</param>
+            <param name="SITEID">SITEID</param>
+            <param name="ROUNDID">巡检</param>
+            <param name="phonenumber">电话号码,逗号分隔</param>
+            <param name="username">用户名,逗号分隔</param>
+            <param name="sitename">监测点名称</param>
+            <param name="roundcode">巡检单号</param>
+            <param name="roundstatus">巡检状态(新建时为空)</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.GetProffList(System.UInt64)">
+            <summary>
+            巡查图片列表
+            </summary>
+            <param name="ROUNDID">巡查ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.GetRoundOrderList(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            移动巡检，待办工单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.RoundController.GetRoundOrderSiteList(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取站点下的待办
+            </summary>
+            <param name="siteid"></param>
+            <param name="roundtype"></param>
+            <param name="status"></param>
+            <param name="datetype"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.ScheduleController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ScheduleController.GetList(System.Int32)">
+            <summary>
+            获取进度列表
+            </summary>
+            <param name="SITEID">监测对象ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.ScheduleController.SetSchedule(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            更新进度
+            </summary>
+            <param name="SITEID">监测对象ID</param>
+            <param name="NODEID">阶段ID</param>
+            <param name="planstart">计划开始日</param>
+            <param name="planend">计划结束日</param>
+            <param name="actstart">实际开始日</param>
+            <param name="actend">实际结束日</param>
+            <param name="person">责任人</param>
+            <param name="reason">原因</param>
+            <param name="updater">更新者</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.SecurityController">
+            <summary>
+            巡检
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.SitePageList(System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            获取巡检站点列表
+            </summary>
+            <param name="keyword">搜索关键字</param>
+            <param name="page">当前页 1开始</param>
+            <param name="size">默认条数 20</param>
+            <param name="order">排序字段</param>
+            <param name="ordertype">排序方式(asc  desc)</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.TodaySecurityListCount(System.Int32,System.DateTime)">
+            <summary>
+            今日 站点下巡检点
+            </summary>
+            <param name="siteid"></param>
+            <param name="date">时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.HisPageList(System.Int32,System.Int32,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            巡检记录(带图片,分页) 
+            </summary>
+            <param name="siteid"></param>
+            <param name="securityid">巡检点（全部传0）</param>
+            <param name="date">时间</param>
+            <param name="page">当前页 1开始</param>
+            <param name="size">默认条数 10</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.HisList(System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            巡检记录(不带图片，不分页) 
+            </summary>
+            <param name="siteid"></param>
+            <param name="securityid">巡检点（全部传0）</param>
+            <param name="date">时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.Security(System.Int32)">
+            <summary>
+            获取巡检点详细
+            </summary>
+            <param name="securityid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.SecurityList(System.Int32)">
+            <summary>
+            获取站点下巡检点列表
+            </summary>
+            <param name="siteid">站点id</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.PostHis(XHS.Build.Model.Models.GCSecureHisEntity)">
+            <summary>
+            新增巡检记录
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.Update(XHS.Build.Model.Models.GCSecurityEntity)">
+            <summary>
+            更新巡检点记录
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.Insert(XHS.Build.Model.Models.GCSecurityEntity)">
+            <summary>
+            新增巡检点记录
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.Delete(System.Int32)">
+            <summary>
+            删除巡检点记录
+            </summary>
+            <param name="securityid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SecurityController.MonthCount(System.Int32,System.DateTime)">
+            <summary>
+            时间 每个月的数量统计
+            </summary>
+            <param name="siteid"></param>
+            <param name="dt">例如：2020-01-01</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.SettingController">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SettingController.GetList">
+            <summary>
+            配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.SiteController">
+            <summary>
+            监测站点
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetList">
+            <summary>
+            获取用户所属组下的监测对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetPhaseCount">
+            <summary>
+            获取用户所属组下的工地进度统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetChildListForMobile">
+            <summary>
+            获取用户所属组下的子监测对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetChildListById(System.Int32)">
+            <summary>
+            获取监测对象的子监测对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetOne(System.Int32)">
+            <summary>
+            获取监测点信息
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetMenu(System.Int32)">
+            <summary>
+            获取监测点设备绑定情况
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.Get24HoursData(System.Int32)">
+            <summary>
+            获取监测对象24小时内的主要污染数据
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.Get60MinutesData(System.Int32)">
+            <summary>
+            获取监测对象近60分钟内的主要污染数据
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetDataHistories(System.Int32,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="SITEID"></param>
+            <param name="startdate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetListByDeviceType(System.Int32)">
+            <summary>
+            根据设备种类获取监测对象
+            </summary>
+            <param name="linktype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetListByMenuId(System.String)">
+            <summary>
+            根据功能ID获取监测对象
+            </summary>
+            <param name="MENUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetTodayWarnList(System.Int32)">
+            <summary>
+             
+             </summary>
+             <param name="SITEID"></param>
+             <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetWeekWarnList(System.Int32)">
+            <summary>
+             
+             </summary>
+             <param name="SITEID"></param>
+             <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetWarnStatus(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="WARNID"></param>
+            <param name="warnstatus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetSiteUser(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetCameraList(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetFlyList(System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="operatedate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetListFivePart(System.Int32)">
+            <summary>
+            五方人员
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.SetFivePart(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            五方人员更新
+            </summary>
+            <param name="SITEID"></param>
+            <param name="USERIDS"></param>
+            <param name="parttypes"></param>
+            <param name="usernames"></param>
+            <param name="companys"></param>
+            <param name="mobiles"></param>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetDocList(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.DeleteDoc(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="SITEDOCID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetTruckList(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetUnloadList(System.Int32)">
+            <summary>
+            获取卸料平台信息
+            </summary>
+            <param name="SITEID">监测点编号</param>
+            <returns>结果集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetSiteO3Latest(System.Int32)">
+            <summary>
+            获取臭氧最近信息 getSiteO3Latest
+            </summary>
+            <param name="SITEID">监测点编号</param>
+            <returns>结果集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetSiteO3Chart(System.Int32)">
+            <summary>
+            获取臭氧图表信息getSiteO3Chart
+            </summary>
+            <param name="SITEID">监测点编号</param>
+            <returns>结果集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SiteController.GetSiteO3His(System.Int32,System.Int32,System.DateTime,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            获取监测点臭氧历史数据getSiteO3His
+            </summary>
+            <param name="SITEID">监测点编号</param>
+            <param name="datatype">1：分钟 2：小时 3：日均</param>
+            <param name="startdate">开始时间</param>
+            <param name="enddate">结束时间</param>
+            <param name="pageIndex">页索引</param>
+            <param name="pageSize">每页记录数</param>
+            <returns>结果集</returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.SpecialEqpController">
+            <summary>
+            特种设备相关接口
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SpecialEqpController.GetSpecialEqpList(System.Int32)">
+            <summary>
+             获取特设列表
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SpecialEqpController.GetSpecialEqpDocList(System.Int32)">
+            <summary>
+             获取特设文件列表
+            </summary>
+            <param name="SEID">特设ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SpecialEqpController.DeleteDoc(System.String)">
+            <summary>
+            删除特设文件
+            </summary>
+            <param name="SEDOCID">特设文件ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SpecialEqpController.GetNjjySiteSpec(System.Int32)">
+            <summary>
+            获取建邺特设列表
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SpecialEqpController.GetSpecialEqpRdtOne(System.Int32)">
+            <summary>
+            获取特设最新实时数据
+            </summary>
+            <param name="SEID">特设ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SpecialEqpController.GetElevatorHisData(System.Int32,System.DateTime,System.String,System.Int32)">
+            <summary>
+             获取升降机历史数据
+            </summary>
+            <param name="pageIndex">页码</param>
+            <param name="date">日期</param>
+            <param name="sn">设备号</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.SpecialEqpController.GetTowerCraneHisData(System.Int32,System.DateTime,System.String,System.Int32)">
+            <summary>
+             获取塔吊历史数据
+            </summary>
+            <param name="pageIndex">页码</param>
+            <param name="date">日期</param>
+            <param name="sn">设备号</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.UnLoadController">
+            <summary>
+            卸料平台
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.UnLoadController.GetListForSite(System.Int32)">
+            <summary>
+            获取卸料平台列表
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <returns>实时值数据集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.UnLoadController.GetListRealUnloadData(System.String)">
+            <summary>
+            获取获取实时值
+            </summary>
+            <param name="unloadid">设备id</param>
+            <returns>实时值数据集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.UnLoadController.GetListUnloadDataScheduleCurrent(System.String,System.DateTime)">
+            <summary>
+            获取指定设备的时间区间实时值
+            </summary>
+            <param name="unloadid">设备id</param>
+            <param name="date">时间yyyy-MM-dd</param>
+            <returns>数据集</returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.VideoController">
+            <summary>
+            摄像头实时，云台，回看操作
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.VideoController.#ctor(XHS.Build.Services.Video.IVideoService)">
+            <summary>
+            摄像头实时，云台，回看操作
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.VideoController.GetRealUrl(XHS.Build.Model.ModelDtos.BnCamera)">
+            <summary>
+            获取摄像头直播流地址
+            </summary>
+            <param name="bc">摄像头信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.VideoController.Ptz(XHS.Build.Model.ModelDtos.BnCamera)">
+            <summary>
+            云台操作，对监控点云台方向，转动速度进行操作。
+            </summary>
+            <param name="bc">摄像头信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.VideoController.GetPlayBackUrl(XHS.Build.Model.ModelDtos.BnCamera)">
+            <summary>
+            获取摄像头回看流地址
+            </summary>
+            <param name="bc">摄像头信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Controllers.WarningController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.#ctor(XHS.Build.Services.Warning.IWarningService,XHS.Build.Services.Site.ISiteService,XHS.Build.Common.Auth.IUser,XHS.Build.Services.Warning.IHpWarningProof,XHS.Build.Services.SmsQueue.ISmsQueueService)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.GetListType(System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            检索预警
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="type">种类(0:全部,1:离线报警,2:超标报警,31:车辆冲洗设备离线报警,32:车辆未冲洗报警,4:特种设备报警,5:临边围挡报警)</param>
+            <param name="startdate">开始日期</param>
+            <param name="enddate">结束日期</param>
+            <returns>预警信息数据集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.GetSumList(System.Int32)">
+            <summary>
+            获取预警统计
+            </summary>
+            <param name="timetype">周期.</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.GetListPrime(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            获取重要告警
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="startdate">开始日期</param>
+            <param name="enddate">结束日期</param>
+            <returns>预警信息数据集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.GetTagetList(System.Int32)">
+            <summary>
+            获取该监测对象的负责人
+            </summary>
+            <param name="SITEID">监测对象ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.UploadProff(XHS.Build.Model.ModelDtos.WarnFileInput)">
+            <summary>
+            上传任务相关文件
+            </summary>
+            <param name="SITEID">SITEID</param>
+            <param name="WPID	">WPID</param>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.GetWarningHandleList(System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            分页获取预警列表
+            </summary>
+            <param name="startdate"></param>
+            <param name="enddate"></param>
+            <param name="normalai"></param>
+            <param name="warntype"></param>
+            <param name="warnstatus"></param>
+            <param name="wpcode"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.RemarkAdd(System.Int64,System.Int32,System.String)">
+            <summary>
+            预警问题添加批示
+            </summary>
+            <param name="WARNID">预警ID</param>
+            <param name="type">类型</param>
+            <param name="remark">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.Solve(System.Int64,System.Int32,System.String,System.Int32)">
+            <summary>
+            预警问题解决
+            </summary>
+            <param name="WARNID">预警ID</param>
+            <param name="type">类型</param>
+            <param name="solvedremark">解决日志</param>
+            <param name="ismulti">0:单条处理  1：批量处理</param> 
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.Finish(System.Int64,System.Int32,System.String)">
+            <summary>
+            结束预警问题
+            </summary>
+            <param name="ROUNDID">预警ID</param> 
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.SetSmsQueue(XHS.Build.Model.ModelDtos.WarnSMSQueueInput)">
+            <summary>
+            设置短信提醒
+            </summary>
+            <param name="input">GROUPID</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.GetWarnDetail(System.Int32,System.Int32)">
+            <summary>
+            预警信息
+            </summary>
+            <param name="WARNID">WARNID</param>
+            <param name="type">type</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.GetSiteAiCount(System.Int32,System.Int32)">
+            <summary>
+            获取一个工地AI的30天和1年的统计件数
+            </summary>
+            <param name="SITEID">工地编号</param>
+            <param name="type">AI种类 61:安全帽佩戴识别,62:陌生人进场识别,63:人车分流识别,64:火警</param>
+            <returns>结果集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.GetSiteAiDayCount(System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            获取一个工地指定日的统计件数
+            </summary>
+            <param name="SITEID">工地编号</param>
+            <param name="type">AI种类 61:安全帽佩戴识别,62:陌生人进场识别,63:人车分流识别,64:火警,46:升降机超员,65:区域闯入,66:黄土裸露,67:密闭运输,68:反光衣</param>
+            <param name="billdate">指定日</param>
+            <returns>结果集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.GetSiteAiList(System.Int32,System.Int32,System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取工地列表
+            </summary>
+            <param name="SITEID">工地编号</param>
+            <param name="type">AI种类 61:安全帽佩戴识别,62:陌生人进场识别,63:人车分流识别,64:火警,65:区域闯入,66:黄土裸露,67:密闭运输,68:反光衣</param>
+            <param name="billdate">指定日</param>
+            <param name="ENDWARNID">本页最后一条数据的WARNID（用于手机分页）</param>
+            <param name="pageindex">页码</param>
+            <param name="pagesize">一页件数</param>
+            <returns>结果集</returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.GetWarning">
+            <summary>
+            首页 新增统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.WarningTypeDaily(System.Int32,System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            告警统计（每日，按设备类型分）
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="deviceType">1 扬尘，2 摄像头，3 塔吊，4 升降机，5 卸料平台，6 深基坑，7 高支模，8 临边围挡（旧）,9 实名制</param>
+            <returns></returns>
+        </member>
+        <member name="M:xhs.build.app.Controllers.WarningController.WarnLiveList(System.Int32,System.Int32,System.String,System.DateTime,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            通用告警-实时告警数据列表
+            </summary>
+            <param name="type">1 扬尘，2 摄像头，3 塔吊，4 升降机，5 卸料平台，6 深基坑，7 高支模，8 临边围挡（旧）,9 实名制</param>
+            <param name="keyword">设备编号、名称、所属区域</param>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">行数</param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Enums.StatusCodes">
+            <summary>
+            状态码枚举
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status0NotOk">
+            <summary>
+            操作失败
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status1Ok">
+            <summary>
+            操作成功
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status401Unauthorized">
+            <summary>
+            未登录（需要重新登录）
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status4001Unauthorized">
+            <summary>
+            登录超时
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status403Forbidden">
+            <summary>
+            权限不足
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status404NotFound">
+            <summary>
+            资源不存在
+            </summary>
+        </member>
+        <member name="F:xhs.build.app.Enums.StatusCodes.Status500InternalServerError">
+            <summary>
+            系统内部错误（非业务代码里显式抛出的异常，例如由于数据不正确导致空指针异常、数据库异常等等）
+            </summary>
+        </member>
+        <member name="T:xhs.build.app.Filters.ExceptionFilter">
+            <summary>
+            Admin异常错误过滤
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Filters.ExceptionFilter.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILogger{xhs.build.app.Filters.ExceptionFilter})">
+            <summary>
+            异常
+            </summary>
+            <param name="env"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:xhs.build.app.Filters.ExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:xhs.build.app.Filters.ExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Filters.InternalServerErrorResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:xhs.build.app.Logs.ILogHandler">
+            <summary>
+            操作日志处理接口
+            </summary>
+        </member>
+        <member name="M:xhs.build.app.Logs.ILogHandler.LogAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            写操作日志
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.app.Logs.LogHandler">
+            <summary>
+            操作日志处理
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.AIController">
+            <summary>
+            AI数据
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AIController.#ctor(XHS.Build.Services.AIAirTightAction.IAIAirTightService,XHS.Build.Services.AISoilAction.IAISoilService,XHS.Build.Services.AISprayAction.IAISprayService,XHS.Build.Services.Site.ISiteService)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AIController.GetAirTightList(System.Int32,System.DateTime)">
+            <summary>
+            密闭运输信息取得
+            </summary>
+            <param name="SITEID"></param>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AIController.GetSoilList(System.Int32,System.DateTime)">
+            <summary>
+            黄土裸露信息取得
+            </summary>
+            <param name="SITEID"></param>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AIController.GetSparyList(System.Int32,System.DateTime)">
+            <summary>
+            雾炮喷淋信息取得
+            </summary>
+            <param name="SITEID"></param>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.app.Controllers.DeepPitController">
+            <summary>
+            深基坑
+            </summary>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.DeepPitController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.DeepPit.IDeepPitService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="user"></param>
+            <param name="deepPitService"></param>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.DeepPitController.Total(System.Int32)">
+            <summary>
+            深基坑统计
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.DeepPitController.Select(System.Int32)">
+            <summary>
+            深基坑-下拉框数据
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.DeepPitController.Monitor(System.Int32,System.Int32,System.DateTime,System.String,System.String)">
+            <summary>
+            深基坑-监控信息
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="DPID">深基坑ID</param>
+            <param name="date">开始时间</param>
+            <param name="monitorType">监控类型</param>
+            <param name="deviceid">设备ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.DeepPitController.LiveData(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            深基坑-实时数据
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="DPID">深基坑ID</param>
+            <param name="pageindex">页码</param>
+            <param name="pagesize">行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.DeepPitController.HisData(System.Int32,System.Int32,System.DateTime,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            深基坑-历史数据
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="DPID">深基坑ID</param>
+            <param name="date">日期</param>
+            <param name="monitorType">监控类型</param>
+            <param name="deviceid">设备ID</param>
+            <param name="pageindex">页码</param>
+            <param name="pagesize">行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.ElectricController.GetElecMeterList(System.Int32)">
+            <summary>
+            获取站点下电表信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.ElectricController.GetElecRtdData(System.Int32,System.String)">
+            <summary>
+            获取电表实时监测数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.ElectricController.GetElecHisData(System.Int32,System.String,System.DateTime)">
+            <summary>
+            获取电表历史数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.ElectricController.GetSiteElecWarnChart(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            电表告警 设备占比
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.ElectricController.GetSiteElecWarnTypeChart(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            电表告警类型占比
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.ElectricController.GetSiteElecWarnList(System.Int32,System.String,System.DateTime,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            获取电表告警列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.app.Controllers.ElectricController.GetSiteElecLatestWarnList(System.Int32,System.String)">
+            <summary>
+            获取电表告警列表
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport"
+			content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+		<title></title>
+		<!-- 引入全局样式 -->
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" href="../css/vant.css" />
+		<!-- 引入elementui样式库 -->
+		<link rel="stylesheet" href="../css/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="../css/wuxi.css"/>
+	</head>
+	
+	<body>
+		<div id="app">
+			<!-- 导航栏 -->
+			<van-sticky>
+				<van-nav-bar title="事件列表" left-arrow class="nav-title">
+					<template slot="left">
+						<van-icon name="arrow-left" color="#333" size="1.2em" @click="onPageBack"/>
+					</template>
+					<template slot="title">
+						<form action="/">
+						  <van-search v-model="keyWords" show-action placeholder="请输入搜索关键词"></van-search>
+						</form>
+					</template>
+				</van-nav-bar>
+			</van-sticky>
+			
+			<div class="mt10">
+				<div class="content pt10">
+					
+					<div class="events-filter">
+						<van-dropdown-menu active-color="#248AFF">
+						  <van-dropdown-item v-model="value1" title="所有风险" :options="searchOptions1"></van-dropdown-item>
+						  <van-dropdown-item v-model="value2" title="所有类型" :options="searchOptions2"></van-dropdown-item>
+						  <van-dropdown-item v-model="value3" title="所有状态" :options="searchOptions3"></van-dropdown-item>
+						</van-dropdown-menu>
+					</div>
+					<div class="calendar-tab van-hairline--bottom">
+						<van-icon name="arrow-left" @click="onDateDowm"></van-icon>
+						<span>{{currentYear}}-{{currentMonth < 10 ? '0'+currentMonth:currentMonth}}</span>
+						<van-icon name="arrow" @click="onDateUp"></van-icon>
+					</div>
+				</div>
+				
+				<div class="pd10">
+					<div class="content content-rank pd10">
+						<van-row class="pd10" v-for="(item,index) in tableData1" :key="index">
+							<van-col span="16" class="rank-info">
+								<p class="rank-title van-ellipsis">{{item.name}}</p>
+								<p class="themeGrey font13">{{item.code}}</p>
+								<div class="rank-itemList mt10">
+									<span :class="item.level =='超高'?'themeRed':item.level =='高'?'themeYellow':item.level =='中'?'themePurple':'themeGreen'">{{item.level}}</span>
+									<span class="themePrimary">{{item.type}}</span>
+									<span :class="item.status =='已处理'?'themeGreen':'themeGrey'">{{item.status}}</span>
+								</div>
+							</van-col>
+							<van-col span="8" class="text-right">
+								<span class="themeGrey font13">{{item.time}}</span>
+							</van-col>
+						</van-row>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/axios.min.js"></script>
+	<script src="../js/vue-2.6.12.min.js"></script>
+	<script src="../js/vant-2.10.min.js"></script>
+	<script>
+		var app = new Vue({
+			el: "#app",
+			data: {
+				title: "",
+				currentIndex: 0,
+				keyWords: '',
+				value1: "",
+				value2: "",
+				value3: "",
+				currentYear: new Date().getFullYear(),
+				currentMonth: new Date().getMonth()+1,
+				searchOptions1: [{
+					text: "超高",
+					value: 4
+				},{
+					text: "高",
+					value: 3
+				},{
+					text: "中",
+					value: 2
+				},{
+					text: "低",
+					value: 1
+				}],
+				searchOptions2: [{
+					text: "设备监测",
+					value: 1
+				}],
+				searchOptions3: [{
+					text: "已处理",
+					value: 0
+				},{
+					text: "未处理",
+					value: 1
+				},{
+					text: "处理中",
+					value: 2
+				}],
+				tableData1:[{
+					name: "1号楼塔吊超重1200KG",
+					level: "超高",
+					time: "2021.10.23 09:23",
+					code: "G48512365512",
+					type: "设备监测",
+					status: "未处理"
+				},{
+					name: "2号楼塔吊超重800KG",
+					level: "高",
+					time: "2021.10.22 11:23",
+					code: "G48512365512",
+					type: "设备监测",
+					status: "未处理"
+				},{
+					name: "5号楼塔吊超重1500KG",
+					level: "超高",
+					time: "2021.10.21 09:23",
+					code: "G48512365512",
+					type: "设备监测",
+					status: "已处理"
+				},{
+					name: "2号楼塔吊超重800KG",
+					level: "高",
+					time: "2021.10.21 08:23",
+					code: "G48512365512",
+					type: "设备监测",
+					status: "未处理"
+				},{
+					name: "4号楼塔吊超重500KG",
+					level: "中",
+					time: "2021.10.18 06:23",
+					code: "G48512365512",
+					type: "设备监测",
+					status: "未处理"
+				},{
+					name: "3号楼塔吊超重200KG",
+					level: "低",
+					time: "2021.10.15 16:23",
+					code: "G48512365512",
+					type: "设备监测",
+					status: "未处理"
+				}]
+			},
+			computed: {},
+			mounted() {},
+			created(){
+			},
+			methods: {
+				getOne() {
+					axios({
+						// baseURL: "http://test.hb.xhs-sz.com",
+						baseURL: "",
+						timeout: 10000,
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+						},
+						method: "post",
+						url: "/handler/njjy/HNjjySiteSecurity.ashx?Action=getone",
+						data: formData,
+					}).then((response) => {
+
+					});
+				},
+				onPageBack(){
+					window.history.go(-1);
+				},
+				onDateDowm(){
+					this.currentMonth --;
+					if(this.currentMonth < 1) {
+						this.currentMonth = 12;
+						this.currentYear --;
+					};
+				},
+				onDateUp(){
+					this.currentMonth ++;
+					if(this.currentMonth > 12) {
+						this.currentMonth = 1;	
+						this.currentYear ++;
+					};
+				}
+			},
+		});
+	</script>
+</html>

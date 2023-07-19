@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover"
+    />
+    <meta
+      name="format-detection"
+      content="telephone=no,email=no,date=no,address=no"
+    />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/round.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"
+    />
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <script src="../js/dayjs.min.js"></script>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <!-- 生产环境版本，优化了尺寸和速度 -->
+    <script src="../js/vue-2.6.12.min.js"></script>
+    <script src="../js/vant-2.10.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <van-sticky>
+        <van-nav-bar :title="title+'详情'"></van-nav-bar>
+      </van-sticky>
+      <div v-if="info" class="container">
+        <ul class="info-box">
+          <li>
+            <label>单号：</label>
+            <span>{{ info.roundcode }}</span>
+            <em :class="info.statusclass">{{ info.statusename }}</em>
+          </li>
+          <li>
+            <label>检查对象：</label>
+            <span>{{ info.siteshortname }}</span>
+          </li>
+          <li>
+            <label>创建人：</label>
+            <span>{{ info.username }}</span>
+          </li>
+          <li>
+            <label>创建时间：</label>
+            <span>{{ info.createtime }}</span>
+          </li>
+          <li>
+            <label>工程进度：</label>
+            <span>{{ info.phasename }}</span>
+          </li>
+          <li>
+            <label>组员：</label>
+            <span v-if="info.fellow && info.fellow.length"
+              ><i v-for="(item, index) in info.fellow" :key="index">
+                {{ item }}
+              </i>
+            </span>
+          </li>
+          <li>
+            <label>整改限期：</label>
+            <span>{{ info.endtime }}</span>
+          </li>
+          <li>
+            <label>负责人：</label>
+            <span>
+              <i>{{ info.solveduser }}</i>
+            </span>
+          </li>
+        </ul>
+        <div class="record-box">
+          <p class="tittle">处理记录</p>
+          <div class="wordbreak" v-if="reverseList.length">
+            <div
+              class="info-detail"
+              v-for="(item, index) in reverseList"
+              :key="index"
+            >
+              <div class="top">
+                <span>{{ item.datatime }}</span>
+                <span :class="item.statusclass">{{ item.statusename }}</span>
+              </div>
+              <div v-text="item.remark"></div>
+              <div>
+                <van-icon
+                  v-show="item.user != '系统自动'"
+                  name="manager"
+                  color="#0086F1"
+                ></van-icon
+                ><span>{{ item.user }}</span>
+              </div>
+            </div>
+          </div>
+          <div v-else class="wordbreak" v-text="list"></div>
+        </div>
+        <div class="check-box">
+          <div class="tittle">检查项</div>
+          <ul v-if="checkList.length">
+            <li v-for="(item, index) in checkList" :key="index">
+              <span :class="{ active: item.checked }">
+                {{ item.text }}
+              </span>
+              <van-icon
+                v-if="item.checked"
+                name="clear"
+                size="22"
+                color="#F4333C"
+              />
+              <van-icon v-else name="checked" size="22" color="#2694FA" />
+            </li>
+          </ul>
+        </div>
+        <div class="image-box">
+          <div class="tittle">问题凭证</div>
+          <van-grid
+            v-if="problemImages.length"
+            :column-num="4"
+            :gutter="0"
+            :square="true"
+            :border="false"
+          >
+            <van-grid-item
+              v-for="(file, idx) in problemImages"
+              @click="previewImg(file)"
+              :key="idx"
+            >
+              <van-image
+                width="100%"
+                height="100%"
+                fit="cover"
+                :src="file.tmbpath"
+              />
+            </van-grid-item>
+          </van-grid>
+        </div>
+        <div class="image-box" v-if="info.status != 1">
+          <div class="tittle">处理凭证</div>
+          <van-grid
+            v-if="solveImages.length"
+            :column-num="4"
+            :gutter="0"
+            :square="true"
+            :border="false"
+          >
+            <van-grid-item
+              v-for="(file, idx) in solveImages"
+              @click="previewImg(file)"
+              :key="idx"
+            >
+              <van-image
+                width="100%"
+                height="100%"
+                fit="cover"
+                :src="file.tmbpath"
+              />
+            </van-grid-item>
+          </van-grid>
+        </div>
+      </div>
+      <van-image-preview
+        v-model="isPreviewImg"
+        :images="images"
+        :start-position="index"
+        @change="onChange"
+        @close="onClose"
+      >
+        <template v-slot:index>
+          {{ +index+1 }}/{{ images.length }}
+        </template>
+      </van-image-preview>
+    </div>
+  </body>
+  <script>
+    const stateList = [
+      { text: "全部状态", value: 0 },
+      { text: "新增", value: 1 },
+      { text: "待审核", value: 2 },
+      { text: "重新整改", value: 3 },
+      { text: "已解决", value: 4 },
+      { text: "检查合格", value: 5 },
+    ];
+    const handleStatus = [
+      { name: "未发布", value: 1 },
+      { name: "等待整改", value: 2 },
+      { name: "等待确认", value: 3 },
+      { name: "整改完成", value: 4 },
+    ];
+    var app = new Vue({
+      el: "#app",
+      data: {
+        title: "",
+        list: "",
+        loading: true,
+        problemImages: [],
+        solveImages: [],
+        problemBigs: [],
+        solveBigs: [],
+        checkList: [],
+        getway: "",
+        roundId: "",
+        index: 0,
+        isPreviewImg: false,
+        imageList: [],
+        images: [],
+        info: {},
+      },
+      computed: {
+        reverseList() {
+          // console.log('this.list', this.list)
+          let list = this.formatData(this.list);
+          console.log("list", list);
+          if (this.list && this.isJSON(`[${this.list}]`) && list.length > 0) {
+            list.forEach((item) => {
+              item.statusename = this.formatName(item.roundstatus);
+              item.statusclass = `tag${item.roundstatus}`;
+            });
+            return list.reverse();
+          } else {
+            return [];
+          }
+        },
+      },
+      mounted() {
+        let url = new URL(window.location.href);
+        this.roundId = url.searchParams.get("roundId");
+        this.title = decodeURI(url.searchParams.get("menuName")) || "";
+        this.title = this.title == "null" ? "" : this.title;
+        document.title = this.title + "详情";
+        this.getOne();
+      },
+      methods: {
+        getOne() {
+          let formData = new FormData();
+          //参数
+          formData.append("roundid", this.roundId);
+          axios({
+            // baseURL: "http://test.hb.xhs-sz.com",
+            baseURL: "",
+            timeout: 10000,
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+            },
+            method: "post",
+            url: "/handler/HRound.ashx?Action=getone",
+            data: formData,
+          }).then((response) => {
+            // console.log(response);
+            if (response.status === 200) {
+              this.handleResponse(response.data);
+            }
+          });
+        },
+        handleResponse(ret) {
+          this.info = ret["0"][0];
+          let { createtime, limit } = this.info || {};
+          let newDate = dayjs(createtime).add(limit, "hour");
+          this.info.createtime = dayjs(createtime).format("YYYY-MM-DD HH:00");
+          this.info.endtime = newDate.format("YYYY-MM-DD HH:00");
+          this.info.fellow = this.info.fellow.split(",");
+          this.getway = "http://test.admin.xhs-sz.com";
+          this.list = this.info.remark;
+          this.info.statusename = this.formatName(this.info.status);
+          this.info.statusclass = `tag${this.info.status}`;
+          if (this.info.solvedurls || this.info.roundurls) {
+            if (this.info.solvedurls) {
+              let index = 0;
+              this.solveImages = this.info.solvedurls.split(",").map((item) => {
+                index++;
+                return {
+                  filename: "solveImages" + index,
+                  path: item,
+                  tmbpath: item,
+                };
+              });
+            }
+            if (this.info.roundurls) {
+              let index = 0;
+              this.problemImages = this.info.roundurls
+                .split(",")
+                .map((item) => {
+                  index++;
+                  return {
+                    filename: "problemImages" + index,
+                    path: item,
+                    tmbpath: item,
+                  };
+                });
+            }
+          } else {
+            this.problemImages = ret["1"];
+            this.solveImages = ret["2"];
+          }
+
+          this.imageList = this.problemImages.concat(this.solveImages);
+          this.images = this.imageList.map((item) => item.path);
+
+          let checkList = [];
+          let roundtype = this.info.roundtype || "";
+          let roundtypeArr = roundtype.split(",");
+          let [{ rtcontent, showqualify }] = ret["3"] || [];
+          rtcontent = this.formatData(rtcontent);
+          rtcontent = rtcontent[0];
+          // console.log('rtcontent',rtcontent)
+          for (const key in rtcontent) {
+            let checked = roundtypeArr.indexOf(key) > -1 ? true : false;
+            let item = { key, text: rtcontent[key], checked };
+            //显示合格和不合格
+            if (+showqualify) {
+              checkList.push(item);
+            } else if (checked) {
+              //只显示不合格
+              checkList.push(item);
+            }
+          }
+          this.checkList = checkList;
+          // console.log('checkList', checkList)
+        },
+        //格式化数据
+        formatData(list) {
+          try {
+            if (list) {
+              return JSON.parse(this.htmlDecodeByRegExp(`[${list}]`));
+            } else {
+              return [];
+            }
+          } catch (error) {
+            return [];
+          }
+        },
+        //获取名字
+        formatName(value) {
+          let item = stateList.find((_) => _.value == value) || {};
+          return item.text || "";
+        },
+        htmlDecodeByRegExp(str) {
+          var temp = "";
+          if (str.length == 0) return "";
+          temp = str.replace(/&amp;/g, "&");
+          temp = temp.replace(/&lt;/g, "<");
+          temp = temp.replace(/&gt;/g, ">");
+          temp = temp.replace(/&nbsp;/g, " ");
+          temp = temp.replace(/&#39;/g, "'");
+          temp = temp.replace(/&quot;/g, '"');
+          temp = temp.replace(/“/g, '"');
+          temp = temp.replace(/[\n]/g, "\\n");
+          temp = temp.replace(/[\r]/g, "\\r");
+          return temp;
+        },
+        isJSON(str) {
+          str = this.htmlDecodeByRegExp(str);
+          if (typeof str == "string") {
+            try {
+              var obj = JSON.parse(str);
+              if (typeof obj == "object" && obj) {
+                return true;
+              } else {
+                return false;
+              }
+            } catch (e) {
+              return false;
+            }
+          } else {
+            return false;
+          }
+        },
+        specialCharFormat(str) {
+          return str
+            .replace(/\'/g, "‘")
+            .replace(/\"/g, "”")
+            .replace(/\\/g, "");
+        },
+        previewImg(_image) {
+          this.index = this.imageList.findIndex(
+            (_) => _.filename == _image.filename
+          );
+          this.isPreviewImg = true;
+        },
+        onChange(index) {
+          this.index = index;
+        },
+        onClose() {
+          this.isPreviewImg = false;
+        },
+      },
+    });
+  </script>
+</html>

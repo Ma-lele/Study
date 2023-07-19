@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport"
+			content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+		<title></title>
+		<!-- 引入全局样式 -->
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" href="../css/vant.css" />
+		<!-- 引入elementui样式库 -->
+		<link rel="stylesheet" href="../css/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="../css/wuxi.css"/>
+	</head>
+
+	<body>
+		<div id="app">
+			<!-- 导航栏 -->
+			<van-sticky>
+				<van-nav-bar left-arrow>
+					<template slot="title">
+						<div @click="onShowCity">
+							<span>{{currentTitle}}</span>
+							<i class="iconfont icon-xiangxia1"></i>
+						</div>
+					</template>
+					<template slot="left">
+						<van-icon name="arrow-left" color="#333" size="1.2em" @click="onPageBack"/>
+					</template>
+				</van-nav-bar>
+			</van-sticky>
+			<!-- tab栏 -->
+			<van-tabs v-model="tabIndex" color="#248AFF" title-active-color="#248AFF" @change="onChangeTab">
+				<van-tab title="风险分析"></van-tab>
+				<van-tab title="事件分析"></van-tab>
+				<van-tab title="综合评分"></van-tab>
+			</van-tabs>
+			<!-- 风险分析 -->
+			<div class="pd10" v-if="tabIndex == 0">
+				<!-- 当前区域风险统计 -->
+				<div class="content pd10">
+					<p class="fontBold16">当前区域风险统计</p>
+					<div v-if="currentTitle != '无锡市'">
+						<div class="flexAlignCenter mt10">
+							<span class="font15 mr5">{{tableData1[currentIndex].name}}</span>
+							<span v-if="tableData1[currentIndex].level == '超高'" class="content-tag themeBgRed">{{tableData1[currentIndex].level}}</span>
+							<span v-if="tableData1[currentIndex].level == '高'" class="content-tag themeBgYellow">{{tableData1[currentIndex].level}}</span>
+							<span v-if="tableData1[currentIndex].level == '中'" class="content-tag themeBgPurple">{{tableData1[currentIndex].level}}</span>
+							<span v-if="tableData1[currentIndex].level == '低'" class="content-tag themeBgGreen">{{tableData1[currentIndex].level}}</span>
+						</div>
+						<div class="mt10">
+							<van-row>
+								<van-col span="5"><span class="font13 mr5">超高</span><span class="themeRed font15">{{tableData1[currentIndex].cg}}</span></van-col>
+								<van-col span="5"><span class="font13 mr5">高</span><span class="themeYellow font15">{{tableData1[currentIndex].g}}</span></van-col>
+								<van-col span="5"><span class="font13 mr5">中</span><span class="themePurple font15">{{tableData1[currentIndex].z}}</span></van-col>
+								<van-col span="5"><span class="font13 mr5">低</span><span class="themeGreen font15">{{tableData1[currentIndex].d}}</span></van-col>
+							</van-row>
+						</div>
+					</div>
+					<div class="mt10" v-else>
+						<van-row class="pt10 pb10" v-for="(item,index) in tableData1" :key="index">
+							<van-col span="4"><span class="font15">{{item.name}}</span></van-col>
+							<van-col span="6" class="text-center">
+								<span v-if="item.level == '超高'" class="content-tag themeBgRed">{{item.level}}</span>
+								<span v-if="item.level == '高'" class="content-tag themeBgYellow">{{item.level}}</span>
+								<span v-if="item.level == '中'" class="content-tag themeBgPurple">{{item.level}}</span>
+								<span v-if="item.level == '低'" class="content-tag themeBgGreen">{{item.level}}</span>
+							</van-col>
+							<van-col span="10"><span class="font13">{{item.d}}个项目{{item.level}}风险</span></van-col>
+							<van-col span="4" class="text-right"><span class="font13 themeGrey" @click="onShowDetail(item)">详情>></span></van-col>
+						</van-row>
+					</div>
+				</div>
+				<!-- 风险发展趋势 -->
+				<div class="content pd10 mt10" v-if="currentTitle != '无锡市'">
+					<div class="flexBetween">
+						<p class="fontBold16">风险发展趋势</p>
+						<span>近20天</span>
+					</div>
+					<div id="echarts-line" class="echarts-line"></div>
+				</div>
+				<!-- 当前项目风险统计 -->
+				<div class="content mt10 pd10">
+					<p class="fontBold16">当前项目风险统计</p>
+					<div class="mt10 text-center">
+						<van-row class="table-head">
+							<van-col span="6">风险级别</van-col>
+							<van-col span="6">昨日数量</van-col>
+							<van-col span="6">当前数量</van-col>
+							<van-col span="6">对比昨天</van-col>
+						</van-row>
+						<van-row class="table-row" v-for="(item,index) in tableData2" :key="index">
+							<van-col span="6">{{item.level}}风险</van-col>
+							<van-col span="6">{{item.zr}}</van-col>
+							<van-col span="6">{{item.jr}}</van-col>
+							<van-col span="6">
+								<div v-if="item.jr - item.zr == 0">0</div>
+								<div class="table-value" v-else>
+									<span>{{item.jr - item.zr > 0 ? "+" + (item.jr - item.zr) : item.jr - item.zr}}</span>
+									<i :class="'iconfont '+(item.jr - item.zr > 0 ? 'icon-xiangshang':'icon-xiangxia')"
+									:style="'color: '+(item.jr - item.zr >= 0 ? '#FF3355':'#1FE2A8')"></i>
+								</div>
+							</van-col>
+						</van-row>
+					</div>
+				</div>
+				<!-- 当前企业风险统计 -->
+				<div class="content mt10 pd10">
+					<p class="fontBold16">当前企业风险统计</p>
+					<div class="mt10 text-center">
+						<van-row class="table-head">
+							<van-col span="6">风险级别</van-col>
+							<van-col span="6">昨日数量</van-col>
+							<van-col span="6">当前数量</van-col>
+							<van-col span="6">对比昨天</van-col>
+						</van-row>
+						<van-row class="table-row" v-for="(item,index) in tableData2" :key="index">
+							<van-col span="6">{{item.level}}风险</van-col>
+							<van-col span="6">{{item.zr}}</van-col>
+							<van-col span="6">{{item.jr}}</van-col>
+							<van-col span="6">
+								<div v-if="item.jr - item.zr == 0">0</div>
+								<div class="table-value" v-else>
+									<span>{{item.jr - item.zr > 0 ? "+" + (item.jr - item.zr) : item.jr - item.zr}}</span>
+									<i :class="'iconfont '+(item.jr - item.zr > 0 ? 'icon-xiangshang':'icon-xiangxia')"
+									:style="'color: '+(item.jr - item.zr >= 0 ? '#FF3355':'#1FE2A8')"></i>
+								</div>
+							</van-col>
+						</van-row>
+					</div>
+				</div>
+			</div>
+			<!-- 事件分析 -->
+			<div class="pd10" v-if="tabIndex == 1">
+				<!-- 事件类型雷达图 -->
+				<div class="content pd10">
+					<p class="fontBold16">事件类型雷达图</p>
+					<div id="echarts-radar" class="echarts-radar"></div>
+				</div>
+				<!-- 事件统计 -->
+				<div class="content mt10 pd10">
+					<div class="flexBetween">
+						<p class="fontBold16">事件统计</p>
+						<span @click="onEventMore">更多</span>
+					</div>
+					<div class="mt10 text-center">
+						<van-row class="table-head">
+							<van-col :span="6" class="text-left">统计</van-col>
+							<van-col :span="6">超高</van-col>
+							<van-col :span="4">高</van-col>
+							<van-col :span="4">中</van-col>
+							<van-col :span="4">低</van-col>
+						</van-row>
+						<van-row class="table-row" v-for="(item,index) in tableData1" :key="index" v-if="index < 3">
+							<van-col span="6" v-if="index == 0" class="text-left">累计发生</van-col>
+							<van-col span="6" v-if="index == 1" class="text-left">未处理</van-col>
+							<van-col span="6" v-if="index == 2" class="text-left">闭环率</van-col>
+							<van-col span="6" @click="onEventMore" :style="{color: index == 2 ? '#FFB300':''}">{{index == 2 ? "50%" : item.cg}}</van-col>
+							<van-col span="4" @click="onEventMore" :style="{color: index == 2 ? '#FFB300':''}">{{index == 2 ? "100%" : item.g}}</van-col>
+							<van-col span="4" @click="onEventMore" :style="{color: index == 2 ? '#FFB300':''}">{{index == 2 ? "100%" : item.z}}</van-col>
+							<van-col span="4" @click="onEventMore" :style="{color: index == 2 ? '#FFB300':''}">{{index == 2 ? "100%" : item.d}}</van-col>
+						</van-row>
+					</div>
+				</div>
+				<!-- 今日事件 -->
+				<div class="content mt10 pd10">
+					<p class="fontBold16">今日事件</p>
+					<div class="mt10 text-center">
+						<van-row class="table-head">
+							<van-col :span="8" class="text-left">风险等级</van-col>
+							<van-col :span="8">发生</van-col>
+							<van-col :span="8">闭环</van-col>
+						</van-row>
+						<van-row class="table-row" v-for="(item,index) in tableData1" :key="index" v-if="index < 4">
+							<van-col span="8" v-if="index == 0" class="text-left flexAlignCenter">
+								<i class="iconfont icon-yuandian themeRed"></i><span>超高</span>
+							</van-col>
+							<van-col span="8" v-if="index == 1" class="text-left flexAlignCenter">
+								<i class="iconfont icon-yuandian themeYellow"></i><span>高</span>
+							</van-col>
+							<van-col span="8" v-if="index == 2" class="text-left">
+								<i class="iconfont icon-yuandian themePurple"></i><span>中</span>
+							</van-col>
+							<van-col span="8" v-if="index == 3" class="text-left">
+								<i class="iconfont icon-yuandian themeGreen"></i><span>低</span>
+							</van-col>
+							<van-col span="8">{{item.d}}</van-col>
+							<van-col span="8">{{item.d}}</van-col>
+						</van-row>
+					</div>
+				</div>
+				<!-- 事件曲线图 -->
+				<div class="content mt10 pd10">
+					<div class="flexBetween">
+						<p class="fontBold16">事件曲线图</p>
+						<span>近20天</span>
+					</div>
+					<div id="echarts-line2" class="echarts-line2"></div>
+				</div>
+			</div>
+			<!-- 综合评分 -->
+			<div v-if="tabIndex == 2">
+				<div class="mt10">
+					<!-- tab栏 -->
+					<van-tabs v-model="nextTabIndex" color="#248AFF" title-active-color="#248AFF" @change="onChangeNextTab">
+						<van-tab title="项目排行"></van-tab>
+						<van-tab title="企业排行"></van-tab>
+					</van-tabs>
+					<div class="content pt10 pb10">
+						<form action="/">
+						  <van-search v-model="keyWords" show-action placeholder="请输入搜索关键词" />
+						</form>
+					</div>
+					<div class="pd10">
+						<div class="content content-rank pd10">
+							<van-row type="flex" align="center" class="pd10" v-for="(item,index) in tableData1" :key="index">
+								<van-col span="20" class="rank-info" v-if="nextTabIndex == 0">
+									<p class="rank-title van-ellipsis">{{item.project}}</p>
+									<div class="rank-itemList mt10">
+										<span class="themeGrey">{{item.name}}</span>
+										<span class="themeGrey">市政公用</span>
+										<span class="themeGrey">在建</span>
+									</div>
+								</van-col>
+								<van-col span="20" class="rank-info" v-else>
+									<p class="rank-title van-ellipsis">{{item.company}}</p>
+									<div class="rank-itemList mt10">
+										<span>承接项目 <font class="themeYellow">{{item.d}}</font></span>
+										<span>在建项目 <font class="themeGreen">{{item.z}}</font></span>
+									</div>
+								</van-col>
+								<van-col span="4">
+									<span class="rank-fontNum">{{item.num}}</span>
+								</van-col>
+							</van-row>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 市区弹层 -->
+			<van-popup transition="van-fade" v-model="showPopup" position="center" :overlay-style="{background: 'rgba(0,0,0,0.3)'}"
+			 :style="{top: '46px',transform: 'translateX(-50%)'}">
+				<ul class="city-popup">
+					<li v-for="(item,index) in tableData1" :key="index" @click="oncChangeTitle(item.name,index)">{{item.name}}</li>
+				</ul>
+			</van-popup>
+			<!-- 区域风险统计详情弹层 -->
+			<van-popup v-model="detailShow" closeable round :style="{width: '90%'}">
+				<div class="content pd15">
+					<p class="fontBold16">风险项目统计</p>
+					<div class="flexAlignCenter mt10">
+						<span class="font15 mr5">{{detailData.name}}</span>
+						<span v-if="detailData.level == '超高'" class="content-tag themeBgRed">{{detailData.level}}</span>
+						<span v-if="detailData.level == '高'" class="content-tag themeBgYellow">{{detailData.level}}</span>
+						<span v-if="detailData.level == '中'" class="content-tag themeBgPurple">{{detailData.level}}</span>
+						<span v-if="detailData.level == '低'" class="content-tag themeBgGreen">{{detailData.level}}</span>
+					</div>
+					<div class="mt10">
+						<van-row>
+							<van-col span="5"><span class="font13 mr5">超高</span><span class="themeRed font15">{{detailData.cg}}</span></van-col>
+							<van-col span="5"><span class="font13 mr5">高</span><span class="themeYellow font15">{{detailData.g}}</span></van-col>
+							<van-col span="5"><span class="font13 mr5">中</span><span class="themePurple font15">{{detailData.z}}</span></van-col>
+							<van-col span="5"><span class="font13 mr5">低</span><span class="themeGreen font15">{{detailData.d}}</span></van-col>
+						</van-row>
+					</div>
+					<br />
+					<div class="flexBetween">
+						<p class="fontBold16">风险发展趋势</p>
+						<span>近20天</span>
+					</div>
+					<div id="echarts-line" class="echarts-line"></div>
+				</div>
+			</van-popup>
+		</div>
+	</body>
+	<script src="../js/axios.min.js"></script>
+	<script src="../js/vue-2.6.12.min.js"></script>
+	<script src="../js/vant-2.10.min.js"></script>
+	<!-- 引入echarts组件库 -->
+	<script src="../js/echarts.js"></script>
+	<script>
+		var app = new Vue({
+			el: "#app",
+			data: {
+				title: "",
+				tabIndex: 0,
+				nextTabIndex: 0,
+				currentTitle: "无锡市",
+				currentIndex: 0,
+				keyWords: '',
+				showPopup: false,
+				detailShow: false,
+				detailData: {},
+				tableData1:[{
+					name: "无锡市",
+					project: "和顺苑农民集中居住区项目",
+					company: "江苏苏冉诚节能建材有限公司",
+					num: 98,
+					cg: 20,
+					g: 23,
+					z: 34,
+					d: 12,
+					level: "超高"
+				},{
+					name: "惠山区",
+					project: "和顺苑农民集中居住区项目",
+					company: "盐城市苏厦建设集团有限公司",
+					num: 92,
+					cg: 20,
+					g: 23,
+					z: 34,
+					d: 12,
+					level: "超高"
+				},{
+					name: "江阴市",
+					project: "和顺苑农民集中居住区项目",
+					company: "江苏苏冉诚节能建材有限公司",
+					num: 88,
+					cg: 16,
+					g: 11,
+					z: 26,
+					d: 18,
+					level: "超高"
+				},{
+					name: "锡山区",
+					project: "天荣广场地下室，天荣广场商业楼",
+					company: "盐城市苏厦建设集团有限公司",
+					num: 84,
+					cg: 0,
+					g: 13,
+					z: 34,
+					d: 9,
+					level: "高"
+				},{
+					name: "梁溪区",
+					project: "水沐云顶花园3、5、6、10、11、12、13、14",
+					company: "盐城市苏厦建设集团有限公司",
+					num: 81,
+					cg: 0,
+					g: 0,
+					z: 34,
+					d: 11,
+					level: "中"
+				},{
+					name: "滨湖区",
+					project: "潮都望庄A地块一标段",
+					company: "江苏苏冉诚节能建材有限公司",
+					num: 72,
+					cg: 0,
+					g: 0,
+					z: 0,
+					d: 14,
+					level: "低"
+				},{
+					name: "新吴区",
+					project: "和韵苑二期农民集中居住区",
+					company: "江苏苏冉诚节能建材有限公司",
+					num: 79,
+					cg: 0,
+					g: 0,
+					z: 0,
+					d: 12,
+					level: "低"
+				}],
+				tableData2:[{
+					zr: 40,
+					jr: 36,
+					level: "超高"
+				},{
+					zr: 30,
+					jr: 47,
+					level: "高"
+				},{
+					zr: 130,
+					jr: 128,
+					level: "中"
+				},{
+					zr: 56,
+					jr: 76,
+					level: "低"
+				}]
+			},
+			computed: {},
+			mounted() {},
+			methods: {
+				getOne() {
+					axios({
+						// baseURL: "http://test.hb.xhs-sz.com",
+						baseURL: "",
+						timeout: 10000,
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+						},
+						method: "post",
+						url: "/handler/njjy/HNjjySiteSecurity.ashx?Action=getone",
+						data: formData,
+					}).then((response) => {
+
+					});
+				},
+				onPageBack(){
+					window.history.go(-1);
+				},
+				onShowCity(){
+					this.showPopup = true;
+				},
+				onShowDetail(data){
+					this.detailShow = true;
+					this.detailData = data;
+					this.$nextTick(()=>{
+						this.lineChart();
+					});
+				},
+				oncChangeTitle(title,index){
+					this.currentTitle = title;
+					this.currentIndex = index;
+					this.showPopup = false;
+					this.$nextTick(()=>{
+						this.lineChart();
+					});
+				},
+				onChangeTab(index){
+					if(index == 0){
+						this.$nextTick(()=>{
+							this.lineChart();
+						});
+					}else if(index == 1){
+						this.$nextTick(()=>{
+							this.radarChart();
+							this.line2Chart();
+						});
+					};
+				},
+				onChangeNextTab(index){
+					this.nextTabIndex = index;
+				},
+				onEventMore(){
+					window.location.href = "wap_events.html"
+				},
+				lineChart() {
+					let dom = document.getElementById("echarts-line");
+					let myChart = echarts.init(dom);
+					let arr = [];
+					let arr1 = [];
+					for (let i = 1, len = 21; i < len; i++) {
+						let num1 = parseInt(Math.random() * 60);
+						arr.push(i);
+						arr1.push(num1);
+					}
+					let option = {
+						tooltip: {
+							show: true,
+							trigger: "axis",
+						},
+						color: ["#ff3355"],
+						grid: {
+							containLabel: true,
+							left: "0",
+							right: "10",
+							top: "20",
+							bottom: "10",
+						},
+						xAxis: {
+							type: "category",
+							data: arr,
+							axisLine: {
+								show: true,
+								lineStyle: {
+									color: "#CCCCCC",
+								},
+							},
+							boundaryGap: false,
+							axisLabel: {
+								color: "#666666",
+								fontSize: 10,
+							},
+							axisTick: {
+								show: false,
+							},
+							splitLine: {
+								show: false,
+							},
+						},
+						yAxis: {
+							type: "value",
+							axisLine: {
+								show: true,
+								lineStyle: {
+									color: "#CCCCCC",
+								},
+							},
+							axisTick: {
+								show:false
+							},
+							axisLabel: {
+								color: "#666666",
+								fontSize: 10
+							},
+							splitLine: {
+								show: false,
+							},
+							splitNumber: 6,
+						},
+						series: [{
+								data: arr1,
+								type: "line",
+								areaStyle: {
+									color: {
+									  type: 'linear',
+									  x: 0,
+									  y: 0,
+									  x2: 0,
+									  y2: 1,
+									  colorStops: [{
+											offset: 0, color: 'rgba(255,0,0,1)' // 0% 处的颜色
+									  }, {
+											offset: 1, color: 'rgba(255,0,0,0.3)' // 100% 处的颜色
+									  }],
+									}
+								},
+								smooth: true,
+								symbol: "none",
+								lineStyle:{
+									color: "#FF0000",
+								}
+							}
+						],
+					};
+					myChart.setOption(option);
+				},
+				radarChart() {
+					let dom = document.getElementById("echarts-radar");
+					let myRadar = echarts.init(dom);
+					myRadar.setOption({
+					  backgroundColor: "transparent",
+					  legend: {
+						 icon: "rect",
+						 bottom: 0,
+						 itemGap: 24,
+						 data: [
+							{
+							  name: "超高",
+							  itemStyle: {
+								 color: "#FF0000",
+							  },
+							},
+							{
+							  name: "高",
+							  itemStyle: {
+								 color: "#FFB300",
+							  },
+							},
+							{
+							  name: "中",
+							  itemStyle: {
+								 color: "#FF00EE",
+							  },
+							},
+							{
+							  name: "低",
+							  itemStyle: {
+								 color: "#17B13B",
+							  },
+							},
+						 ],
+					  },
+					  radar: {
+						 name: {
+							color: "#248AFF",
+						 },
+						 indicator: [
+							{ name: "人员管理", max: 6500 },
+							{ name: "设备监测", max: 25000 },
+							{ name: "企业自查", max: 52000 },
+							{ name: "监督检查", max: 38000 },
+							{ name: "车辆管控", max: 30000 },
+							{ name: "AI识别", max: 16000 },
+						 ],
+						 splitArea: {
+							areaStyle: {
+							  color: ["rgba(0,111,255,0.1)", "rgba(0,111,255,0.16)"],
+							},
+						 },
+						 splitLine: {
+							lineStyle: {
+							  width: 0.5,
+							},
+						 },
+						 axisLine: {
+							lineStyle: {
+							  width: 0.5,
+							},
+						 },
+						 triggerEvent: true
+					  },
+					  series: [
+						 {
+							name: "",
+							type: "radar",
+							lineStyle: {
+							  width: 1,
+							},
+							data: [
+							  {
+								 value: [4200, 12000, 20000, 35000, 20000, 11000],
+								 name: "超高",
+							  },
+							  {
+								 value: [5000, 14000, 28000, 26000, 15000, 11000],
+								 name: "高",
+							  },
+							  {
+								 value: [6000, 13000, 23000, 24000, 13000, 8000],
+								 name: "中",
+							  },
+							  {
+								 value: [3000, 11000, 22000, 21000, 12000, 10000],
+								 name: "低",
+							  },
+							],
+						 },
+					  ],
+					});
+				},
+				line2Chart(){
+					let dom = document.getElementById("echarts-line2");
+					let myChart = echarts.init(dom);
+					let arr = [];
+					let arr1 = [];
+					let arr2 = [];
+					let arr3 = [];
+					let arr4 = [];
+					for (let i = 1, len = 21; i < len; i++) {
+						let num1 = parseInt(Math.random() * 60);
+						let num2 = parseInt(Math.random() * 60);
+						let num3 = parseInt(Math.random() * 60);
+						let num4 = parseInt(Math.random() * 60);
+						arr.push(i);
+						arr1.push(num1);
+						arr2.push(num2);
+						arr3.push(num3);
+						arr4.push(num4);
+					}
+					let option = {
+						tooltip: {
+							show: true,
+							trigger: "axis",
+						},
+						color: ["#FF0000", "#FFB300", "#FF00EE", "#17B13B"],
+					   legend: {
+							 icon: "roundRect",
+							 data: ["超高", "高", "中", "低"],
+							 textStyle: {
+								color: "#333333",
+							 },
+							 itemGap: 30,
+					   },
+						grid: {
+							containLabel: true,
+							left: "0",
+							right: "10",
+							top: "20",
+							bottom: "10",
+						},
+						xAxis: {
+							type: "category",
+							data: arr,
+							axisLine: {
+								show: true,
+								lineStyle: {
+									color: "#CCCCCC",
+								},
+							},
+							boundaryGap: false,
+							axisLabel: {
+								color: "#666666",
+								fontSize: 10,
+							},
+							axisTick: {
+								show: false,
+							},
+							splitLine: {
+								show: false
+							},
+						},
+						yAxis: {
+							type: "value",
+							axisLine: {
+								show: true,
+								lineStyle: {
+									color: "#CCCCCC",
+								},
+							},
+							axisTick: {
+								show:false
+							},
+							axisLabel: {
+								color: "#666666",
+								fontSize: 10
+							},
+							splitLine: {
+								show: true,
+								lineStyle: {
+								  type: "dashed"
+								},
+							},
+							splitNumber: 6,
+						},
+						series: [{
+								data: arr1,
+								type: "line",
+								smooth: true,
+								symbol: "none"
+							},{
+								data: arr2,
+								type: "line",
+								smooth: true,
+								symbol: "none"
+							},{
+								data: arr3,
+								type: "line",
+								smooth: true,
+								symbol: "none"
+							},{
+								data: arr4,
+								type: "line",
+								smooth: true,
+								symbol: "none"
+							}
+						],
+					};
+					myChart.setOption(option);
+				}
+			},
+		});
+	</script>
+</html>

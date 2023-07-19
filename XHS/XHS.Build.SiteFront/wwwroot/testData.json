@@ -1,0 +1,3496 @@
+{
+    "success": true,
+    "title": "大数据风险分析系统",
+    "cityData": [{
+            "GROUPID": 0,
+            "USERID": 0,
+            "groupshortname": "无锡市",
+            "sitecount": 99999,
+            "url": "",
+            "mapcode": "320700",
+            "belongto": "AJ320701-1",
+            "lnglat": ""
+        },
+        {
+            "GROUPID": 1,
+            "USERID": 25,
+            "groupshortname": "惠山区",
+            "sitecount": 13,
+            "url": "http://teste",
+            "mapcode": "",
+            "belongto": "AJ320708-1",
+            "lnglat": "118.58558|34.915418"
+        },
+        {
+            "GROUPID": 6,
+            "USERID": 218,
+            "groupshortname": "锡山区",
+            "sitecount": 7,
+            "url": "http://test.hb.xhs-sz.com/handler/HLogin.ashx?action=area&data=e3VzZXI6IuWMujXkuJPmnIkiLHB3ZDoiMHg3YzIyMmZiMjkyN2Q4MjhhZjIyZjU5MjEzNGU4OTMyNDgwNjM3YzBkIix0bToiMTYzNDc5NTgxOSJ9",
+            "mapcode": "",
+            "belongto": "",
+            "lnglat": "118.756402|34.548394"
+        },
+        {
+            "GROUPID": 4,
+            "USERID": 215,
+            "groupshortname": "梁溪区",
+            "sitecount": 6,
+            "url": "http://test.hb.xhs-sz.com/handler/HLogin.ashx?action=area&data=e3VzZXI6IuWMujLkuJPmnIkiLHB3ZDoiMHg3YzIyMmZiMjkyN2Q4MjhhZjIyZjU5MjEzNGU4OTMyNDgwNjM3YzBkIix0bToiMTYzNDc5NTgxOSJ9",
+            "mapcode": "",
+            "belongto": "AJ320724-1",
+            "lnglat": "118.97045|34.887013"
+        },
+        {
+            "GROUPID": 5,
+            "USERID": 220,
+            "groupshortname": "滨湖区",
+            "sitecount": 3,
+            "url": "http://test.hb.xhs-sz.com/handler/HLogin.ashx?action=area&data=e3VzZXI6IuWMujfkuJPmnIkiLHB3ZDoiMHg3YzIyMmZiMjkyN2Q4MjhhZjIyZjU5MjEzNGU4OTMyNDgwNjM3YzBkIix0bToiMTYzNDc5NTgxOSJ9",
+            "mapcode": "",
+            "belongto": "",
+            "lnglat": "119.489437|34.353492"
+        },
+        {
+            "GROUPID": 10,
+            "USERID": 219,
+            "groupshortname": "江阴市",
+            "sitecount": 2,
+            "url": "http://test.hb.xhs-sz.com/handler/HLogin.ashx?action=area&data=e3VzZXI6IuWMujbkuJPmnIkiLHB3ZDoiMHg3YzIyMmZiMjkyN2Q4MjhhZjIyZjU5MjEzNGU4OTMyNDgwNjM3YzBkIix0bToiMTYzNDc5NTgxOSJ9",
+            "mapcode": "",
+            "belongto": "AJ320721-1",
+            "lnglat": "119.426214|34.609566"
+        },
+        {
+            "GROUPID": 2,
+            "USERID": 216,
+            "groupshortname": "宜兴市",
+            "sitecount": 2,
+            "url": "http://test.hb.xhs-sz.com/handler/HLogin.ashx?action=area&data=e3VzZXI6IuWMujPkuJPmnIkiLHB3ZDoiMHg3YzIyMmZiMjkyN2Q4MjhhZjIyZjU5MjEzNGU4OTMyNDgwNjM3YzBkIix0bToiMTYzNDc5NTgxOSJ9",
+            "mapcode": "",
+            "belongto": "AJ320722-1",
+            "lnglat": "119.170269|34.57698"
+        }
+    ],
+    "tableData": {
+        "当前区域风险统计": [{
+                "name": "惠山区",
+                "cg": 20,
+                "g": 23,
+                "z": 34,
+                "d": 12,
+                "lv": "超高",
+                "qs": [
+                    4,
+                    1,
+                    1,
+                    1,
+                    3,
+                    2,
+                    2,
+                    4,
+                    2,
+                    4,
+                    3,
+                    3,
+                    4,
+                    1,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    4
+                ]
+            },
+            {
+                "name": "锡山区",
+                "cg": 12,
+                "g": 13,
+                "z": 34,
+                "d": 9,
+                "lv": "超高",
+                "qs": [
+                    2,
+                    3,
+                    2,
+                    3,
+                    3,
+                    4,
+                    2,
+                    2,
+                    3,
+                    2,
+                    3,
+                    1,
+                    4,
+                    3,
+                    3,
+                    3,
+                    2,
+                    4,
+                    4,
+                    3
+                ]
+            },
+            {
+                "name": "梁溪区",
+                "cg": 10,
+                "g": 23,
+                "z": 34,
+                "d": 12,
+                "lv": "超高",
+                "qs": [
+                    1,
+                    1,
+                    1,
+                    3,
+                    1,
+                    1,
+                    4,
+                    1,
+                    3,
+                    3,
+                    1,
+                    4,
+                    4,
+                    1,
+                    3,
+                    3,
+                    3,
+                    1,
+                    1,
+                    3
+                ]
+            },
+            {
+                "name": "滨湖区",
+                "cg": 0,
+                "g": 35,
+                "z": 34,
+                "d": 14,
+                "lv": "高",
+                "qs": [
+                    1,
+                    4,
+                    1,
+                    2,
+                    1,
+                    4,
+                    1,
+                    1,
+                    2,
+                    3,
+                    2,
+                    2,
+                    1,
+                    1,
+                    2,
+                    4,
+                    3,
+                    3,
+                    4,
+                    3
+                ]
+            },
+            {
+                "name": "新吴区",
+                "cg": 0,
+                "g": 0,
+                "z": 34,
+                "d": 21,
+                "lv": "中",
+                "qs": [
+                    3,
+                    4,
+                    4,
+                    1,
+                    3,
+                    3,
+                    4,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    4,
+                    1,
+                    4,
+                    2,
+                    3,
+                    4,
+                    4
+                ]
+            },
+            {
+                "name": "江阴市",
+                "cg": 0,
+                "g": 0,
+                "z": 0,
+                "d": 43,
+                "lv": "低",
+                "qs": [
+                    3,
+                    2,
+                    4,
+                    4,
+                    2,
+                    1,
+                    4,
+                    3,
+                    4,
+                    4,
+                    1,
+                    2,
+                    4,
+                    4,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "name": "宜兴市",
+                "cg": 0,
+                "g": 0,
+                "z": 0,
+                "d": 32,
+                "lv": "低",
+                "qs": [
+                    2,
+                    2,
+                    1,
+                    1,
+                    3,
+                    2,
+                    1,
+                    3,
+                    2,
+                    1,
+                    2,
+                    4,
+                    2,
+                    4,
+                    4,
+                    2,
+                    4,
+                    2,
+                    3,
+                    4
+                ]
+            }
+        ],
+        "当前项目风险统计": [{
+                "lv": "超高风险",
+                "ys": 4,
+                "js": 6
+            },
+            {
+                "lv": "高风险",
+                "ys": 3,
+                "js": 2
+            },
+            {
+                "lv": "中风险",
+                "ys": 30,
+                "js": 32
+            },
+            {
+                "lv": "低风险",
+                "ys": 40,
+                "js": 35
+            }
+        ],
+        "当前企业风险统计": [{
+                "lv": "超高风险",
+                "ys": 1,
+                "js": 1
+            },
+            {
+                "lv": "高风险",
+                "ys": 2,
+                "js": 1
+            },
+            {
+                "lv": "中风险",
+                "ys": 12,
+                "js": 10
+            },
+            {
+                "lv": "低风险",
+                "ys": 30,
+                "js": 35
+            }
+        ],
+        "项目风险排行": [{
+                "name": "锡澄水厂深度处理二期工程",
+                "cg": 20,
+                "g": 23,
+                "z": 34,
+                "d": 2,
+                "lv": "超高",
+                "area": "锡山区"
+            },
+            {
+                "name": "江阴市临江路西延伸段改建工程（一标段）",
+                "cg": 13,
+                "g": 13,
+                "z": 24,
+                "d": 20,
+                "lv": "高",
+                "area": "江阴市"
+            },
+            {
+                "name": "澄地2019－C- 32号、2019－C－33号地块商品房开发项目(5#-6#楼,12#-14#楼)",
+                "cg": 3,
+                "g": 12,
+                "z": 24,
+                "d": 11,
+                "lv": "低",
+                "area": "惠山区"
+            },
+            {
+                "name": "苏地2019-WG-7号地块项目二期施工总承包工程",
+                "cg": 5,
+                "g": 17,
+                "z": 22,
+                "d": 5,
+                "lv": "中",
+                "area": "梁溪区"
+            },
+            {
+                "name": "新建梅里实验小学项目-1#教学楼,2#教学楼,3#教学楼,行政、实验艺术楼,报告厅,食堂体育馆,连廊看台,南门卫,地下车库",
+                "cg": 1,
+                "g": 6,
+                "z": 14,
+                "d": 9,
+                "lv": "低",
+                "area": "惠山区"
+            },
+            {
+                "name": "XDG-2019-60号地块建设项目（1#等）",
+                "cg": 6,
+                "g": 15,
+                "z": 22,
+                "d": 18,
+                "lv": "高",
+                "area": "惠山区"
+            },
+            {
+                "name": "浦庄安置小区（三期）项目",
+                "cg": 21,
+                "g": 19,
+                "z": 31,
+                "d": 12,
+                "lv": "超高",
+                "area": "锡山区"
+            }
+        ],
+        "项目列表": [{
+                "name": "锡澄水厂深度处理二期工程",
+                "projectType": "房屋建筑",
+                "projectPriod": "在建",
+                "sght": "3202812018041101A02000",
+                "ajba": "GH4856936322",
+                "sgxk": "GH485693632",
+                "platform": "Swagger平台",
+                "addressArea": "江苏省/无锡市/新吴区",
+                "address": "江苏省无锡市新吴区梅育路58号",
+                "lnglat": "119.426214,34.609566",
+                "cityItem": "否",
+                "money": "234万元",
+                "planStartTime": "2021-07-26",
+                "planEndTime": "2023-08-26",
+                "area": "1500m²",
+                "general": "郁洲公园便民服务中心除险加固改造工程-郁洲公园便民服务中心除险加固改造工程",
+                "score": 99,
+                "projecter": "周伟",
+                "projectManager": "刘廷",
+                "projectWacher": "张廷玉",
+                "buildCompany": "无锡市建筑设计单位",
+                "actualCompany": "无锡市施工单位",
+                "phone": "15963256325",
+                "phone1": "13956235632",
+                "phone2": "13695623523",
+                "wachCompany": "无锡市工地施工监管局",
+                "cg": 9,
+                "g": 9,
+                "z": 12,
+                "d": 45,
+                "status": "超高风险"
+            },
+            {
+                "name": "江阴市临江路西延伸段改建工程（一标段）",
+                "projectType": "市政公用",
+                "projectPriod": "在建",
+                "sght": "3202812018041101A02000",
+                "ajba": "GH4856936322",
+                "sgxk": "GH485693632",
+                "platform": "Swagger平台",
+                "addressArea": "江苏省/无锡市/新吴区",
+                "address": "江苏省无锡市新吴区梅育路58号",
+                "lnglat": "119.426214,34.609566",
+                "cityItem": "否",
+                "money": "234万元",
+                "planStartTime": "2021-07-26",
+                "planEndTime": "2023-08-26",
+                "area": "1500m²",
+                "general": "郁洲公园便民服务中心除险加固改造工程-郁洲公园便民服务中心除险加固改造工程",
+                "score": 89,
+                "projecter": "周伟",
+                "projectManager": "刘廷",
+                "projectWacher": "张廷玉",
+                "buildCompany": "无锡市建筑设计单位",
+                "actualCompany": "无锡市施工单位",
+                "phone": "15963256325",
+                "phone1": "13956235632",
+                "phone2": "13695623523",
+                "wachCompany": "无锡市工地施工监管局",
+                "cg": 8,
+                "g": 23,
+                "z": 12,
+                "d": 45,
+                "status": "超高风险"
+            },
+            {
+                "name": "澄地2019－C- 32号、2019－C－33号地块商品房开发项目(5#-6#楼,12#-14#楼)",
+                "projectType": "市政公用",
+                "projectPriod": "在建",
+                "sght": "3202812018041101A02000",
+                "ajba": "GH4856936322",
+                "sgxk": "GH485693632",
+                "platform": "Swagger平台",
+                "addressArea": "江苏省/无锡市/新吴区",
+                "address": "江苏省无锡市新吴区梅育路58号",
+                "lnglat": "119.426214,34.609566",
+                "cityItem": "否",
+                "money": "234万元",
+                "planStartTime": "2021-07-26",
+                "planEndTime": "2023-08-26",
+                "area": "1500m²",
+                "general": "郁洲公园便民服务中心除险加固改造工程-郁洲公园便民服务中心除险加固改造工程",
+                "score": 92,
+                "projecter": "周伟",
+                "projectManager": "刘廷",
+                "projectWacher": "张廷玉",
+                "buildCompany": "无锡市建筑设计单位",
+                "actualCompany": "无锡市施工单位",
+                "phone": "15963256325",
+                "phone1": "13956235632",
+                "phone2": "13695623523",
+                "wachCompany": "无锡市工地施工监管局",
+                "cg": 7,
+                "g": 23,
+                "z": 12,
+                "d": 45,
+                "status": "超高风险"
+            },
+            {
+                "name": "新建梅里实验小学项目-1#教学楼,2#教学楼,3#教学楼,行政、实验艺术楼,报告厅,食堂体育馆,连廊看台,南门卫,地下车库",
+                "projectType": "房屋建筑",
+                "projectPriod": "在建",
+                "sght": "3202812018041101A02000",
+                "ajba": "GH4856936322",
+                "sgxk": "GH485693632",
+                "platform": "Swagger平台",
+                "addressArea": "江苏省/无锡市/新吴区",
+                "address": "江苏省无锡市新吴区梅育路58号",
+                "lnglat": "119.426214,34.609566",
+                "cityItem": "否",
+                "money": "234万元",
+                "planStartTime": "2021-07-26",
+                "planEndTime": "2023-08-26",
+                "area": "1500m²",
+                "general": "郁洲公园便民服务中心除险加固改造工程-郁洲公园便民服务中心除险加固改造工程",
+                "score": 99,
+                "projecter": "周伟",
+                "projectManager": "刘廷",
+                "projectWacher": "张廷玉",
+                "buildCompany": "无锡市建筑设计单位",
+                "actualCompany": "无锡市施工单位",
+                "phone": "15963256325",
+                "phone1": "13956235632",
+                "phone2": "13695623523",
+                "wachCompany": "无锡市工地施工监管局",
+                "cg": 5,
+                "g": 23,
+                "z": 12,
+                "d": 45,
+                "status": "超高风险"
+            },
+            {
+                "name": "XDG-2019-60号地块建设项目（1#等",
+                "projectType": "房屋建筑",
+                "projectPriod": "在建",
+                "sght": "3202812018041101A02000",
+                "ajba": "GH4856936322",
+                "sgxk": "GH485693632",
+                "platform": "Swagger平台",
+                "addressArea": "江苏省/无锡市/新吴区",
+                "address": "江苏省无锡市新吴区梅育路58号",
+                "lnglat": "119.426214,34.609566",
+                "cityItem": "否",
+                "money": "234万元",
+                "planStartTime": "2021-07-26",
+                "planEndTime": "2023-08-26",
+                "area": "1500m²",
+                "general": "郁洲公园便民服务中心除险加固改造工程-郁洲公园便民服务中心除险加固改造工程",
+                "score": 99,
+                "projecter": "周伟",
+                "projectManager": "刘廷",
+                "projectWacher": "张廷玉",
+                "buildCompany": "无锡市建筑设计单位",
+                "actualCompany": "无锡市施工单位",
+                "phone": "15963256325",
+                "phone1": "13956235632",
+                "phone2": "13695623523",
+                "wachCompany": "无锡市工地施工监管局",
+                "cg": 4,
+                "g": 23,
+                "z": 12,
+                "d": 45,
+                "status": "超高风险"
+            }
+        ],
+        "发生事件": [{
+                "createTime": "2020-08-23 10:23",
+                "eventContent": "塔吊超重2000KG",
+                "eventType": "设备监测",
+                "eventCode": "GH448512321121",
+                "eventLevel": "超高风险",
+                "status": "未处理",
+                "project": "锡澄水厂深度处理二期工程",
+                "addressArea": "新吴区",
+                "duration": "1小时",
+                "dealer": "丁彦翔",
+                "device": "NJ025C303G222106001",
+                "times": 31,
+                "rate": "98%",
+                "pare": "2%"
+            },
+            {
+                "createTime": "2020-08-23 10:23",
+                "eventContent": "塔吊超重2000KG",
+                "eventType": "设备监测",
+                "eventCode": "GH448512321121",
+                "eventLevel": "超高风险",
+                "status": "未处理",
+                "project": "江阴市临江路西延伸段改建工程（一标段）",
+                "addressArea": "江阴市",
+                "duration": "8小时",
+                "dealer": "尤俊琪",
+                "device": "84E0F42A5C671602",
+                "times": 30,
+                "rate": "77%",
+                "pare": "23%"
+            },
+            {
+                "createTime": "2020-08-23 10:23",
+                "eventContent": "塔吊超重2000KG",
+                "eventType": "设备监测",
+                "eventCode": "GH448512321121",
+                "eventLevel": "超高风险",
+                "status": "未处理",
+                "project": "苏地2019-WG-7号地块项目二期施工总承包工程",
+                "addressArea": "新吴区",
+                "duration": "11小时",
+                "dealer": "沈威",
+                "device": "84E0F42B07901602",
+                "times": 17,
+                "rate": "56%",
+                "pare": "22%"
+            },
+            {
+                "createTime": "2020-08-23 10:23",
+                "eventContent": "塔吊超重2000KG",
+                "eventType": "设备监测",
+                "eventCode": "GH448512321121",
+                "eventLevel": "超高风险",
+                "status": "已处理",
+                "project": "江阴市临江路西延伸段改建工程（二标段）",
+                "addressArea": "新吴区",
+                "duration": "3小时",
+                "dealer": "钱昌海",
+                "device": "NJ025C303G222107001",
+                "result": "限期整改单:X456311255",
+                "times": 27,
+                "rate": "36%",
+                "pare": "22%"
+            },
+            {
+                "createTime": "2020-08-23 10:23",
+                "eventContent": "塔吊超重2000KG",
+                "eventType": "设备监测",
+                "eventCode": "GH448512321121",
+                "eventLevel": "超高风险",
+                "status": "未处理",
+                "project": "新建梅里实验小学项目-1#教学楼,2#教学楼,3#教学楼,行政、实验艺术楼,报告厅,食堂体育馆,连廊看台,南门卫,地下车库",
+                "addressArea": "梁溪区",
+                "duration": "6小时",
+                "dealer": "刘丰恺",
+                "device": "NJ025C303G222107003",
+                "times": 46,
+                "rate": "27%",
+                "pare": "12%"
+            }
+        ],
+        "行政处罚": [{
+                "createTime": "2020.02.03",
+                "codeNum": "GH5541236885",
+                "content": "违反国家、地方和行业安全生产有关法律法规和标准的操作行为；违反岗位操作规程、作业指导书的操作行为",
+                "project": "新建梅里实验小学项目-1#教学楼,2#教学楼,3#教学楼,行政、实验艺术楼,报告厅,食堂体育馆,连廊看台,南门卫,地下车库"
+            },
+            {
+                "createTime": "2020.05.13",
+                "codeNum": "GH5541236885",
+                "content": "违反国家、地方和行业安全生产有关法律法规和标准的操作行为；违反岗位操作规程、作业指导书的操作行为",
+                "project": "江阴市临江路西延伸段改建工程（二标段）"
+            },
+            {
+                "createTime": "2020.07.21",
+                "codeNum": "GH5541236885",
+                "content": "违反国家、地方和行业安全生产有关法律法规和标准的操作行为；违反岗位操作规程、作业指导书的操作行为",
+                "project": "苏地2019-WG-7号地块项目二期施工总承包工程"
+            },
+            {
+                "createTime": "2021.01.07",
+                "codeNum": "GH5541236885",
+                "content": "违反国家、地方和行业安全生产有关法律法规和标准的操作行为；违反岗位操作规程、作业指导书的操作行为",
+                "project": "江阴市临江路西延伸段改建工程（一标段）"
+            },
+            {
+                "createTime": "2020.02.03",
+                "codeNum": "GH5541236885",
+                "content": "违反国家、地方和行业安全生产有关法律法规和标准的操作行为；违反岗位操作规程、作业指导书的操作行为",
+                "project": "锡澄水厂深度处理二期工程"
+            }
+        ],
+        "企业列表": [{
+                "name": "无锡市水务集团有限公司",
+                "type": "施工单位",
+                "code": "91320200135907734U",
+                "person": "吴红亚",
+                "phone": "051082768151",
+                "score": 98,
+                "number": 12,
+                "cg": 9,
+                "g": 9,
+                "z": 12,
+                "d": 45,
+                "status": "超高风险"
+            },
+            {
+                "name": "无锡市政建设集团有限公司",
+                "type": "总包单位",
+                "code": "91320206135994014Q",
+                "person": "陈向阳",
+                "phone": "13093086502",
+                "score": 98,
+                "number": 9,
+                "cg": 9,
+                "g": 9,
+                "z": 12,
+                "d": 45,
+                "status": "中风险"
+            },
+            {
+                "name": "无锡市新城建设监理有限公司",
+                "type": "施工单位",
+                "code": "91320200772004327A",
+                "person": "张志平",
+                "phone": "051082820067",
+                "score": 98,
+                "number": 6,
+                "cg": 9,
+                "g": 9,
+                "z": 12,
+                "d": 45,
+                "status": "中风险"
+            },
+            {
+                "name": "鑫缇建筑科技（苏州）有限公司",
+                "type": "施工单位",
+                "code": "91320508MA1YMNPR28",
+                "person": "吴水宽",
+                "phone": "13801551568",
+                "score": 98,
+                "number": 11,
+                "cg": 9,
+                "g": 9,
+                "z": 12,
+                "d": 45,
+                "status": "低风险"
+            },
+            {
+                "name": "苏州富登豪建设工程有限公司",
+                "type": "施工单位",
+                "code": "91320507562933398P",
+                "person": "刘朝财",
+                "phone": "13776065628",
+                "score": 98,
+                "number": 13,
+                "cg": 9,
+                "g": 9,
+                "z": 12,
+                "d": 45,
+                "status": "高风险"
+            }
+        ],
+        "事件统计": [{
+                "name": "累计发生",
+                "cg": 10,
+                "g": 10,
+                "z": 80,
+                "d": 120
+            },
+            {
+                "name": "未处理",
+                "cg": 2,
+                "g": 2,
+                "z": 10,
+                "d": 50
+            },
+            {
+                "name": "闭环率",
+                "cg": "50%",
+                "g": "50%",
+                "z": "20%",
+                "d": "50%"
+            }
+        ],
+        "今日事件": [{
+                "lv": "超高",
+                "hp": 20,
+                "bh": 23
+            },
+            {
+                "lv": "高",
+                "hp": 13,
+                "bh": 21
+            },
+            {
+                "lv": "中",
+                "hp": 5,
+                "bh": 21
+            },
+            {
+                "lv": "低",
+                "hp": 3,
+                "bh": 15
+            }
+        ],
+        "人员统计": [{
+                "name": "管理人员",
+                "total": 202,
+                "persons": [{
+                        "area": "惠山区",
+                        "onMan": 213,
+                        "goMan": 89,
+                        "rate": "35%"
+                    },
+                    {
+                        "area": "梁山区",
+                        "onMan": 211,
+                        "goMan": 126,
+                        "rate": "46%"
+                    },
+                    {
+                        "area": "锡山区",
+                        "onMan": 98,
+                        "goMan": 156,
+                        "rate": "87%"
+                    },
+                    {
+                        "area": "新吴区",
+                        "onMan": 78,
+                        "goMan": 231,
+                        "rate": "92%"
+                    },
+                    {
+                        "area": "滨湖区",
+                        "onMan": 242,
+                        "goMan": 189,
+                        "rate": "88%"
+                    },
+                    {
+                        "area": "江阴市",
+                        "onMan": 176,
+                        "goMan": 123,
+                        "rate": "86%"
+                    },
+                    {
+                        "area": "宜兴市",
+                        "onMan": 142,
+                        "goMan": 132,
+                        "rate": "91%"
+                    }
+                ]
+            },
+            {
+                "name": "施工人员",
+                "total": 446,
+                "persons": [{
+                        "area": "惠山区",
+                        "onMan": 113,
+                        "goMan": 79,
+                        "rate": "31%"
+                    },
+                    {
+                        "area": "梁山区",
+                        "onMan": 221,
+                        "goMan": 49,
+                        "rate": "46%"
+                    },
+                    {
+                        "area": "锡山区",
+                        "onMan": 57,
+                        "goMan": 136,
+                        "rate": "57%"
+                    },
+                    {
+                        "area": "新吴区",
+                        "onMan": 78,
+                        "goMan": 231,
+                        "rate": "92%"
+                    },
+                    {
+                        "area": "滨湖区",
+                        "onMan": 225,
+                        "goMan": 169,
+                        "rate": "79%"
+                    },
+                    {
+                        "area": "江阴市",
+                        "onMan": 187,
+                        "goMan": 121,
+                        "rate": "84%"
+                    },
+                    {
+                        "area": "宜兴市",
+                        "onMan": 112,
+                        "goMan": 178,
+                        "rate": "81%"
+                    }
+                ]
+            },
+            {
+                "name": "监理人员",
+                "total": 85,
+                "persons": [{
+                        "area": "惠山区",
+                        "onMan": 213,
+                        "goMan": 89,
+                        "rate": "35%"
+                    },
+                    {
+                        "area": "梁山区",
+                        "onMan": 211,
+                        "goMan": 126,
+                        "rate": "46%"
+                    },
+                    {
+                        "area": "锡山区",
+                        "onMan": 98,
+                        "goMan": 156,
+                        "rate": "87%"
+                    },
+                    {
+                        "area": "新吴区",
+                        "onMan": 78,
+                        "goMan": 231,
+                        "rate": "92%"
+                    },
+                    {
+                        "area": "滨湖区",
+                        "onMan": 242,
+                        "goMan": 189,
+                        "rate": "88%"
+                    },
+                    {
+                        "area": "江阴市",
+                        "onMan": 176,
+                        "goMan": 123,
+                        "rate": "86%"
+                    },
+                    {
+                        "area": "宜兴市",
+                        "onMan": 142,
+                        "goMan": 132,
+                        "rate": "91%"
+                    }
+                ]
+            },
+            {
+                "name": "特种人员",
+                "total": 89,
+                "persons": [{
+                        "area": "惠山区",
+                        "onMan": 213,
+                        "goMan": 89,
+                        "rate": "35%"
+                    },
+                    {
+                        "area": "梁山区",
+                        "onMan": 211,
+                        "goMan": 126,
+                        "rate": "46%"
+                    },
+                    {
+                        "area": "锡山区",
+                        "onMan": 98,
+                        "goMan": 156,
+                        "rate": "87%"
+                    },
+                    {
+                        "area": "新吴区",
+                        "onMan": 78,
+                        "goMan": 231,
+                        "rate": "92%"
+                    },
+                    {
+                        "area": "滨湖区",
+                        "onMan": 242,
+                        "goMan": 189,
+                        "rate": "88%"
+                    },
+                    {
+                        "area": "江阴市",
+                        "onMan": 176,
+                        "goMan": 123,
+                        "rate": "86%"
+                    },
+                    {
+                        "area": "宜兴市",
+                        "onMan": 142,
+                        "goMan": 132,
+                        "rate": "91%"
+                    }
+                ]
+            }
+        ],
+        "性别统计": {
+            "male": 105,
+            "female": 23,
+            "age45": 10,
+            "age34": 42,
+            "age55": 9,
+            "age35": 21
+        },
+        "在岗人员教育统计": [{
+                "percent": "58%",
+                "key": "安全教育",
+                "surplus": 308
+            },
+            {
+                "percent": "85%",
+                "key": "体检报告",
+                "surplus": 308
+            },
+            {
+                "percent": "60%",
+                "key": "培训报告",
+                "surplus": 308
+            },
+            {
+                "percent": "46%",
+                "key": "筑锡码领取率",
+                "surplus": 308
+            },
+            {
+                "percent": "86%",
+                "key": "特种人员证书有效率",
+                "surplus": 308
+            }
+        ],
+        "人员户籍统计": [{
+                "name": "安徽",
+                "count": 1611
+            },
+            {
+                "name": "福建",
+                "count": 10
+            },
+            {
+                "name": "河北",
+                "count": 3397
+            },
+            {
+                "name": "河南",
+                "count": 2069
+            },
+            {
+                "name": "湖北",
+                "count": 511
+            },
+            {
+                "name": "湖南",
+                "count": 185
+            },
+            {
+                "name": "江苏",
+                "count": 15473
+            },
+            {
+                "name": "江西",
+                "count": 96
+            },
+            {
+                "name": "山东",
+                "count": 651
+            },
+            {
+                "name": "山西",
+                "count": 109
+            },
+            {
+                "name": "陕西",
+                "count": 285
+            },
+            {
+                "name": "上海",
+                "count": 5
+            },
+            {
+                "name": "四川",
+                "count": 975
+            },
+            {
+                "name": "浙江",
+                "count": 15
+            }
+        ],
+        "劳务人员工种": [{
+                "name": "安装工",
+                "count": 1757
+            },
+            {
+                "name": "保安",
+                "count": 7
+            },
+            {
+                "name": "防水工",
+                "count": 149
+            },
+            {
+                "name": "分包管理人员",
+                "count": 1
+            },
+            {
+                "name": "钢筋工",
+                "count": 4581
+            },
+            {
+                "name": "高处作业吊篮安装拆卸工",
+                "count": 1
+            },
+            {
+                "name": "混凝土工",
+                "count": 901
+            },
+            {
+                "name": "机械司机",
+                "count": 1
+            },
+            {
+                "name": "架子工",
+                "count": 1
+            },
+            {
+                "name": "建筑电工",
+                "count": 72
+            },
+            {
+                "name": "建筑电焊工",
+                "count": 32
+            },
+            {
+                "name": "建筑架子工",
+                "count": 126
+            },
+            {
+                "name": "建筑起重机械安装拆卸工",
+                "count": 1
+            },
+            {
+                "name": "建筑起重机械司机",
+                "count": 171
+            },
+            {
+                "name": "建筑起重信号司索工",
+                "count": 132
+            },
+            {
+                "name": "建筑施工现场场内机动车司机",
+                "count": 33
+            },
+            {
+                "name": "门卫",
+                "count": 21
+            },
+            {
+                "name": "模板工",
+                "count": 193
+            }
+        ],
+        "设备监测统计": {
+            "devicecount": 41,
+            "washcount": 1,
+            "airtightcount": 0,
+            "soiltightcount": 0,
+            "fogcount": 9,
+            "totalcount": 48
+        },
+        "环境告警统计": [{
+                "index": 0,
+                "pmcount": 57,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 57
+            },
+            {
+                "index": 1,
+                "pmcount": 451,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 451
+            },
+            {
+                "index": 2,
+                "pmcount": 1579,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 1579
+            },
+            {
+                "index": 3,
+                "pmcount": 7221,
+                "washcount": 529,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 7750
+            }
+        ],
+        "扬尘PM10实时监测": [{
+                "siteshortname": "高盐废水处理工程",
+                "pm10": 48,
+                "updatetime": "2021-10-29 13:21:52",
+                "status": 1,
+                "sitelng": 119.511682,
+                "sitelat": 34.623357
+            },
+            {
+                "siteshortname": "第二水厂三期",
+                "pm10": 46,
+                "updatetime": "2021-10-29 13:21:52",
+                "status": 1,
+                "sitelng": 119.567474,
+                "sitelat": 34.537416
+            },
+            {
+                "siteshortname": "国网农电项目",
+                "pm10": 54.2,
+                "updatetime": "2021-10-29 13:16:15",
+                "status": 1,
+                "sitelng": 119.23991,
+                "sitelat": 34.62738
+            },
+            {
+                "siteshortname": "第一医院锡山区",
+                "pm10": 70.8,
+                "updatetime": "2021-10-29 13:21:17",
+                "status": 1,
+                "sitelng": 119.25608,
+                "sitelat": 34.697178
+            },
+            {
+                "siteshortname": "大浦污水处理厂",
+                "pm10": 10,
+                "updatetime": "2021-06-24 06:10:53",
+                "status": 0,
+                "sitelng": 119.188833,
+                "sitelat": 34.653122
+            },
+            {
+                "siteshortname": "港馨花园二期B区",
+                "pm10": 44.3,
+                "updatetime": "2021-10-29 13:20:51",
+                "status": 1,
+                "sitelng": 119.249962,
+                "sitelat": 34.684403
+            },
+            {
+                "siteshortname": "康泰学府小区",
+                "pm10": 0,
+                "updatetime": "2021-10-29 13:21:07",
+                "status": 1,
+                "sitelng": 118.756931,
+                "sitelat": 34.557122
+            },
+            {
+                "siteshortname": "渔湾游客中心",
+                "pm10": 38.9,
+                "updatetime": "2021-10-29 13:21:45",
+                "status": 1,
+                "sitelng": 119.343244,
+                "sitelat": 34.64593
+            },
+            {
+                "siteshortname": "瀛洲幸福里",
+                "pm10": 0,
+                "updatetime": null,
+                "status": 0,
+                "sitelng": 119.162508,
+                "sitelat": 34.601406
+            },
+            {
+                "siteshortname": "信榆国际",
+                "pm10": 55.4,
+                "updatetime": "2021-10-29 13:15:22",
+                "status": 1,
+                "sitelng": 119.131117,
+                "sitelat": 34.84166
+            },
+            {
+                "siteshortname": "同天国宾府",
+                "pm10": 42,
+                "updatetime": "2021-10-29 13:21:23",
+                "status": 1,
+                "sitelng": 119.364906,
+                "sitelat": 34.100303
+            },
+            {
+                "siteshortname": "书香世家",
+                "pm10": 40,
+                "updatetime": "2021-10-29 13:21:25",
+                "status": 1,
+                "sitelng": 119.376305,
+                "sitelat": 34.093769
+            },
+            {
+                "siteshortname": "十里桃源花园",
+                "pm10": 38,
+                "updatetime": "2021-10-29 13:21:18",
+                "status": 1,
+                "sitelng": 119.356064,
+                "sitelat": 34.108291
+            },
+            {
+                "siteshortname": "凤鸣府",
+                "pm10": 38,
+                "updatetime": "2021-10-29 13:21:20",
+                "status": 1,
+                "sitelng": 119.365409,
+                "sitelat": 34.100742
+            },
+            {
+                "siteshortname": "壹号院",
+                "pm10": 13,
+                "updatetime": "2021-10-29 13:21:31",
+                "status": 1,
+                "sitelng": 119.376498,
+                "sitelat": 34.111695
+            },
+            {
+                "siteshortname": "妇幼保健院",
+                "pm10": 63,
+                "updatetime": "2021-10-29 13:21:20",
+                "status": 1,
+                "sitelng": 119.29601,
+                "sitelat": 34.28542
+            },
+            {
+                "siteshortname": "浦南污水处理厂",
+                "pm10": 64.7,
+                "updatetime": "2021-10-29 13:21:10",
+                "status": 1,
+                "sitelng": 119.124545,
+                "sitelat": 34.610932
+            },
+            {
+                "siteshortname": "云湖社区邻里",
+                "pm10": 26,
+                "updatetime": "2021-10-29 12:36:14",
+                "status": 0,
+                "sitelng": 119.513919,
+                "sitelat": 34.623476
+            },
+            {
+                "siteshortname": "干散货输送栈桥",
+                "pm10": 26.2,
+                "updatetime": "2021-10-29 08:02:18",
+                "status": 0,
+                "sitelng": 119.563009,
+                "sitelat": 34.614044
+            },
+            {
+                "siteshortname": "应急救援中心二期",
+                "pm10": 7.8,
+                "updatetime": "2021-10-14 07:00:50",
+                "status": 0,
+                "sitelng": 119.45965,
+                "sitelat": 34.316466
+            },
+            {
+                "siteshortname": "灌南职业高级中学",
+                "pm10": 61,
+                "updatetime": "2021-10-29 13:21:29",
+                "status": 1,
+                "sitelng": 119.329905,
+                "sitelat": 34.092303
+            },
+            {
+                "siteshortname": "凤凰城二期",
+                "pm10": 40,
+                "updatetime": "2021-09-09 06:54:09",
+                "status": 0,
+                "sitelng": 119.338358,
+                "sitelat": 34.093582
+            },
+            {
+                "siteshortname": "水木芳华苑",
+                "pm10": 105.8,
+                "updatetime": "2021-10-29 13:20:58",
+                "status": 1,
+                "sitelng": 119.162792,
+                "sitelat": 34.583405
+            },
+            {
+                "siteshortname": "盛虹云海湾一期",
+                "pm10": 0,
+                "updatetime": null,
+                "status": -1,
+                "sitelng": 119.511682,
+                "sitelat": 34.623357
+            },
+            {
+                "siteshortname": "新海岸·熙墅湾",
+                "pm10": 0,
+                "updatetime": null,
+                "status": -1,
+                "sitelng": 119.347469,
+                "sitelat": 34.764858
+            },
+            {
+                "siteshortname": "尚都天璞",
+                "pm10": 0,
+                "updatetime": null,
+                "status": -1,
+                "sitelng": 119.139278,
+                "sitelat": 34.860892
+            },
+            {
+                "siteshortname": "和悦府",
+                "pm10": 0,
+                "updatetime": null,
+                "status": -1,
+                "sitelng": 119.133581,
+                "sitelat": 34.855307
+            },
+            {
+                "siteshortname": "农发集团服务中心",
+                "pm10": 0,
+                "updatetime": null,
+                "status": 0,
+                "sitelng": 119.223073,
+                "sitelat": 34.634725
+            },
+            {
+                "siteshortname": "叶海华庭一期",
+                "pm10": 0,
+                "updatetime": null,
+                "status": 0,
+                "sitelng": 119.154521,
+                "sitelat": 34.609644
+            },
+            {
+                "siteshortname": "伊山名府",
+                "pm10": 62,
+                "updatetime": "2021-10-29 13:21:43",
+                "status": 1,
+                "sitelng": 119.230981,
+                "sitelat": 34.324659
+            },
+            {
+                "siteshortname": "金海梧桐苑",
+                "pm10": 113,
+                "updatetime": "2021-10-29 13:21:07",
+                "status": 1,
+                "sitelng": 119.234927,
+                "sitelat": 34.587904
+            },
+            {
+                "siteshortname": "时光印象苑",
+                "pm10": 118.4,
+                "updatetime": "2021-10-29 13:21:14",
+                "status": 1,
+                "sitelng": 119.158438,
+                "sitelat": 34.602817
+            },
+            {
+                "siteshortname": "云台山第二标段",
+                "pm10": 38.1,
+                "updatetime": "2021-10-29 13:21:04",
+                "status": 1,
+                "sitelng": 119.244559,
+                "sitelat": 34.608767
+            },
+            {
+                "siteshortname": "上城福园",
+                "pm10": 49,
+                "updatetime": "2021-10-29 13:21:04",
+                "status": 1,
+                "sitelng": 119.328708,
+                "sitelat": 34.107854
+            },
+            {
+                "siteshortname": "天樾府南苑",
+                "pm10": 0,
+                "updatetime": null,
+                "status": -1,
+                "sitelng": 119.164083,
+                "sitelat": 34.845489
+            },
+            {
+                "siteshortname": "上城雅苑",
+                "pm10": 10,
+                "updatetime": "2021-10-29 13:21:34",
+                "status": 1,
+                "sitelng": 119.270602,
+                "sitelat": 34.307553
+            },
+            {
+                "siteshortname": "凤凰国际创客空间一标段",
+                "pm10": 0,
+                "updatetime": null,
+                "status": -1,
+                "sitelng": 119.227728,
+                "sitelat": 34.590075
+            },
+            {
+                "siteshortname": "凤凰国际创客空间二标段",
+                "pm10": 0,
+                "updatetime": null,
+                "status": 0,
+                "sitelng": 119.224979,
+                "sitelat": 34.594622
+            },
+            {
+                "siteshortname": "苏海听涛苑二期",
+                "pm10": 70.2,
+                "updatetime": "2021-10-29 13:16:39",
+                "status": 1,
+                "sitelng": 119.148834,
+                "sitelat": 34.854038
+            },
+            {
+                "siteshortname": "高效低碳燃气轮机试验装置",
+                "pm10": 0,
+                "updatetime": null,
+                "status": 0,
+                "sitelng": 119.243728,
+                "sitelat": 34.698858
+            },
+            {
+                "siteshortname": "港馨花园二期A区",
+                "pm10": 12.9,
+                "updatetime": "2021-10-23 01:29:06",
+                "status": 0,
+                "sitelng": 119.249859,
+                "sitelat": 34.684378
+            },
+            {
+                "siteshortname": "赣榆高铁初级中学",
+                "pm10": 0,
+                "updatetime": null,
+                "status": -1,
+                "sitelng": 119.12165,
+                "sitelat": 34.846441
+            },
+            {
+                "siteshortname": "第二人民医院",
+                "pm10": 10.5,
+                "updatetime": "2021-10-23 07:29:52",
+                "status": 0,
+                "sitelng": 119.147432,
+                "sitelat": 34.580105
+            },
+            {
+                "siteshortname": "裕源新村三期",
+                "pm10": 0,
+                "updatetime": null,
+                "status": 0,
+                "sitelng": 119.246657,
+                "sitelat": 34.697868
+            },
+            {
+                "siteshortname": "城投·水晶家苑",
+                "pm10": 7.3,
+                "updatetime": "2021-10-29 13:21:08",
+                "status": 1,
+                "sitelng": 118.745882,
+                "sitelat": 34.549693
+            },
+            {
+                "siteshortname": "珑樾府",
+                "pm10": 0,
+                "updatetime": null,
+                "status": 0,
+                "sitelng": 119.193989,
+                "sitelat": 34.595123
+            },
+            {
+                "siteshortname": "白虎山综合商品城",
+                "pm10": 0,
+                "updatetime": null,
+                "status": 0,
+                "sitelng": 119.147695,
+                "sitelat": 34.582605
+            },
+            {
+                "siteshortname": "晶祥苑二期",
+                "pm10": 0,
+                "updatetime": "2021-10-29 13:21:04",
+                "status": 1,
+                "sitelng": 118.771508,
+                "sitelat": 34.517441
+            }
+        ],
+        "环境监测告警统计": [{
+                "name": "惠山区",
+                "lnglat": "118.97045|34.887013",
+                "pmcount": 161,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 161
+            },
+            {
+                "name": "梁山区",
+                "lnglat": "119.491736|34.184998",
+                "pmcount": 128,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 128
+            },
+            {
+                "name": "锡山区",
+                "lnglat": "119.247589|34.699241",
+                "pmcount": 95,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 95
+            },
+            {
+                "name": "新吴区",
+                "lnglat": "119.579845|34.554947",
+                "pmcount": 48,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 48
+            },
+            {
+                "name": "滨湖区",
+                "lnglat": "119.489437|34.353492",
+                "pmcount": 18,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 18
+            },
+            {
+                "name": "江阴市",
+                "lnglat": "119.170269|34.57698",
+                "pmcount": 12,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 12
+            },
+            {
+                "name": "宜兴市",
+                "lnglat": "118.756402|34.548394",
+                "pmcount": 0,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 0
+            },
+            {
+                "name": "无锡市",
+                "lnglat": "119.44819|34.675681",
+                "pmcount": 0,
+                "washcount": 0,
+                "solicount": 0,
+                "airtightcount": 0,
+                "totalcount": 0
+            }
+        ],
+        "扬尘实时数据排行": [{
+                "name": "锡山区",
+                "pm10": 105.4,
+                "onper": 28.57
+            },
+            {
+                "name": "江阴市",
+                "pm10": 80.1,
+                "onper": 46.15
+            },
+            {
+                "name": "滨湖区",
+                "pm10": 76.4,
+                "onper": 100
+            },
+            {
+                "name": "梁山区",
+                "pm10": 41.13,
+                "onper": 88.89
+            },
+            {
+                "name": "新吴区",
+                "pm10": 38.33,
+                "onper": 60
+            },
+            {
+                "name": "宜兴市",
+                "pm10": 4.7,
+                "onper": 100
+            },
+            {
+                "name": "惠山区",
+                "pm10": -1,
+                "onper": 0
+            },
+            {
+                "name": "无锡市",
+                "pm10": -1,
+                "onper": 0
+            }
+        ],
+        "扬尘小时均值排行": [{
+                "name": "锡山区",
+                "pm10": 85.8,
+                "date": "13时"
+            },
+            {
+                "name": "滨湖区",
+                "pm10": 72.15,
+                "date": "13时"
+            },
+            {
+                "name": "江阴市",
+                "pm10": 67.85,
+                "date": "13时"
+            },
+            {
+                "name": "新吴区",
+                "pm10": 41.23,
+                "date": "13时"
+            },
+            {
+                "name": "梁山区",
+                "pm10": 34.99,
+                "date": "13时"
+            },
+            {
+                "name": "宜兴市",
+                "pm10": 8.1,
+                "date": "13时"
+            },
+            {
+                "name": "惠山区",
+                "pm10": -1,
+                "date": "13时"
+            },
+            {
+                "name": "无锡市",
+                "pm10": -1,
+                "date": "13时"
+            }
+        ],
+        "扬尘日均值排行": [{
+                "name": "滨湖区",
+                "pm10": 55.75,
+                "date": "10-28"
+            },
+            {
+                "name": "江阴市",
+                "pm10": 53.12,
+                "date": "10-28"
+            },
+            {
+                "name": "锡山区",
+                "pm10": 44.2,
+                "date": "10-28"
+            },
+            {
+                "name": "梁山区",
+                "pm10": 41.45,
+                "date": "10-28"
+            },
+            {
+                "name": "新吴区",
+                "pm10": 35.03,
+                "date": "10-28"
+            },
+            {
+                "name": "宜兴市",
+                "pm10": 5.9,
+                "date": "10-28"
+            },
+            {
+                "name": "惠山区",
+                "pm10": -1,
+                "date": "10-28"
+            },
+            {
+                "name": "无锡市",
+                "pm10": -1,
+                "date": "10-28"
+            }
+        ],
+        "特种设备统计": [{
+                "name": "无锡市",
+                "lnglat": "119.247589|34.699241",
+                "GROUPID": 21,
+                "cranecount": 16,
+                "liftcount": 50,
+                "unloadcount": 10,
+                "deepcount": 0,
+                "hfcount": 0,
+                "totalcount": 76,
+                "sitecount": 7,
+                "craneoncount": 14,
+                "liftoncount": 43,
+                "unloadoncount": 10,
+                "deeponcount": 0,
+                "hfoncount": 0,
+                "craneonpercent": 87.5,
+                "liftonpercent": 86,
+                "unloadonpercent": 100,
+                "deeponpercent": 0,
+                "hfwonpercent": 0
+            },
+            {
+                "name": "惠山区",
+                "lnglat": "119.170269|34.57698",
+                "GROUPID": 14,
+                "cranecount": 23,
+                "liftcount": 6,
+                "unloadcount": 4,
+                "deepcount": 0,
+                "hfcount": 0,
+                "totalcount": 33,
+                "sitecount": 14,
+                "craneoncount": 18,
+                "liftoncount": 5,
+                "unloadoncount": 4,
+                "deeponcount": 0,
+                "hfoncount": 0,
+                "craneonpercent": 78.26,
+                "liftonpercent": 83.33,
+                "unloadonpercent": 100,
+                "deeponpercent": 0,
+                "hfwonpercent": 0
+            },
+            {
+                "name": "宜兴市",
+                "lnglat": "118.756402|34.548394",
+                "GROUPID": 18,
+                "cranecount": 13,
+                "liftcount": 11,
+                "unloadcount": 7,
+                "deepcount": 0,
+                "hfcount": 0,
+                "totalcount": 31,
+                "sitecount": 4,
+                "craneoncount": 9,
+                "liftoncount": 7,
+                "unloadoncount": 4,
+                "deeponcount": 0,
+                "hfoncount": 0,
+                "craneonpercent": 69.23,
+                "liftonpercent": 63.64,
+                "unloadonpercent": 57.14,
+                "deeponpercent": 0,
+                "hfwonpercent": 0
+            },
+            {
+                "name": "新吴区",
+                "lnglat": "118.97045|34.887013",
+                "GROUPID": 16,
+                "cranecount": 15,
+                "liftcount": 8,
+                "unloadcount": 7,
+                "deepcount": 0,
+                "hfcount": 0,
+                "totalcount": 30,
+                "sitecount": 6,
+                "craneoncount": 13,
+                "liftoncount": 7,
+                "unloadoncount": 4,
+                "deeponcount": 0,
+                "hfoncount": 0,
+                "craneonpercent": 86.67,
+                "liftonpercent": 87.5,
+                "unloadonpercent": 57.14,
+                "deeponpercent": 0,
+                "hfwonpercent": 0
+            },
+            {
+                "name": "梁山区",
+                "lnglat": "119.491736|34.184998",
+                "GROUPID": 19,
+                "cranecount": 21,
+                "liftcount": 5,
+                "unloadcount": 2,
+                "deepcount": 0,
+                "hfcount": 0,
+                "totalcount": 28,
+                "sitecount": 9,
+                "craneoncount": 10,
+                "liftoncount": 5,
+                "unloadoncount": 1,
+                "deeponcount": 0,
+                "hfoncount": 0,
+                "craneonpercent": 47.62,
+                "liftonpercent": 100,
+                "unloadonpercent": 50,
+                "deeponpercent": 0,
+                "hfwonpercent": 0
+            },
+            {
+                "name": "锡山区",
+                "lnglat": "119.489437|34.353492",
+                "GROUPID": 17,
+                "cranecount": 15,
+                "liftcount": 0,
+                "unloadcount": 5,
+                "deepcount": 0,
+                "hfcount": 0,
+                "totalcount": 20,
+                "sitecount": 2,
+                "craneoncount": 10,
+                "liftoncount": 0,
+                "unloadoncount": 0,
+                "deeponcount": 0,
+                "hfoncount": 0,
+                "craneonpercent": 66.67,
+                "liftonpercent": 0,
+                "unloadonpercent": 0,
+                "deeponpercent": 0,
+                "hfwonpercent": 0
+            },
+            {
+                "name": "江阴市",
+                "lnglat": "119.579845|34.554947",
+                "GROUPID": 15,
+                "cranecount": 13,
+                "liftcount": 5,
+                "unloadcount": 0,
+                "deepcount": 1,
+                "hfcount": 0,
+                "totalcount": 19,
+                "sitecount": 6,
+                "craneoncount": 6,
+                "liftoncount": 4,
+                "unloadoncount": 0,
+                "deeponcount": 1,
+                "hfoncount": 0,
+                "craneonpercent": 46.15,
+                "liftonpercent": 80,
+                "unloadonpercent": 0,
+                "deeponpercent": 100,
+                "hfwonpercent": 0
+            },
+            {
+                "name": "无锡市",
+                "lnglat": "119.44819|34.675681",
+                "GROUPID": 20,
+                "cranecount": 2,
+                "liftcount": 0,
+                "unloadcount": 0,
+                "deepcount": 0,
+                "hfcount": 0,
+                "totalcount": 2,
+                "sitecount": 1,
+                "craneoncount": 2,
+                "liftoncount": 0,
+                "unloadoncount": 0,
+                "deeponcount": 0,
+                "hfoncount": 0,
+                "craneonpercent": 100,
+                "liftonpercent": 0,
+                "unloadonpercent": 0,
+                "deeponpercent": 0,
+                "hfwonpercent": 0
+            }
+        ],
+        "告警统计": [{
+                "date": "2021-10-23 00:00:00",
+                "cranecount": 89,
+                "liftcount": 3
+            },
+            {
+                "date": "2021-10-24 00:00:00",
+                "cranecount": 32,
+                "liftcount": 3
+            },
+            {
+                "date": "2021-10-25 00:00:00",
+                "cranecount": 81,
+                "liftcount": 4
+            },
+            {
+                "date": "2021-10-26 00:00:00",
+                "cranecount": 174,
+                "liftcount": 13
+            },
+            {
+                "date": "2021-10-27 00:00:00",
+                "cranecount": 103,
+                "liftcount": 20
+            },
+            {
+                "date": "2021-10-28 00:00:00",
+                "cranecount": 161,
+                "liftcount": 29
+            },
+            {
+                "date": "2021-10-29 00:00:00",
+                "cranecount": 147,
+                "liftcount": 26,
+                "unloadcount": 0,
+                "deepcount": 0,
+                "hfcount": 0
+            }
+        ],
+        "告警区域排行": [{
+                "name": "灌南县",
+                "warncount": 641,
+                "closecount": 0
+            },
+            {
+                "name": "灌云县",
+                "warncount": 142,
+                "closecount": 0
+            },
+            {
+                "name": "赣榆区",
+                "warncount": 112,
+                "closecount": 0
+            },
+            {
+                "name": "开发区",
+                "warncount": 59,
+                "closecount": 0
+            },
+            {
+                "name": "东海县",
+                "warncount": 12,
+                "closecount": 0
+            },
+            {
+                "name": "海州区",
+                "warncount": 0,
+                "closecount": 0
+            },
+            {
+                "name": "连云区",
+                "warncount": 0,
+                "closecount": 0
+            },
+            {
+                "name": "徐圩新区",
+                "warncount": 0,
+                "closecount": 0
+            }
+        ],
+        "设备告警排行": [{
+                "cranecount": 858,
+                "liftcount": 108
+            },
+            {
+                "cranecount": 184,
+                "liftcount": 1
+            }
+        ]
+    },
+    "data": [{
+            "GROUPID": 14,
+            "SITEID": 160,
+            "groupshortname": "海州区",
+            "siteshortname": "白虎山综合商品城",
+            "sitename": "海州白虎山综合商品城新建工程项目",
+            "cameracode": "ea041bfce54a45018e803332d1cbdfdc",
+            "cameraname": "车冲"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 160,
+            "groupshortname": "海州区",
+            "siteshortname": "白虎山综合商品城",
+            "sitename": "海州白虎山综合商品城新建工程项目",
+            "cameracode": "9d8432e356424a8aaa860b11d1025aa2",
+            "cameraname": "料场"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 160,
+            "groupshortname": "海州区",
+            "siteshortname": "白虎山综合商品城",
+            "sitename": "海州白虎山综合商品城新建工程项目",
+            "cameracode": "33a1add5f9cc4208b7f1db8c815eb4d3",
+            "cameraname": "塔吊球机"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 160,
+            "groupshortname": "海州区",
+            "siteshortname": "白虎山综合商品城",
+            "sitename": "海州白虎山综合商品城新建工程项目",
+            "cameracode": "560b2eb158e844309d369f2dc3dd7438",
+            "cameraname": "西门实名制通道"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 156,
+            "groupshortname": "海州区",
+            "siteshortname": "第二人民医院",
+            "sitename": "连云港市第二人民医院西院区急危重症救治病房及住院医师规培基地大楼",
+            "cameracode": "b70a1506a1c4482a9b3805b14f9460b0",
+            "cameraname": "大门口"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 156,
+            "groupshortname": "海州区",
+            "siteshortname": "第二人民医院",
+            "sitename": "连云港市第二人民医院西院区急危重症救治病房及住院医师规培基地大楼",
+            "cameracode": "1f6aaf356bb041448f860ef6231af630",
+            "cameraname": "料场"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 156,
+            "groupshortname": "海州区",
+            "siteshortname": "第二人民医院",
+            "sitename": "连云港市第二人民医院西院区急危重症救治病房及住院医师规培基地大楼",
+            "cameracode": "84d3d7d71d944d72823e2d8f6fb954b1",
+            "cameraname": "实名制"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 156,
+            "groupshortname": "海州区",
+            "siteshortname": "第二人民医院",
+            "sitename": "连云港市第二人民医院西院区急危重症救治病房及住院医师规培基地大楼",
+            "cameracode": "b7e602295ff642b68b478092e6013da8",
+            "cameraname": "扬尘"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 148,
+            "groupshortname": "海州区",
+            "siteshortname": "凤凰国际创客空间二标段",
+            "sitename": "运通·凤凰国际创客空间1#、6#楼及地下室二标段工程",
+            "cameracode": "57eb87fcb46b479abe7b71c93c62f723",
+            "cameraname": "车冲"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 148,
+            "groupshortname": "海州区",
+            "siteshortname": "凤凰国际创客空间二标段",
+            "sitename": "运通·凤凰国际创客空间1#、6#楼及地下室二标段工程",
+            "cameracode": "dd50a7fea62a436493e16329accadf14",
+            "cameraname": "料场"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 148,
+            "groupshortname": "海州区",
+            "siteshortname": "凤凰国际创客空间二标段",
+            "sitename": "运通·凤凰国际创客空间1#、6#楼及地下室二标段工程",
+            "cameracode": "1891e43b353a448b9e47bb2513186026",
+            "cameraname": "施工平面"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 148,
+            "groupshortname": "海州区",
+            "siteshortname": "凤凰国际创客空间二标段",
+            "sitename": "运通·凤凰国际创客空间1#、6#楼及地下室二标段工程",
+            "cameracode": "f60542fd699f43728183a15578db5a40",
+            "cameraname": "实名同道"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 147,
+            "groupshortname": "海州区",
+            "siteshortname": "凤凰国际创客空间一标段",
+            "sitename": "运通·凤凰国际创客空间2#、3#、7#～9#楼及地下室一标段工程",
+            "cameracode": "e578a01cb60f4635acd2e5db8332206f",
+            "cameraname": "车冲"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 147,
+            "groupshortname": "海州区",
+            "siteshortname": "凤凰国际创客空间一标段",
+            "sitename": "运通·凤凰国际创客空间2#、3#、7#～9#楼及地下室一标段工程",
+            "cameracode": "a6114556621049958471b3453b73ce05",
+            "cameraname": "实名"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 147,
+            "groupshortname": "海州区",
+            "siteshortname": "凤凰国际创客空间一标段",
+            "sitename": "运通·凤凰国际创客空间2#、3#、7#～9#楼及地下室一标段工程",
+            "cameracode": "959581ce28374e22baba79ffa4e287b3",
+            "cameraname": "制高点"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 141,
+            "groupshortname": "海州区",
+            "siteshortname": "金海梧桐苑",
+            "sitename": "金海梧桐苑1#~3#楼，5#~11#楼，地下车库",
+            "cameracode": "cf0577484a114981a20f9e3747452158",
+            "cameraname": "车辆冲洗处"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 141,
+            "groupshortname": "海州区",
+            "siteshortname": "金海梧桐苑",
+            "sitename": "金海梧桐苑1#~3#楼，5#~11#楼，地下车库",
+            "cameracode": "7d9f9868f95542a791ed96e2c6f6a0d9",
+            "cameraname": "实名制监控点"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 141,
+            "groupshortname": "海州区",
+            "siteshortname": "金海梧桐苑",
+            "sitename": "金海梧桐苑1#~3#楼，5#~11#楼，地下车库",
+            "cameracode": "dd934516d0a747bda90d55b24065bfac",
+            "cameraname": "扬尘料场"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 141,
+            "groupshortname": "海州区",
+            "siteshortname": "金海梧桐苑",
+            "sitename": "金海梧桐苑1#~3#楼，5#~11#楼，地下车库",
+            "cameracode": "76354af6482b4582b1dcf5bd43797e47",
+            "cameraname": "制高点"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 159,
+            "groupshortname": "海州区",
+            "siteshortname": "珑樾府",
+            "sitename": "珑樾府1-7#楼及地下室工程",
+            "cameracode": "d6c4fbdaf21c4aa4b5555f6cc325975d",
+            "cameraname": "车冲"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 159,
+            "groupshortname": "海州区",
+            "siteshortname": "珑樾府",
+            "sitename": "珑樾府1-7#楼及地下室工程",
+            "cameracode": "8c8bfa92a51f41b4991c328fd1a2dbbc",
+            "cameraname": "大门口"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 159,
+            "groupshortname": "海州区",
+            "siteshortname": "珑樾府",
+            "sitename": "珑樾府1-7#楼及地下室工程",
+            "cameracode": "1cb2e82f1e824feca6bfcd778fc047d8",
+            "cameraname": "实名制"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 159,
+            "groupshortname": "海州区",
+            "siteshortname": "珑樾府",
+            "sitename": "珑樾府1-7#楼及地下室工程",
+            "cameracode": "757974e0d8a74e00bacd251041a02912",
+            "cameraname": "物料堆积"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 159,
+            "groupshortname": "海州区",
+            "siteshortname": "珑樾府",
+            "sitename": "珑樾府1-7#楼及地下室工程",
+            "cameracode": "a1d0b6ac44294b53bbf0c5c531dc7749",
+            "cameraname": "制高点"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 159,
+            "groupshortname": "海州区",
+            "siteshortname": "珑樾府",
+            "sitename": "珑樾府1-7#楼及地下室工程",
+            "cameracode": "39301fc421c946ebaf3cea258fde01d9",
+            "cameraname": "作业面"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 159,
+            "groupshortname": "海州区",
+            "siteshortname": "珑樾府",
+            "sitename": "珑樾府1-7#楼及地下室工程",
+            "cameracode": "3211bdbf0ca34505974f2a1f8a80b0d6",
+            "cameraname": "作业面"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 123,
+            "groupshortname": "海州区",
+            "siteshortname": "农发集团服务中心",
+            "sitename": "连云港农发集团服务中心",
+            "cameracode": "cdf52998aee84f0eb745bd4e060cd291",
+            "cameraname": "大门内"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 123,
+            "groupshortname": "海州区",
+            "siteshortname": "农发集团服务中心",
+            "sitename": "连云港农发集团服务中心",
+            "cameracode": "501e8821cbe045ea9a0f07dd0547b30f",
+            "cameraname": "大门外"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 123,
+            "groupshortname": "海州区",
+            "siteshortname": "农发集团服务中心",
+            "sitename": "连云港农发集团服务中心",
+            "cameracode": "df2dfb8da3144bbfba31f50588e2b2b3",
+            "cameraname": "东北角"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 123,
+            "groupshortname": "海州区",
+            "siteshortname": "农发集团服务中心",
+            "sitename": "连云港农发集团服务中心",
+            "cameracode": "d54455b61c9043c99deb3bb73ac86450",
+            "cameraname": "南塔吊"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 103,
+            "groupshortname": "海州区",
+            "siteshortname": "浦南污水处理厂",
+            "sitename": "浦南污水处理厂二期扩建工程",
+            "cameracode": "952ae6ddebcf4369839220e95d8b491c",
+            "cameraname": "仓库料场"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 103,
+            "groupshortname": "海州区",
+            "siteshortname": "浦南污水处理厂",
+            "sitename": "浦南污水处理厂二期扩建工程",
+            "cameracode": "35468ee25dc54166a9b9c85bbf007b5e",
+            "cameraname": "车辆冲洗"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 103,
+            "groupshortname": "海州区",
+            "siteshortname": "浦南污水处理厂",
+            "sitename": "浦南污水处理厂二期扩建工程",
+            "cameracode": "91b604cf6e764ae5a090417be11d5161",
+            "cameraname": "考勤机"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 103,
+            "groupshortname": "海州区",
+            "siteshortname": "浦南污水处理厂",
+            "sitename": "浦南污水处理厂二期扩建工程",
+            "cameracode": "2c3a7f26af3747f2841740f5bb9e531c",
+            "cameraname": "球机"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 142,
+            "groupshortname": "海州区",
+            "siteshortname": "时光印象苑",
+            "sitename": "时光印象苑1-10#楼",
+            "cameracode": "b626a8acec95416995118f340f6d0848",
+            "cameraname": "连云港保利车冲"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 142,
+            "groupshortname": "海州区",
+            "siteshortname": "时光印象苑",
+            "sitename": "时光印象苑1-10#楼",
+            "cameracode": "120ce93fd1b04047b9d07fa809c1840c",
+            "cameraname": "连云港保利料场"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 142,
+            "groupshortname": "海州区",
+            "siteshortname": "时光印象苑",
+            "sitename": "时光印象苑1-10#楼",
+            "cameracode": "32c90e4cdb0649479913c6bd609bc628",
+            "cameraname": "连云港保利门口"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 142,
+            "groupshortname": "海州区",
+            "siteshortname": "时光印象苑",
+            "sitename": "时光印象苑1-10#楼",
+            "cameracode": "3f55a9931ac24315bcfa551fbbbc2083",
+            "cameraname": "连云港保利实名视频"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 110,
+            "groupshortname": "海州区",
+            "siteshortname": "水木芳华苑",
+            "sitename": "水木芳华苑1#—9#楼、地下室",
+            "cameracode": "062317b3b6554aa880ece27aee849629",
+            "cameraname": "料场"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 110,
+            "groupshortname": "海州区",
+            "siteshortname": "水木芳华苑",
+            "sitename": "水木芳华苑1#—9#楼、地下室",
+            "cameracode": "061ad1a4886a4491a4254996b5343add",
+            "cameraname": "扬尘视频"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 110,
+            "groupshortname": "海州区",
+            "siteshortname": "水木芳华苑",
+            "sitename": "水木芳华苑1#—9#楼、地下室",
+            "cameracode": "cfad840df86d4517859b726ced6185d1",
+            "cameraname": "制高点东"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 110,
+            "groupshortname": "海州区",
+            "siteshortname": "水木芳华苑",
+            "sitename": "水木芳华苑1#—9#楼、地下室",
+            "cameracode": "a6056fe0700d4c0b8d103704391dd6dc",
+            "cameraname": "制高点西"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 129,
+            "groupshortname": "海州区",
+            "siteshortname": "叶海华庭一期",
+            "sitename": "叶海华庭（一期）S1#、1#-10#、1-4#配电房、1#水泵房、1#开闭所及地",
+            "cameracode": "7b4c4b79c2744d82ae614fbbad0953b6",
+            "cameraname": "工地外围2"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 129,
+            "groupshortname": "海州区",
+            "siteshortname": "叶海华庭一期",
+            "sitename": "叶海华庭（一期）S1#、1#-10#、1-4#配电房、1#水泵房、1#开闭所及地",
+            "cameracode": "c8edd8daeb8b433f9bb38323d5d50e99",
+            "cameraname": "料场"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 129,
+            "groupshortname": "海州区",
+            "siteshortname": "叶海华庭一期",
+            "sitename": "叶海华庭（一期）S1#、1#-10#、1-4#配电房、1#水泵房、1#开闭所及地",
+            "cameracode": "957d810dc96948e69b2876475cb70916",
+            "cameraname": "球机"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 88,
+            "groupshortname": "海州区",
+            "siteshortname": "瀛洲幸福里",
+            "sitename": "瀛洲幸福里（1#-9#楼、幼儿园、地下车库）",
+            "cameracode": "8006ba3744ee4094b9828a4b53bbd544",
+            "cameraname": "出入口枪机"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 88,
+            "groupshortname": "海州区",
+            "siteshortname": "瀛洲幸福里",
+            "sitename": "瀛洲幸福里（1#-9#楼、幼儿园、地下车库）",
+            "cameracode": "eff9829c3cdc43a7a045788cfa22cc97",
+            "cameraname": "堆料区枪机"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 88,
+            "groupshortname": "海州区",
+            "siteshortname": "瀛洲幸福里",
+            "sitename": "瀛洲幸福里（1#-9#楼、幼儿园、地下车库）",
+            "cameracode": "afb936d024dd45e78df64af8a52f06c9",
+            "cameraname": "洗车台枪机"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 88,
+            "groupshortname": "海州区",
+            "siteshortname": "瀛洲幸福里",
+            "sitename": "瀛洲幸福里（1#-9#楼、幼儿园、地下车库）",
+            "cameracode": "e9c06ed7a95248189e401169323f62ed",
+            "cameraname": "制高点球机"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 87,
+            "groupshortname": "海州区",
+            "siteshortname": "渔湾游客中心",
+            "sitename": "大花果山景区渔湾游客中心工程总承包（EPC）",
+            "cameracode": "c460566539b344fea8a4e9d1ef56f950",
+            "cameraname": "大门口枪机"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 87,
+            "groupshortname": "海州区",
+            "siteshortname": "渔湾游客中心",
+            "sitename": "大花果山景区渔湾游客中心工程总承包（EPC）",
+            "cameracode": "138020a0b96540738d92aff5ec936804",
+            "cameraname": "洗车台"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 87,
+            "groupshortname": "海州区",
+            "siteshortname": "渔湾游客中心",
+            "sitename": "大花果山景区渔湾游客中心工程总承包（EPC）",
+            "cameracode": "27df5c68a07d44a9a21563286c03617c",
+            "cameraname": "制高点"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 143,
+            "groupshortname": "海州区",
+            "siteshortname": "云台山第二标段",
+            "sitename": "云台山第花园工程项目二标段建设工程",
+            "cameracode": "032b1c2173c24249aa0ffd1e0a297b2a",
+            "cameraname": "1号吊钩"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 143,
+            "groupshortname": "海州区",
+            "siteshortname": "云台山第二标段",
+            "sitename": "云台山第花园工程项目二标段建设工程",
+            "cameracode": "1a5f68b97ea64d6b9f5244d40d17183a",
+            "cameraname": "大门"
+        },
+        {
+            "GROUPID": 14,
+            "SITEID": 143,
+            "groupshortname": "海州区",
+            "siteshortname": "云台山第二标段",
+            "sitename": "云台山第花园工程项目二标段建设工程",
+            "cameracode": "8835144e06164e468e049deb9c3558e8",
+            "cameraname": "项目部"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 82,
+            "groupshortname": "开发区",
+            "siteshortname": "第一医院开发区",
+            "sitename": "连云港市第一人民医院开发区院区工程",
+            "cameracode": "902845d3fd2f4c0795d74ac933392240",
+            "cameraname": "1号门内"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 82,
+            "groupshortname": "开发区",
+            "siteshortname": "第一医院开发区",
+            "sitename": "连云港市第一人民医院开发区院区工程",
+            "cameracode": "b680a5db0b964dc9a46f1f14f68c67b3",
+            "cameraname": "2号门外"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 82,
+            "groupshortname": "开发区",
+            "siteshortname": "第一医院开发区",
+            "sitename": "连云港市第一人民医院开发区院区工程",
+            "cameracode": "3accbca15e3a4fb4b828da9bbe164676",
+            "cameraname": "3号门外"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 82,
+            "groupshortname": "开发区",
+            "siteshortname": "第一医院开发区",
+            "sitename": "连云港市第一人民医院开发区院区工程",
+            "cameracode": "6976be198534443ab373146f4fb3dd18",
+            "cameraname": "5号塔吊制高点"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 82,
+            "groupshortname": "开发区",
+            "siteshortname": "第一医院开发区",
+            "sitename": "连云港市第一人民医院开发区院区工程",
+            "cameracode": "fe30f4b051584043af2bc6592a2d69a2",
+            "cameraname": "车冲"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 82,
+            "groupshortname": "开发区",
+            "siteshortname": "第一医院开发区",
+            "sitename": "连云港市第一人民医院开发区院区工程",
+            "cameracode": "b334835773f7413a824d9c5d7f298987",
+            "cameraname": "实名制通道"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 82,
+            "groupshortname": "开发区",
+            "siteshortname": "第一医院开发区",
+            "sitename": "连云港市第一人民医院开发区院区工程",
+            "cameracode": "3cd65ef119be4a03a2e3e28cf8b776d3",
+            "cameraname": "物料堆放"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 151,
+            "groupshortname": "开发区",
+            "siteshortname": "港馨花园二期A区",
+            "sitename": "港馨花园二期A区1#-6#楼、9#-11#楼、地下车库、综合楼",
+            "cameracode": "8601ba15fd274f508d5b1366c31e120b",
+            "cameraname": "车辆冲洗台"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 151,
+            "groupshortname": "开发区",
+            "siteshortname": "港馨花园二期A区",
+            "sitename": "港馨花园二期A区1#-6#楼、9#-11#楼、地下车库、综合楼",
+            "cameracode": "4cadf87eec3849599ff4df78af781d0b",
+            "cameraname": "大门口"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 151,
+            "groupshortname": "开发区",
+            "siteshortname": "港馨花园二期A区",
+            "sitename": "港馨花园二期A区1#-6#楼、9#-11#楼、地下车库、综合楼",
+            "cameracode": "85ebbe7920bc4fb5a5dce70687a3228e",
+            "cameraname": "生活区"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 151,
+            "groupshortname": "开发区",
+            "siteshortname": "港馨花园二期A区",
+            "sitename": "港馨花园二期A区1#-6#楼、9#-11#楼、地下车库、综合楼",
+            "cameracode": "c748ed4ec1c547109c55c54faab9a7eb",
+            "cameraname": "塔吊"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 151,
+            "groupshortname": "开发区",
+            "siteshortname": "港馨花园二期A区",
+            "sitename": "港馨花园二期A区1#-6#楼、9#-11#楼、地下车库、综合楼",
+            "cameracode": "e929c8995e17457b922244da1466c5d2",
+            "cameraname": "物料堆放"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 84,
+            "groupshortname": "开发区",
+            "siteshortname": "港馨花园二期B区",
+            "sitename": "港馨花园二期B区工程",
+            "cameracode": "0a36dcd120894c9c9b859c1e573a1f09",
+            "cameraname": "东门"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 84,
+            "groupshortname": "开发区",
+            "siteshortname": "港馨花园二期B区",
+            "sitename": "港馨花园二期B区工程",
+            "cameracode": "3a3e9d1834aa4df391821fb521bc8616",
+            "cameraname": "塔吊"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 84,
+            "groupshortname": "开发区",
+            "siteshortname": "港馨花园二期B区",
+            "sitename": "港馨花园二期B区工程",
+            "cameracode": "a6d9994535864b959b3db6d37ae4be2c",
+            "cameraname": "物料"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 84,
+            "groupshortname": "开发区",
+            "siteshortname": "港馨花园二期B区",
+            "sitename": "港馨花园二期B区工程",
+            "cameracode": "9f934822879e48259dcfdca335283bab",
+            "cameraname": "作业面"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 79,
+            "groupshortname": "开发区",
+            "siteshortname": "国网农电项目",
+            "sitename": "山西三建国网江苏连云港供电公司运维检修用房",
+            "cameracode": "ed3cd0fa5cc947388fae2543393d099e",
+            "cameraname": "大门口"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 79,
+            "groupshortname": "开发区",
+            "siteshortname": "国网农电项目",
+            "sitename": "山西三建国网江苏连云港供电公司运维检修用房",
+            "cameracode": "7469ac0fdb8248439fe082dbdcd59d37",
+            "cameraname": "东南角"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 79,
+            "groupshortname": "开发区",
+            "siteshortname": "国网农电项目",
+            "sitename": "山西三建国网江苏连云港供电公司运维检修用房",
+            "cameracode": "0698cedbd0fc4714908c44f87dc71ef9",
+            "cameraname": "塔吊球机"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 157,
+            "groupshortname": "开发区",
+            "siteshortname": "裕源新村三期",
+            "sitename": "裕源新村（三期）棚户区改造项目工程施工",
+            "cameracode": "14f3363696f647cab2b3baa692ea800a",
+            "cameraname": "车冲"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 157,
+            "groupshortname": "开发区",
+            "siteshortname": "裕源新村三期",
+            "sitename": "裕源新村（三期）棚户区改造项目工程施工",
+            "cameracode": "df2a2c3161b64143bab9aed06a1c01c3",
+            "cameraname": "料场"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 157,
+            "groupshortname": "开发区",
+            "siteshortname": "裕源新村三期",
+            "sitename": "裕源新村（三期）棚户区改造项目工程施工",
+            "cameracode": "a86f43ee307e44049327a92344b96965",
+            "cameraname": "实名制通道"
+        },
+        {
+            "GROUPID": 21,
+            "SITEID": 157,
+            "groupshortname": "开发区",
+            "siteshortname": "裕源新村三期",
+            "sitename": "裕源新村（三期）棚户区改造项目工程施工",
+            "cameracode": "6305f4c19cf9447eb7317fa772042b0b",
+            "cameraname": "制高点"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 76,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "第二水厂三期",
+            "sitename": "徐圩新区第二水厂三期及深度处理项目",
+            "cameracode": "727317ee3d9c4aa485391e19a8b30b54",
+            "cameraname": "大门1"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 76,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "第二水厂三期",
+            "sitename": "徐圩新区第二水厂三期及深度处理项目",
+            "cameracode": "9fe63c6c9a5645b9bb1c39ae5c5e9ad7",
+            "cameraname": "大门球机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 76,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "第二水厂三期",
+            "sitename": "徐圩新区第二水厂三期及深度处理项目",
+            "cameracode": "027e1742fa324b93b5a6a8b2da91cd0f",
+            "cameraname": "南围墙"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 76,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "第二水厂三期",
+            "sitename": "徐圩新区第二水厂三期及深度处理项目",
+            "cameracode": "e2dead24a4974d4a9dea786802ff79c9",
+            "cameraname": "实名制"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 105,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "干散货输送栈桥",
+            "sitename": "徐圩新区干散货输送栈桥一期工程项目3#转运站,BG2段（海滨大道至石化三路段）",
+            "cameracode": "74ff8eab096e44b3861d5e16c76cd803",
+            "cameraname": "干散货-石化三路3号球机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 105,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "干散货输送栈桥",
+            "sitename": "徐圩新区干散货输送栈桥一期工程项目3#转运站,BG2段（海滨大道至石化三路段）",
+            "cameracode": "189671ea8023466bb133b210fccfc95c",
+            "cameraname": "干散货-苏海路3号枪机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 105,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "干散货输送栈桥",
+            "sitename": "徐圩新区干散货输送栈桥一期工程项目3#转运站,BG2段（海滨大道至石化三路段）",
+            "cameracode": "1b9edad22228408bb9a719ddc437959b",
+            "cameraname": "干散货-苏海路5号枪机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 105,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "干散货输送栈桥",
+            "sitename": "徐圩新区干散货输送栈桥一期工程项目3#转运站,BG2段（海滨大道至石化三路段）",
+            "cameracode": "a54294a2577445599db8f83e4058d471",
+            "cameraname": "干散货-鹰眼全景"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 75,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "高盐废水处理工程",
+            "sitename": "连云港石化基地化工高盐废水处理工程（一期）",
+            "cameracode": "1e3994ea6e1f458788aee9af54e7518c",
+            "cameraname": "1#起升"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 75,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "高盐废水处理工程",
+            "sitename": "连云港石化基地化工高盐废水处理工程（一期）",
+            "cameracode": "d7ea78cdd761461ebf1ef30ebc957a4d",
+            "cameraname": "1#司机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 75,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "高盐废水处理工程",
+            "sitename": "连云港石化基地化工高盐废水处理工程（一期）",
+            "cameracode": "01f61cf08055437483e2f71f57025a7b",
+            "cameraname": "实名制出入口枪机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 75,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "高盐废水处理工程",
+            "sitename": "连云港石化基地化工高盐废水处理工程（一期）",
+            "cameracode": "75bdb9f193034c8b9f4e79843d9689a5",
+            "cameraname": "西围墙2号枪机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 75,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "高盐废水处理工程",
+            "sitename": "连云港石化基地化工高盐废水处理工程（一期）",
+            "cameracode": "bf482712b9604b939f2835fe51337e35",
+            "cameraname": "西围墙枪机1"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 75,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "高盐废水处理工程",
+            "sitename": "连云港石化基地化工高盐废水处理工程（一期）",
+            "cameracode": "39abf3eee1af41c1bf4ce12da4775448",
+            "cameraname": "西围墙枪机3"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 112,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "盛虹云海湾一期",
+            "sitename": "盛虹云海湾一期",
+            "cameracode": "ef88f748e885431a846332678912fc60",
+            "cameraname": "10号塔吊球机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 112,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "盛虹云海湾一期",
+            "sitename": "盛虹云海湾一期",
+            "cameracode": "41dcc75cd0c94a98854eab3cca64743d",
+            "cameraname": "2号塔吊球机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 112,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "盛虹云海湾一期",
+            "sitename": "盛虹云海湾一期",
+            "cameracode": "90ac53dec9e04c9eae4f7052bbfc24ad",
+            "cameraname": "北门"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 112,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "盛虹云海湾一期",
+            "sitename": "盛虹云海湾一期",
+            "cameracode": "6e1450ed6b2c4fb19888b76b6bac7bdf",
+            "cameraname": "体温"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 112,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "盛虹云海湾一期",
+            "sitename": "盛虹云海湾一期",
+            "cameracode": "74c21f3feeb2404e9a8d5358272770a6",
+            "cameraname": "西门"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 106,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "应急救援中心二期",
+            "sitename": "连云港徐圩新区医疗应急救援中心二期",
+            "cameracode": "8e37c53ea6b44d55b268ecdcbcbc5e11",
+            "cameraname": "球机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 106,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "应急救援中心二期",
+            "sitename": "连云港徐圩新区医疗应急救援中心二期",
+            "cameracode": "6587c4cd60cd412b985750b26e482cd3",
+            "cameraname": "医疗二期-大门"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 106,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "应急救援中心二期",
+            "sitename": "连云港徐圩新区医疗应急救援中心二期",
+            "cameracode": "b103beaeacc949d39d9a677644bffd3c",
+            "cameraname": "医疗二期-工地西球机作业面"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 106,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "应急救援中心二期",
+            "sitename": "连云港徐圩新区医疗应急救援中心二期",
+            "cameracode": "f1aa66af1add4d80b565cb7f8943d1ec",
+            "cameraname": "医疗二期-西北向南1材料堆放处"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 106,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "应急救援中心二期",
+            "sitename": "连云港徐圩新区医疗应急救援中心二期",
+            "cameracode": "7da0a15a13b54c0186bb75b91217d894",
+            "cameraname": "医疗二期-扬尘"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 104,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "云湖社区邻里",
+            "sitename": " 徐圩新区人才公寓-徐圩新区云湖社区邻里中心（沿街高层)26-33#楼及4#地下",
+            "cameracode": "44ac7703682948a3b31a4f90ffd747c2",
+            "cameraname": "东球机"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 104,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "云湖社区邻里",
+            "sitename": " 徐圩新区人才公寓-徐圩新区云湖社区邻里中心（沿街高层)26-33#楼及4#地下",
+            "cameracode": "5da5acc9f43745668e262135985fb1ce",
+            "cameraname": "南门西向北"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 104,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "云湖社区邻里",
+            "sitename": " 徐圩新区人才公寓-徐圩新区云湖社区邻里中心（沿街高层)26-33#楼及4#地下",
+            "cameracode": "83d5dd7908984c1bb1b90953137129c8",
+            "cameraname": "南门西向东北"
+        },
+        {
+            "GROUPID": 15,
+            "SITEID": 104,
+            "groupshortname": "徐圩新区",
+            "siteshortname": "云湖社区邻里",
+            "sitename": " 徐圩新区人才公寓-徐圩新区云湖社区邻里中心（沿街高层)26-33#楼及4#地下",
+            "cameracode": "47d89975fea748f891ecc1b30bba7679",
+            "cameraname": "西门门外"
+        },
+        {
+            "GROUPID": 16,
+            "SITEID": 149,
+            "groupshortname": "赣榆区",
+            "siteshortname": "苏海听涛苑二期",
+            "sitename": "苏海听涛苑3#-5#楼、10#-12#楼及地下车库二期",
+            "cameracode": "7b223a6d69cd497d8cc936a3e0a61238",
+            "cameraname": "大门口"
+        },
+        {
+            "GROUPID": 16,
+            "SITEID": 149,
+            "groupshortname": "赣榆区",
+            "siteshortname": "苏海听涛苑二期",
+            "sitename": "苏海听涛苑3#-5#楼、10#-12#楼及地下车库二期",
+            "cameracode": "716fcd29bd424e7b93371f79bd6a90f2",
+            "cameraname": "中维世纪"
+        },
+        {
+            "GROUPID": 16,
+            "SITEID": 149,
+            "groupshortname": "赣榆区",
+            "siteshortname": "苏海听涛苑二期",
+            "sitename": "苏海听涛苑3#-5#楼、10#-12#楼及地下车库二期",
+            "cameracode": "d63d720b06844a42acc0af218b3e9996",
+            "cameraname": "中维世纪2"
+        },
+        {
+            "GROUPID": 16,
+            "SITEID": 149,
+            "groupshortname": "赣榆区",
+            "siteshortname": "苏海听涛苑二期",
+            "sitename": "苏海听涛苑3#-5#楼、10#-12#楼及地下车库二期",
+            "cameracode": "43fc581d97704a19817638bf147dc60a",
+            "cameraname": "中维世纪3"
+        },
+        {
+            "GROUPID": 16,
+            "SITEID": 89,
+            "groupshortname": "赣榆区",
+            "siteshortname": "信榆国际",
+            "sitename": "信榆国际C#楼、D#楼、一期地下室",
+            "cameracode": "a7d09f4f8d49488bbe1b2d18332e7bb1",
+            "cameraname": "塔机吊装盲区可视化系统"
+        },
+        {
+            "GROUPID": 16,
+            "SITEID": 89,
+            "groupshortname": "赣榆区",
+            "siteshortname": "信榆国际",
+            "sitename": "信榆国际C#楼、D#楼、一期地下室",
+            "cameracode": "36e533d2d0874a0c9b5795d42d8980dc",
+            "cameraname": "信榆国际-东门内"
+        },
+        {
+            "GROUPID": 16,
+            "SITEID": 89,
+            "groupshortname": "赣榆区",
+            "siteshortname": "信榆国际",
+            "sitename": "信榆国际C#楼、D#楼、一期地下室",
+            "cameracode": "f8673028d25a4c299c9926ea34b62652",
+            "cameraname": "信榆国际-东门外"
+        },
+        {
+            "GROUPID": 16,
+            "SITEID": 89,
+            "groupshortname": "赣榆区",
+            "siteshortname": "信榆国际",
+            "sitename": "信榆国际C#楼、D#楼、一期地下室",
+            "cameracode": "9ed89beab1064ac395b1f8c14f50f4d2",
+            "cameraname": "信榆国际-塔吊吊钩广角摄像头"
+        },
+        {
+            "GROUPID": 16,
+            "SITEID": 89,
+            "groupshortname": "赣榆区",
+            "siteshortname": "信榆国际",
+            "sitename": "信榆国际C#楼、D#楼、一期地下室",
+            "cameracode": "cd6bce7a64034aa6b9d2f19541af630f",
+            "cameraname": "信榆国际-西北对正东通道"
+        },
+        {
+            "GROUPID": 16,
+            "SITEID": 89,
+            "groupshortname": "赣榆区",
+            "siteshortname": "信榆国际",
+            "sitename": "信榆国际C#楼、D#楼、一期地下室",
+            "cameracode": "f65c7f52f30b4fa2a72674dcb1109263",
+            "cameraname": "信榆国际-西门内"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 158,
+            "groupshortname": "东海县",
+            "siteshortname": "城投·水晶家苑",
+            "sitename": "城投·水晶家苑小区（小望东片区安置房）",
+            "cameracode": "27ebd52e27a042f48dbaadab4f4c4b62",
+            "cameraname": "车冲"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 158,
+            "groupshortname": "东海县",
+            "siteshortname": "城投·水晶家苑",
+            "sitename": "城投·水晶家苑小区（小望东片区安置房）",
+            "cameracode": "ff2890e04a2d492aa6281988706c4381",
+            "cameraname": "料场"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 158,
+            "groupshortname": "东海县",
+            "siteshortname": "城投·水晶家苑",
+            "sitename": "城投·水晶家苑小区（小望东片区安置房）",
+            "cameracode": "8ba06cb128bb4ab0a2272af9fea54e63",
+            "cameraname": "实名制"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 158,
+            "groupshortname": "东海县",
+            "siteshortname": "城投·水晶家苑",
+            "sitename": "城投·水晶家苑小区（小望东片区安置房）",
+            "cameracode": "e4f0f0d0eead4a419da6377324d10243",
+            "cameraname": "制高点"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 161,
+            "groupshortname": "东海县",
+            "siteshortname": "晶祥苑二期",
+            "sitename": "城投晶祥苑二期安置房项目",
+            "cameracode": "0ae5258e1a364d8aab1db22a38b36220",
+            "cameraname": "3号塔吊"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 161,
+            "groupshortname": "东海县",
+            "siteshortname": "晶祥苑二期",
+            "sitename": "城投晶祥苑二期安置房项目",
+            "cameracode": "071d4bf7682c4ef1a0e75e240218f0de",
+            "cameraname": "4号塔吊"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 161,
+            "groupshortname": "东海县",
+            "siteshortname": "晶祥苑二期",
+            "sitename": "城投晶祥苑二期安置房项目",
+            "cameracode": "845621a2dcba4defa2e287402464c879",
+            "cameraname": "大门口"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 161,
+            "groupshortname": "东海县",
+            "siteshortname": "晶祥苑二期",
+            "sitename": "城投晶祥苑二期安置房项目",
+            "cameracode": "8190be3a0bbc45b59feb899b7d128491",
+            "cameraname": "物料堆积"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 161,
+            "groupshortname": "东海县",
+            "siteshortname": "晶祥苑二期",
+            "sitename": "城投晶祥苑二期安置房项目",
+            "cameracode": "1e7ea71fe83c4af788a7f94d61a44a16",
+            "cameraname": "洗车台"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 85,
+            "groupshortname": "东海县",
+            "siteshortname": "康泰学府小区",
+            "sitename": "康泰学府小区",
+            "cameracode": "7f22412f958f47899f4dccff11062295",
+            "cameraname": "材料堆放处"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 85,
+            "groupshortname": "东海县",
+            "siteshortname": "康泰学府小区",
+            "sitename": "康泰学府小区",
+            "cameracode": "a12edc1e2dfb432e97d6ceebfc1daa48",
+            "cameraname": "大门"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 85,
+            "groupshortname": "东海县",
+            "siteshortname": "康泰学府小区",
+            "sitename": "康泰学府小区",
+            "cameracode": "29c67040e4d04f4e84967247aaa0b447",
+            "cameraname": "作业面"
+        },
+        {
+            "GROUPID": 18,
+            "SITEID": 85,
+            "groupshortname": "东海县",
+            "siteshortname": "康泰学府小区",
+            "sitename": "康泰学府小区",
+            "cameracode": "4c2123ec0ed346eb8af459c33b532603",
+            "cameraname": "作业面2"
+        },
+        {
+            "GROUPID": 17,
+            "SITEID": 102,
+            "groupshortname": "灌云县",
+            "siteshortname": "妇幼保健院",
+            "sitename": "灌云县妇幼保健院新建项目-医疗综合楼保健部,医疗综合楼住院部, 后勤服务中心,",
+            "cameracode": "25956d3e57d747b69d4c08154c876abb",
+            "cameraname": "北门"
+        },
+        {
+            "GROUPID": 17,
+            "SITEID": 102,
+            "groupshortname": "灌云县",
+            "siteshortname": "妇幼保健院",
+            "sitename": "灌云县妇幼保健院新建项目-医疗综合楼保健部,医疗综合楼住院部, 后勤服务中心,",
+            "cameracode": "b226618ceffc4cd0b599e14d0cc0131d",
+            "cameraname": "东南角2"
+        },
+        {
+            "GROUPID": 17,
+            "SITEID": 102,
+            "groupshortname": "灌云县",
+            "siteshortname": "妇幼保健院",
+            "sitename": "灌云县妇幼保健院新建项目-医疗综合楼保健部,医疗综合楼住院部, 后勤服务中心,",
+            "cameracode": "bd6a84aea9cb4166a75990937a49bfe5",
+            "cameraname": "塔吊4"
+        },
+        {
+            "GROUPID": 17,
+            "SITEID": 102,
+            "groupshortname": "灌云县",
+            "siteshortname": "妇幼保健院",
+            "sitename": "灌云县妇幼保健院新建项目-医疗综合楼保健部,医疗综合楼住院部, 后勤服务中心,",
+            "cameracode": "70d86bb7a62d4e188ead1c2ed441c534",
+            "cameraname": "西门"
+        },
+        {
+            "GROUPID": 17,
+            "SITEID": 136,
+            "groupshortname": "灌云县",
+            "siteshortname": "伊山名府",
+            "sitename": "伊山名府_1#楼-21#楼，地下室，生活水泵房",
+            "cameracode": "8b395eb18f2e43a9833e8c040a650630",
+            "cameraname": "大门出入口枪机"
+        },
+        {
+            "GROUPID": 17,
+            "SITEID": 136,
+            "groupshortname": "灌云县",
+            "siteshortname": "伊山名府",
+            "sitename": "伊山名府_1#楼-21#楼，地下室，生活水泵房",
+            "cameracode": "a4333ffafb1f47f888f6f12f0ca94307",
+            "cameraname": "堆料场枪机"
+        },
+        {
+            "GROUPID": 17,
+            "SITEID": 136,
+            "groupshortname": "灌云县",
+            "siteshortname": "伊山名府",
+            "sitename": "伊山名府_1#楼-21#楼，地下室，生活水泵房",
+            "cameracode": "3c1cb99f1e784b30b6c7a49f6f9343b4",
+            "cameraname": "洗车台枪机"
+        },
+        {
+            "GROUPID": 17,
+            "SITEID": 136,
+            "groupshortname": "灌云县",
+            "siteshortname": "伊山名府",
+            "sitename": "伊山名府_1#楼-21#楼，地下室，生活水泵房",
+            "cameracode": "eccf7a77de164c5fae441b15cadef4fc",
+            "cameraname": "制高点塔吊球机"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 109,
+            "groupshortname": "灌南县",
+            "siteshortname": "凤凰城二期",
+            "sitename": "凤凰城二期1#-3#楼、5#-11#楼及地下室工程",
+            "cameracode": "deaa25ccd631404294586057f8d953d3",
+            "cameraname": "凤凰祥麟苑冲洗平台"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 109,
+            "groupshortname": "灌南县",
+            "siteshortname": "凤凰城二期",
+            "sitename": "凤凰城二期1#-3#楼、5#-11#楼及地下室工程",
+            "cameracode": "851e69ec89a543f0a6f1c8cd964fa3ed",
+            "cameraname": "凤凰祥麟苑塔吊"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 109,
+            "groupshortname": "灌南县",
+            "siteshortname": "凤凰城二期",
+            "sitename": "凤凰城二期1#-3#楼、5#-11#楼及地下室工程",
+            "cameracode": "f40d4fde9d3d4c279168193eafc3bc29",
+            "cameraname": "凤凰祥麟院南门口"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 94,
+            "groupshortname": "灌南县",
+            "siteshortname": "凤鸣府",
+            "sitename": "凤鸣府项目一期-1#，25#",
+            "cameracode": "a4bd6a7ffdb943e3840f03e8cbae648e",
+            "cameraname": "碧桂园凤鸣府高空球机"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 94,
+            "groupshortname": "灌南县",
+            "siteshortname": "凤鸣府",
+            "sitename": "凤鸣府项目一期-1#，25#",
+            "cameracode": "d46bfe57606d4fd38c5892370d6a54bd",
+            "cameraname": "碧桂园凤鸣府工地冲洗平台"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 94,
+            "groupshortname": "灌南县",
+            "siteshortname": "凤鸣府",
+            "sitename": "凤鸣府项目一期-1#，25#",
+            "cameracode": "b9be323713d54e08aa43dcb7da5ef4f6",
+            "cameraname": "碧桂园凤鸣府工地入口"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 108,
+            "groupshortname": "灌南县",
+            "siteshortname": "灌南职业高级中学",
+            "sitename": "灌南职业（综合）高级中学新建工程及附属工程",
+            "cameracode": "484b83f42e8540a28cda4ab6a458bc00",
+            "cameraname": "职业高中冲洗平台"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 108,
+            "groupshortname": "灌南县",
+            "siteshortname": "灌南职业高级中学",
+            "sitename": "灌南职业（综合）高级中学新建工程及附属工程",
+            "cameracode": "044b592796194fab867c32ad15eb1f66",
+            "cameraname": "职业高中工地入口"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 108,
+            "groupshortname": "灌南县",
+            "siteshortname": "灌南职业高级中学",
+            "sitename": "灌南职业（综合）高级中学新建工程及附属工程",
+            "cameracode": "a8b9d799cc284b9ba690bda6621f370a",
+            "cameraname": "职业高中塔吊球机"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 144,
+            "groupshortname": "灌南县",
+            "siteshortname": "上城福园",
+            "sitename": "上城福园住宅小区16#、17#楼工程",
+            "cameracode": "10f558f901e7473ab55dad78cf36515e",
+            "cameraname": "DigitChan_3"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 144,
+            "groupshortname": "灌南县",
+            "siteshortname": "上城福园",
+            "sitename": "上城福园住宅小区16#、17#楼工程",
+            "cameracode": "f345ef8e4a1246bba62ac553eb98e59b",
+            "cameraname": "DigitChan_4"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 144,
+            "groupshortname": "灌南县",
+            "siteshortname": "上城福园",
+            "sitename": "上城福园住宅小区16#、17#楼工程",
+            "cameracode": "f8aac1efd191445b994c148270a51a53",
+            "cameraname": "上城福园冲洗平台"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 144,
+            "groupshortname": "灌南县",
+            "siteshortname": "上城福园",
+            "sitename": "上城福园住宅小区16#、17#楼工程",
+            "cameracode": "986bc9bce3904e4ea79ec36f69a045ac",
+            "cameraname": "上城福园高空球机"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 146,
+            "groupshortname": "灌南县",
+            "siteshortname": "上城雅苑",
+            "sitename": "上城雅苑住宅小区1#、2#、3#、4#、5#、6#、7#、8#、商业和地下车库（",
+            "cameracode": "a682574deba441f284ec28021091c2c4",
+            "cameraname": "上城雅苑高空僚望"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 93,
+            "groupshortname": "灌南县",
+            "siteshortname": "十里桃源花园",
+            "sitename": "十里桃源花园1#-3#楼，5#-9#楼，20#楼，地下室24-45轴（含人防）",
+            "cameracode": "20ebc737357c498380b91b4ce6f673f4",
+            "cameraname": "十里桃园工地冲洗平台"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 93,
+            "groupshortname": "灌南县",
+            "siteshortname": "十里桃源花园",
+            "sitename": "十里桃源花园1#-3#楼，5#-9#楼，20#楼，地下室24-45轴（含人防）",
+            "cameracode": "b11fa93ef20f488cb7c3a1fac6fbab47",
+            "cameraname": "十里桃园工地入口"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 93,
+            "groupshortname": "灌南县",
+            "siteshortname": "十里桃源花园",
+            "sitename": "十里桃源花园1#-3#楼，5#-9#楼，20#楼，地下室24-45轴（含人防）",
+            "cameracode": "c5842f97ca864cd598f47905551c7874",
+            "cameraname": "十里桃源球机"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 92,
+            "groupshortname": "灌南县",
+            "siteshortname": "书香世家",
+            "sitename": "书香世家15#楼，20#楼，21#楼，22#楼，人防地下室",
+            "cameracode": "bc0a886a43df4be99aa1c5990322ba38",
+            "cameraname": "书香世家高空球机"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 92,
+            "groupshortname": "灌南县",
+            "siteshortname": "书香世家",
+            "sitename": "书香世家15#楼，20#楼，21#楼，22#楼，人防地下室",
+            "cameracode": "2279c4aa92024fad836ba0f42e573806",
+            "cameraname": "书香世家工地冲洗平台"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 92,
+            "groupshortname": "灌南县",
+            "siteshortname": "书香世家",
+            "sitename": "书香世家15#楼，20#楼，21#楼，22#楼，人防地下室",
+            "cameracode": "65b57a70ce804df6a995c4d29123e427",
+            "cameraname": "书香世家工地入口"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 91,
+            "groupshortname": "灌南县",
+            "siteshortname": "同天国宾府",
+            "sitename": "同天国宾府-5-8#楼，10#楼",
+            "cameracode": "97494f5211b943b598f1dda247b80188",
+            "cameraname": "国宾府工地入口"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 91,
+            "groupshortname": "灌南县",
+            "siteshortname": "同天国宾府",
+            "sitename": "同天国宾府-5-8#楼，10#楼",
+            "cameracode": "574d4bbb3bdd4310a65915595f2c0da7",
+            "cameraname": "同天国宾府高空瞭望"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 91,
+            "groupshortname": "灌南县",
+            "siteshortname": "同天国宾府",
+            "sitename": "同天国宾府-5-8#楼，10#楼",
+            "cameracode": "d35755529ccc473cba8376641d829045",
+            "cameraname": "同天国宾府工地冲洗平台"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 95,
+            "groupshortname": "灌南县",
+            "siteshortname": "壹号院",
+            "sitename": "壹号院小区建设工程项目一标段工程（1#-13#楼，15#楼，24#楼，南区地下室",
+            "cameracode": "310e258e51664a279d7d20986392ecdd",
+            "cameraname": "金灌一号院车辆冲洗平台"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 95,
+            "groupshortname": "灌南县",
+            "siteshortname": "壹号院",
+            "sitename": "壹号院小区建设工程项目一标段工程（1#-13#楼，15#楼，24#楼，南区地下室",
+            "cameracode": "e13692fcc94b4145ad9ebaabb8383c89",
+            "cameraname": "金灌壹号院高空球机"
+        },
+        {
+            "GROUPID": 19,
+            "SITEID": 95,
+            "groupshortname": "灌南县",
+            "siteshortname": "壹号院",
+            "sitename": "壹号院小区建设工程项目一标段工程（1#-13#楼，15#楼，24#楼，南区地下室",
+            "cameracode": "c0285bc640c64f7197b9a804115e5959",
+            "cameraname": "金灌壹号院工地入口"
+        }
+    ]
+}

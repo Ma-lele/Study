@@ -1,0 +1,3004 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XHS.Build.Admin</name>
+    </assembly>
+    <members>
+        <member name="T:XHS.Build.Admin.Attributes.LoginAttribute">
+            <summary>
+            登录后不走权限
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Admin.Attributes.PermissionAttribute">
+            <summary>
+            启用权限
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Admin.Auth.IPermissionHandler">
+            <summary>
+            权限处理接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Auth.IPermissionHandler.ValidateAsync(System.String)">
+            <summary>
+            权限验证
+            </summary>
+            <param name="api"></param>
+            <param name="httpMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Auth.PermissionHandler">
+            <summary>
+            权限处理
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Auth.PermissionHandler.ValidateAsync(System.String)">
+            <summary>
+            权限验证
+            </summary>
+            <param name="api">接口路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Auth.ResponseAuthenticationHandler">
+            <summary>
+            响应认证处理器
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.AnalyseController">
+            <summary>
+            风险分析配置
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AnalyseController.SetPLAlgorithm(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            设置PL算法
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AnalyseController.GetPLAlgorithm">
+            <summary>
+            获取PL算法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AnalyseController.GetSeverity">
+            <summary>
+            获取严重度数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AnalyseController.SetSeverity(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            设置严重度数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AnalyseController.GetFrequency">
+            <summary>
+            获取可能性配置数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AnalyseController.SetFrequency(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            设置可能性配置
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.ApisController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ApisController.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ApisController.GetAll">
+            <summary>
+            获取全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ApisController.Post(XHS.Build.Model.Models.SysApisEntity)">
+            <summary>
+            添加
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ApisController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ApisController.Put(XHS.Build.Model.Models.SysApisEntity)">
+            <summary>
+            修改信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ApisController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ApisController.AsyncApi">
+            <summary>
+            同步所有接口数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.AssetInspectionController">
+            <summary>
+            资产巡检
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.AddTenantType(XHS.Build.Model.Models.CATenantType)">
+            <summary>
+            新增租户类型
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.GetTenantTypeList(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取租户类型列表分页
+            </summary>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.EditTenantType(XHS.Build.Model.Models.CATenantType)">
+            <summary>
+            编辑租户类型
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.DeleteTenantType(System.Int32)">
+            <summary>
+            删除租户类型
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.AddInspectionTemplate(XHS.Build.Model.ModelDtos.InspectionTemplateDto)">
+            <summary>
+            新增检查模板
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.GetInsTmpListAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取检查模板列表分页
+            </summary>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.GetCheckListAsync(System.Int32)">
+            <summary>
+            获取模板检查项列表
+            </summary>
+            <param name="CMID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.EditInsTmpAsync(XHS.Build.Model.ModelDtos.InspectionTemplateDto)">
+            <summary>
+            编辑检查模板
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.DelInsTmpAsync(System.Int32)">
+            <summary>
+            删除检查模板
+            </summary>
+            <param name="CMID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.GetTenantListAsync(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取租户列表分页
+            </summary>
+            <param name="keyword"></param>
+            <param name="groupid"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.CheckUsername(System.String)">
+            <summary>
+            登录名查重
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.GetTenantGroupCount">
+            <summary>
+            分组Count
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.AddTenantAsync(XHS.Build.Model.Models.CATenant)">
+            <summary>
+            新增租户
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.EditTenantAsync(XHS.Build.Model.Models.CATenant)">
+            <summary>
+            编辑租户
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.GetCustom(System.Int32)">
+            <summary>
+            获取自定义检查项
+            </summary>
+            <param name="TEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.SetCustom(XHS.Build.Model.ModelDtos.CustomDto)">
+            <summary>
+            设置自定义检查项
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.AssetInspectionController.GetTenantSites(System.Int32)">
+            <summary>
+            获取资产巡检SITES
+            </summary>
+            <param name="GROUPID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.CableController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CableController.#ctor(XHS.Build.Services.Cable.ICableService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CableController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CableController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CableController.Post(XHS.Build.Model.Models.GCCableEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CableController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CableController.Put(XHS.Build.Model.Models.GCCableEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CableController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.CameraController">
+            <summary>
+            摄像头
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CameraController.#ctor(XHS.Build.Services.Cameras.ICameraService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            摄像头
+            </summary>
+            <param name="cameraService"></param>
+            <param name="user"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CameraController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CameraController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CameraController.Post(XHS.Build.Model.Models.GCCameraEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CameraController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CameraController.Put(XHS.Build.Model.Models.GCCameraEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CameraController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CameraController.UpdateStatus(XHS.Build.Model.Models.GCCameraEntity)">
+            <summary>
+            冻结/解冻
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.CtRoleController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtRoleController.#ctor(XHS.Build.Services.CtRole.ICtRoleService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtRoleController.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="keyword">关键字</param>
+            <param name="page">页码</param>
+            <param name="size">每页件数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtRoleController.GetAll">
+            <summary>
+            获取所有角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtRoleController.Post(XHS.Build.Model.Models.CTRoleEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtRoleController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtRoleController.Put(XHS.Build.Model.Models.CTRoleEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.CtRoleRightController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtRoleRightController.#ctor(XHS.Build.Services.RoleRight.IRoleRightService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtRoleRightController.GetAll(System.String)">
+            <summary>
+            列表
+            </summary>
+            <param name="ROLEID">角色</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtRoleRightController.Put(XHS.Build.Model.Models.GCRoleRightEntity)">
+            <summary>
+            保存
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.CtUserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtUserController.#ctor(XHS.Build.Services.CtUser.ICtUserService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtUserController.Get(System.Int32)">
+            <summary>
+            获取单个用户
+            </summary>
+            <param name="id">用户编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtUserController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="keyword">关键字</param>
+            <param name="page">页码</param>
+            <param name="size">每页件数</param>
+            <param name="GROUPID">分组</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtUserController.GetGroupCount">
+            <summary>
+            获取每个分组用户的数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtUserController.Post(XHS.Build.Model.Models.CTUserEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtUserController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtUserController.Put(XHS.Build.Model.Models.CTUserEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtUserController.UpdateStatus(XHS.Build.Model.Models.CTUserEntity)">
+            <summary>
+            冻结/解冻用户
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtUserController.ResetPwd(XHS.Build.Model.Models.CTUserEntity)">
+            <summary>
+            重置密码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.CtUserController.GetRegions(System.Int32)">
+            <summary>
+            获取区域列表
+            </summary>
+            <param name="GROUPID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.DeepPitController">
+            <summary>
+            深基坑
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.#ctor(XHS.Build.Services.DeepPit.IDeepPitService,XHS.Build.Common.Auth.IUser,AutoMapper.IMapper,XHS.Build.Services.SystemSetting.IHpSystemSetting,XHS.Build.Services.File.IHpFileDoc,XHS.Build.Services.Device.IDeviceService)">
+            <summary>
+            
+            </summary>
+            <param name="deepPitService"></param>
+            <param name="user"></param>
+            <param name="mapper"></param>
+            <param name="hpSystemSetting"></param>
+            <param name="hpFileDoc"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.Post(XHS.Build.Model.ModelDtos.DeepPitInputDto)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.CheckCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            检查同一group下code是否重复
+            </summary>
+            <param name="code"></param>
+            <param name="groupid"></param>
+            <param name="dpid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取深基坑分页数据
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.Put(XHS.Build.Model.ModelDtos.DeepPitInputDto)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.AddDevice(XHS.Build.Model.Models.GCDeepPitDevice)">
+            <summary>
+            新增设备
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.EditDevice(XHS.Build.Model.Models.GCDeepPitDevice)">
+            <summary>
+            编辑设备
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.DeleteDevice(System.Int32)">
+            <summary>
+            删除设备
+            </summary>
+            <param name="DPDID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.GetDeviceList(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取深基坑设备分页数据
+            </summary>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.CheckDeviceCode(System.String)">
+            <summary>
+            检查深基坑设备编号是否重复
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeepPitController.GetDpSelect">
+            <summary>
+            获取所有深基坑列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.DefenceController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DefenceController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DefenceController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DefenceController.Post(XHS.Build.Model.Models.DefenceEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DefenceController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DefenceController.Put(XHS.Build.Model.Models.DefenceEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DefenceController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.DeviceController">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeviceController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeviceController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeviceController.Post(XHS.Build.Model.Models.GCDeviceEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeviceController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeviceController.Put(XHS.Build.Model.Models.GCDeviceEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeviceController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeviceController.GetUnBind(System.Int32)">
+            <summary>
+            获取未绑定的设备（后台扬尘监测点绑定设备使用）
+            </summary>
+            <param name="groupid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeviceController.BindDevice(System.Int32,System.Int32,System.String)">
+            <summary>
+            绑定设备（后台扬尘监测点绑定）
+            </summary>
+            <param name="groupid"></param>
+            <param name="siteid"></param>
+            <param name="deviceCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DeviceController.UnbindDevice(System.Int32,System.Int32,System.String)">
+            <summary>
+            解除设备绑定（后台扬尘监测点）
+            </summary>
+            <param name="groupid"></param>
+            <param name="siteid"></param>
+            <param name="deviceCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.DictionaryController">
+            <summary>
+            公共字典 数据
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DictionaryController.GetPages(System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            字典分页
+            </summary>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="order"></param>
+            <param name="ordertype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DictionaryController.Post(XHS.Build.Model.Models.CCDataDictionaryEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DictionaryController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DictionaryController.Put(XHS.Build.Model.Models.CCDataDictionaryEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DictionaryController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DictionaryController.City(System.Int32)">
+            <summary>
+            获取市区街道
+            </summary>
+            <param name="pid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DictionaryController.List(System.String)">
+            <summary>
+            获取所有配置字典
+            </summary>
+            <param name="datatype"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.DustController">
+            <summary>
+            扬尘
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DustController.GetPage">
+            <summary>
+            扬尘 页面 Dataset
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DustController.GetList(System.Int32,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <param name="order"></param>
+            <param name="ordertype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DustController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DustController.Post(XHS.Build.Model.Models.DustSiteAddInput)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DustController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="siteid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DustController.Put(XHS.Build.Model.Models.DustSiteAddInput)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.DustController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ElecMeterController.List(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ElecMeterController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ElecMeterController.Post(XHS.Build.Model.Models.GCElecMeterEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ElecMeterController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="EMID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ElecMeterController.Put(XHS.Build.Model.Models.GCElecMeterEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ElecMeterController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.EmployeeCareerController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.EmployeeCareerController.GetList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="id"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.EmployeeCareerController.Post(XHS.Build.Model.Models.GCEmployeeCareerEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.EmployeeCareerController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.EmployeeCareerController.Put(XHS.Build.Model.Models.GCEmployeeCareerEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.EmployeeCareerController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.EmployeeController">
+            <summary>
+            员工
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.EmployeeController.#ctor(XHS.Build.Services.Employee.IEmployeeService,AutoMapper.IMapper,XHS.Build.Common.Auth.IUser,XHS.Build.Services.File.IHpFileDoc,XHS.Build.Services.File.IFileService)">
+            <summary>
+            
+            </summary>
+            <param name="employeeService"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.EmployeeController.GetList(System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            列表
+            </summary>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <param name="order"></param>
+            <param name="ordertype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.EmployeeController.Post(XHS.Build.Model.Models.EmployeeAddEditInput)">
+            <summary>
+            新增or修改（根据ID）
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.EmployeeController.Get(System.String)">
+            <summary>
+            单个信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.FallProtectionController">
+            <summary>
+            临边防护[新]
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FallProtectionController.#ctor(XHS.Build.Services.SystemSetting.IHpSystemSetting,Microsoft.Extensions.Configuration.IConfiguration,XHS.Build.Services.FallProtection.IFallProtectionService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            ctor
+            </summary>
+            <param name="hpSystemSetting"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FallProtectionController.SetPushUrl(System.String,System.String,System.String,System.String)">
+            <summary>
+            设置服务器推送地址
+            </summary>
+            <param name="statusUrl"></param>
+            <param name="dataUrl"></param>
+            <param name="oldStatusUrl"></param>
+            <param name="oldDataUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FallProtectionController.GetPushUrl">
+            <summary>
+            获取服务器推送地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FallProtectionController.GetPageList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            分页数据
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FallProtectionController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FallProtectionController.AddDevice(XHS.Build.Model.Models.GCFallProtectionDevice)">
+            <summary>
+            新增设备
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FallProtectionController.EditDevice(XHS.Build.Model.Models.GCFallProtectionDevice)">
+            <summary>
+            编辑设备
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FallProtectionController.DeleteDevice(System.Int32)">
+            <summary>
+            删除设备
+            </summary>
+            <param name="FPDID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FallProtectionController.CheckCode(System.String,System.Int32)">
+            <summary>
+            检查设备编号是否重复
+            </summary>
+            <param name="code"></param>
+            <param name="FPDID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.FileController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FileController.Post(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            上传文件
+            </summary>
+            <param name="formFiles">文件对象。一次只允许上传1个文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FileController.Compress(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            上传图片并压缩
+            </summary>
+            <param name="formFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FileController.Delete(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="FILEID">文件ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.FogController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FogController.#ctor(XHS.Build.Services.Fog.IFogService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FogController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FogController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FogController.Post(XHS.Build.Model.Models.GCFogEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FogController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FogController.Put(XHS.Build.Model.Models.GCFogEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FogController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.FrontRoleController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontRoleController.#ctor(XHS.Build.Services.FrontRole.IFrontRoleService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontRoleController.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="keyword">关键字</param>
+            <param name="page">页码</param>
+            <param name="size">每页件数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontRoleController.GetAll">
+            <summary>
+            获取所有角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontRoleController.Post(XHS.Build.Model.Models.GCRoleEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontRoleController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontRoleController.Put(XHS.Build.Model.Models.GCRoleEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.FrontUserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.#ctor(XHS.Build.Services.FrontUser.IFrontUserService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.Get(System.Int32)">
+            <summary>
+            获取单个用户
+            </summary>
+            <param name="id">用户编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="keyword">关键字</param>
+            <param name="page">页码</param>
+            <param name="size">每页件数</param>
+            <param name="GROUPID">分组</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.GetGroupCount">
+            <summary>
+            获取每个分组用户的数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.Post(XHS.Build.Model.Models.GCUserEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.Put(XHS.Build.Model.Models.GCUserEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.UpdateStatus(XHS.Build.Model.Models.GCUserEntity)">
+            <summary>
+            冻结/解冻用户
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.ResetPwd(XHS.Build.Model.Models.GCUserEntity)">
+            <summary>
+            重置密码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.UserSiteList(System.Int32)">
+            <summary>
+            获取单个用户的负责工地列表
+            </summary>
+            <param name="USERID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.FrontUserController.SaveUserSite(XHS.Build.Model.Models.UserSiteInput)">
+            <summary>
+            保存单个用户负责的工地
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.GroupController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.GroupController.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.GroupController.GetAll">
+            <summary>
+            获取全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.GroupController.Post(XHS.Build.Model.Models.GroupInputDto)">
+            <summary>
+            添加
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.GroupController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="groupid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.GroupController.Put(XHS.Build.Model.Models.GroupInputDto)">
+            <summary>
+            修改信息
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.GroupController.Status(System.String)">
+            <summary>
+            修改状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.GroupController.GroupSiteCount">
+            <summary>
+            检测对象分组及数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.GroupController.GroupSiteCountOutZero">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.GroupController.SetLine(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            设置扬尘告警线
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.GroupController.GetSetting(System.Int32)">
+            <summary>
+            获取组设置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.HelmetBeaconController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBeaconController.GetList(System.Int32,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <param name="order"></param>
+            <param name="ordertype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBeaconController.Groups">
+            <summary>
+            安全帽 区域分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBeaconController.Post(XHS.Build.Model.Models.GCHelmetBeaconEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBeaconController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="BEACONID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBeaconController.Put(XHS.Build.Model.Models.GCHelmetBeaconEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBeaconController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBuildController.GetList(System.Int32,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <param name="order"></param>
+            <param name="ordertype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBuildController.Groups">
+            <summary>
+            安全帽 分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBuildController.Post(XHS.Build.Model.Models.GCHelmetBuildEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBuildController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="BEACONID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBuildController.Put(XHS.Build.Model.Models.GCHelmetBuildEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetBuildController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.HelmetController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetController.#ctor(XHS.Build.Services.Helmet.IHelmetService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+            <param name="helmetService"></param>
+            <param name="user"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetController.GetList(System.Int32,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="order"></param>
+            <param name="page"></param>
+            <param name="ordertype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetController.Groups">
+            <summary>
+            安全帽 分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetController.Post(XHS.Build.Model.Models.GCHelmetEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="buildid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetController.Put(XHS.Build.Model.Models.GCHelmetEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HelmetController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.HighFormworkController">
+            <summary>
+            高支模
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.#ctor(XHS.Build.Services.HighFormwork.IHighFormworkService,XHS.Build.Common.Auth.IUser,AutoMapper.IMapper,XHS.Build.Services.File.IHpFileDoc,XHS.Build.Services.Device.IDeviceService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="highFormworkService"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.Post(XHS.Build.Model.Models.GCHighFormwork)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.CheckCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            检查同一group下code是否重复
+            </summary>
+            <param name="code"></param>
+            <param name="groupid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取高支模分页数据
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.Put(XHS.Build.Model.Models.GCHighFormwork)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.Delete(XHS.Build.Model.Models.GCHighFormwork)">
+            <summary>
+            删除
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.GetHFWs(System.Int32)">
+            <summary>
+            根据siteid获取下面所有高支模
+            </summary>
+            <param name="siteid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.AddArea(XHS.Build.Model.ModelDtos.HighFormworkAreaDto)">
+            <summary>
+            新增高支模区域
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.AreaGroups">
+            <summary>
+            高支模分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.GetAreaList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取高支模区域分页数据
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.PutArea(XHS.Build.Model.ModelDtos.HighFormworkAreaUpdateDto)">
+            <summary>
+            修改高支模区域
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.HighFormworkController.DeleteArea(XHS.Build.Model.Models.GCHighFormworkArea)">
+            <summary>
+            删除高支模区域
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.InvadeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.InvadeController.#ctor(XHS.Build.Services.Invade.IInvadeService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+            <param name="invadeService"></param>
+            <param name="user"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.InvadeController.List(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.InvadeController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.InvadeController.Post(XHS.Build.Model.Models.GCInvadeEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.InvadeController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.InvadeController.Put(XHS.Build.Model.Models.GCInvadeEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.InvadeController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.IPWhiteListController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.IPWhiteListController.#ctor(XHS.Build.Services.IPWhiteList.IIPWhiteListService,Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.Extensions.Logging.ILogger{XHS.Build.Admin.Controllers.IPWhiteListController},XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.IPWhiteListController.Replace(System.String)">
+            <summary>
+            替换新合盛白IP
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.IPWhiteListController.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            分页数据
+            </summary>
+            <param name="keyword">关键词</param>
+            <param name="page">页码</param>
+            <param name="size">行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.IPWhiteListController.Add(XHS.Build.Model.Models.SFIPWhiteList)">
+            <summary>
+            新增IP白名单
+            </summary>
+            <param name="input">IPEntity</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.IPWhiteListController.Edit(XHS.Build.Model.Models.SFIPWhiteList)">
+            <summary>
+            编辑IP白名单
+            </summary>
+            <param name="input">entity</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.IPWhiteListController.Delete(System.Int32)">
+            <summary>
+            删除IP白名单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.KeySecretController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.KeySecretController.#ctor(XHS.Build.Services.KeySecretConfig.IKeySecretService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.KeySecretController.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.KeySecretController.Post(XHS.Build.Common.Configs.TCCKeySecretConfig)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.KeySecretController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.KeySecretController.Put(XHS.Build.Common.Configs.TCCKeySecretConfig)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.KeySecretController.Get(System.Int32)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.LogController">
+            <summary>
+            日志
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LogController.#ctor(XHS.Build.Services.Log.ILogService)">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LogController.GetLogTypeCount(System.DateTime)">
+            <summary>
+            获取操作日志类型Count
+            </summary>
+            <param name="startDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LogController.GetOpLogPageList(XHS.Build.Model.Models.TypeName,System.DateTime,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取操作日志列表
+            </summary>
+            <param name="type"></param>
+            <param name="startDate"></param>
+            <param name="orderField"></param>
+            <param name="sort"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LogController.GetFogLogPageList(System.String,System.String,System.DateTime,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取雾炮日志列表
+            </summary>
+            <param name="direct"></param>
+            <param name="cmd"></param>
+            <param name="startDate"></param>
+            <param name="orderField"></param>
+            <param name="sort"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.LoginController">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.Login(XHS.Build.Model.ModelDtos.LoginUserInput)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="input">登录信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.Refresh(System.String)">
+            <summary>
+            刷新Token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.GetToken(XHS.Build.Model.ModelDtos.LoginUserOutput)">
+            <summary>
+            获得token
+            </summary>
+            <param name="output"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.OzoneController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.OzoneController.CheckCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            检查同一group下code是否重复
+            </summary>
+            <param name="code"></param>
+            <param name="groupid"></param>
+            <param name="dpid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.OzoneController.Post(XHS.Build.Model.Models.GCOzone)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.OzoneController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取臭氧分页数据
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.OzoneController.Put(XHS.Build.Model.Models.GCOzone)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.OzoneController.Delete(XHS.Build.Model.Models.GCOzone)">
+            <summary>
+            删除
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.PermissionController">
+            <summary>
+            模块菜单
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.PermissionController.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            所有列表
+            </summary>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.PermissionController.GetTreeTable(System.String,System.String,System.String)">
+            <summary>
+            查询树形 Table
+            </summary>
+            <param name="parentid">父节点</param>
+            <param name="key">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.PermissionController.GetPermissionTree(System.String,System.Boolean)">
+            <summary>
+            获取菜单树
+            </summary>
+            <param name="pid"></param>
+            <param name="needbtn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.PermissionController.Post(XHS.Build.Model.ModelDtos.PermissionAddInput)">
+            <summary>
+            添加
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.PermissionController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.PermissionController.Put(XHS.Build.Model.ModelDtos.PermissionUpdateInput)">
+            <summary>
+            修改信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.PermissionController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.PermissionController.Assign(XHS.Build.Model.ModelDtos.AssignView)">
+            <summary>
+            保存菜单权限分配
+            </summary>
+            <param name="assignView"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.PermissionController.GetPermissionIdByRoleId(System.String)">
+            <summary>
+            通过角色获取菜单【无权限】
+            </summary>
+            <param name="rid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.PermissionController.GetNavigationBar(System.String)">
+            <summary>
+            获取路由树
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.RoleController">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.RoleController.GetList(System.Int32,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            角色列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.RoleController.Groups">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.RoleController.GetAll">
+            <summary>
+            全部账号可见角色列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.RoleController.Post(XHS.Build.Model.ModelDtos.RoleAddInput)">
+            <summary>
+            添加角色
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.RoleController.Delete(System.String)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.RoleController.Put(XHS.Build.Model.ModelDtos.RoleUpdateInput)">
+            <summary>
+            修改角色信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.RoleController.Get(System.String)">
+            <summary>
+            获取角色详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.RoleRightController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.RoleRightController.#ctor(XHS.Build.Services.RoleRight.IRoleRightService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.RoleRightController.GetAll(System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="ROLEID">角色</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.RoleRightController.Put(XHS.Build.Model.Models.GCRoleRightEntity)">
+            <summary>
+            保存
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.ScreenController">
+            <summary>
+            大屏
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ScreenController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ScreenController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ScreenController.Post(XHS.Build.Model.Models.GCScreenEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ScreenController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ScreenController.Put(XHS.Build.Model.Models.GCScreenEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.ScreenController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SettingController.GetList(System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            系统配置列表
+            </summary>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="order"></param>
+            <param name="ordertype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SettingController.Post(XHS.Build.Model.Models.CCSystemSettingEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SettingController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SettingController.Put(XHS.Build.Model.Models.CCSystemSettingEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SettingController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.SiteController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.#ctor(XHS.Build.Services.Site.ISiteService,XHS.Build.Common.Auth.IUser,XHS.Build.Services.RealName.IQunYaoRealNameService,XHS.Build.Services.SystemSetting.IHpSystemSetting,XHS.Build.Services.Group.IGroupService,XHS.Build.Common.Auth.XHSRealnameToken)">
+            <summary>
+            
+            </summary>
+            <param name="siteService"></param>
+            <param name="user"></param>
+            <param name="qunYaoRealNameService"></param>
+            <param name="hpSystemSetting"></param>
+            <param name="groupService"></param>
+            <param name="jwtToken"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.GetList(System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="type"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.Post(XHS.Build.Model.Models.GCSiteEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.Stop(System.Int32)">
+            <summary>
+            停用
+            </summary>
+            <param name="siteid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.Recover(System.Int32)">
+            <summary>
+            恢复
+            </summary>
+            <param name="siteid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.Complete(System.Int32)">
+            <summary>
+            关闭
+            </summary>
+            <param name="siteid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.Remove(System.Int32)">
+            <summary>
+            移除
+            </summary>
+            <param name="siteid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.Put(XHS.Build.Model.Models.GCSiteEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.Sites(System.Int32,System.Int32)">
+            <summary>
+            获取全部站点
+            </summary>
+            <param name="groupid"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.GetSummary(System.Int32,System.Int32)">
+            <summary>
+            获取简介
+            </summary>
+            <param name="groupid">分组编号</param>
+            <param name="siteid">监测对象编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.SaveSummary(XHS.Build.Model.Models.GCSiteSummaryEntity)">
+            <summary>
+            保存简介
+            </summary>
+            <param name="entity">实体</param>
+            <returns>结果</returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.SetPic(XHS.Build.Model.ModelDtos.SitePicInputDto)">
+            <summary>
+            新增、删除、修改图片
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.GetPic(System.Int32)">
+            <summary>
+            获取图片
+            </summary>
+            <param name="siteid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.GetAttendProjList(System.Int32,System.Int32)">
+            <summary>
+            获取各种实名制对应的项目列表
+            </summary>
+            <param name="type">1：群耀，2：大运，5：新合盛实名制</param>
+            <param name="GROUPID">分组编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.SaveBind(XHS.Build.Model.Models.GCSiteBindEntity)">
+            <summary>
+            第三方绑定信息保存
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.GetAreas(System.Int32)">
+            <summary>
+            根据分组获取市区街道
+            </summary>
+            <param name="GROUPID">分组编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.SiteCompany(System.Int32)">
+            <summary>
+            获取工地和五方信息
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.SiteCompanyUpdate(XHS.Build.Model.Models.GCSiteAndCompanyEntity)">
+            <summary>
+            修改监测对象及五方信息
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.SiteCompanyInsert(XHS.Build.Model.Models.GCSiteAndCompanyEntity)">
+            <summary>
+            插入监测对象及五方信息
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.SiteUserList(System.Int32)">
+            <summary>
+            获取单个工地的负责人列表
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.SaveSiteUser(XHS.Build.Model.Models.SiteUserInput)">
+            <summary>
+            保存单个工地的负责人
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.SiteUninput">
+            <summary>
+            获取安监通里有，site里没有的项目列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.GetAqtProj(System.String)">
+            <summary>
+            获取安监通的项目信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteController.GetNoDeviceList(System.Int32)">
+            <summary>
+            获取未绑定扬尘设备的监测对象列表
+            </summary>
+            <param name="groupid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.SiteMapController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapController.#ctor(XHS.Build.Services.Site.ISiteMapService,XHS.Build.Services.File.IFileService,XHS.Build.Services.SystemSetting.IHpSystemSetting,XHS.Build.Common.Auth.IUser,XHS.Build.Services.File.IHpFileDoc)">
+            <summary>
+            
+            </summary>
+            <param name="siteMapService"></param>
+            <param name="fileService"></param>
+            <param name="hpSystemSetting"></param>
+            <param name="user"></param>
+            <param name="hpFileDoc"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapController.Post(XHS.Build.Model.Models.GCSiteMapEntity)">
+            <summary>
+            增
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapController.Update(XHS.Build.Model.Models.GCSiteMapEntity)">
+            <summary>
+            改
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapController.Get(System.Int32)">
+            <summary>
+            详细
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapController.SavePlane(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.Int32,System.Int32)">
+            <summary>
+            上传覆盖在地图上的工地平面图
+            </summary>
+            <param name="formFile">上传的文件</param>
+            <param name="GROUPID"></param>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapController.DeletePlane(System.String)">
+            <summary>
+            删除工地平面图
+            </summary>
+            <param name="FILEID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.SiteMapEquipController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapEquipController.#ctor(XHS.Build.Services.Site.ISiteMapEquipService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            设备地图点位
+            </summary>
+            <param name="siteMapEquipService"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapEquipController.Post(XHS.Build.Model.Models.GCSiteMapEquipEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapEquipController.Put(XHS.Build.Model.Models.GCSiteMapEquipEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapEquipController.Get(System.Int32)">
+            <summary>
+            详细
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapEquipController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="SMEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapEquipController.GetListBySite(System.Int32)">
+            <summary>
+            获取监测点下设备地图点位
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapShapeController.Pages(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            分页获取列表
+            </summary>
+            <param name="SITEID"></param>
+            <param name="pageindex"></param>
+            <param name="pagesize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapShapeController.Post(XHS.Build.Model.Models.GCSiteMapShareEntity)">
+            <summary>
+            增
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapShapeController.Put(XHS.Build.Model.Models.GCSiteMapShareEntity)">
+            <summary>
+            改
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SiteMapShapeController.Delete(System.Int32)">
+            <summary>
+            删
+            </summary>
+            <param name="SMPID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.SpecialEqpController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.SpecialEqp.ISpecialEqpService,XHS.Build.Services.SpecialEqp.ISpecialEqpRecordService,XHS.Build.Services.SystemSetting.IHpSystemSetting,XHS.Build.Services.Device.IDeviceService)">
+            <summary>
+            
+            </summary>
+            <param name="user"></param>
+            <param name="specialEqpService"></param>
+            <param name="hpSystemSetting"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpController.Post(XHS.Build.Model.Models.GCSpecialEqpEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpController.Put(XHS.Build.Model.Models.GCSpecialEqpEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpController.GetWXDYToken(System.String,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            获取大运Token
+            </summary>
+            <param name="appid"></param>
+            <param name="isForce"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpController.SetSEPic(XHS.Build.Model.Models.SpecialEqpDocInputDto)">
+            <summary>
+            新增、删除、修改图片
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpController.GetSEPics(System.Int32)">
+            <summary>
+            获取图片
+            </summary>
+            <param name="SEID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.SpecialEqpRecordController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpRecordController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.SpecialEqp.ISpecialEqpRecordService,XHS.Build.Services.SystemSetting.IHpSystemSetting)">
+            <summary>
+            
+            </summary>
+            <param name="user"></param>
+            <param name="specialEqpService"></param>
+            <param name="hpSystemSetting"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpRecordController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpRecordController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpRecordController.Post(XHS.Build.Model.Models.SpecialEqpRecordInputDto)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpRecordController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpRecordController.Put(XHS.Build.Model.Models.SpecialEqpRecordUpdateDto)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpRecordController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpRecordController.GetEqp(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取监测对象下的特种设备列表
+            </summary>
+            <param name="GROUPID"></param>
+            <param name="SITEID"></param>
+            <param name="setype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpRecordController.GetEqpProof(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取图片
+            </summary>
+            <param name="GROUPID"></param>
+            <param name="SITEID"></param>
+            <param name="SERID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.SpecialEqpTypeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpTypeController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpTypeController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpTypeController.Post(XHS.Build.Model.Models.GCSpecialEqpTypeEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpTypeController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpTypeController.Put(XHS.Build.Model.Models.GCSpecialEqpTypeEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialEqpTypeController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SpecialRealDataController.Pages(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            特种设备 实时数据
+            </summary>
+            <param name="secode"></param>
+            <param name="starttime"></param>
+            <param name="endtime"></param>
+            <param name="pageindex"></param>
+            <param name="pagesize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.SystemsController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SystemsController.#ctor(XHS.Build.Services.Systems.ISystemsService,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="systemsService"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SystemsController.GetList(System.String,System.Int32,System.Int32)">
+            <summary>
+            系统列表
+            </summary>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SystemsController.List">
+            <summary>
+            获取全部系统信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SystemsController.Post(XHS.Build.Model.Models.SystemsEntity)">
+            <summary>
+            添加
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SystemsController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SystemsController.Put(XHS.Build.Model.Models.SystemsEntity)">
+            <summary>
+            修改信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.SystemsController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TaskJobController.Get(System.Int32,System.Int32,System.String)">
+            <summary>
+            分页获取
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TaskJobController.Post(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            添加计划任务
+            </summary>
+            <param name="tasksQz"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TaskJobController.Put(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            修改计划任务
+            </summary>
+            <param name="tasksQz"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TaskJobController.Delete(System.Int32)">
+            <summary>
+            删除计划
+            </summary>
+            <param name="jobId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TaskJobController.StartJob(System.Int32)">
+            <summary>
+            启动计划任务
+            </summary>
+            <param name="jobId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TaskJobController.StopJob(System.Int32)">
+            <summary>
+            停止一个计划任务
+            </summary>
+            <param name="jobId"></param>
+            <returns></returns>        
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TaskJobController.ReCovery(System.Int32)">
+            <summary>
+            重启一个计划任务
+            </summary>
+            <param name="jobId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.TruckController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TruckController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.Truck.ITruckService)">
+            <summary>
+            
+            </summary>
+            <param name="user"></param>
+            <param name="TruckService"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TruckController.List(System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TruckController.Post(XHS.Build.Model.Models.GCSiteTruckEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TruckController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="STID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TruckController.Put(XHS.Build.Model.Models.GCSiteTruckEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.TruckController.Get(System.Int32)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="STID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.UnloadController">
+            <summary>
+            卸料
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UnloadController.#ctor(XHS.Build.Services.Unload.IUnloadService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+            <param name="unloadService"></param>
+            <param name="user"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UnloadController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UnloadController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UnloadController.Post(XHS.Build.Model.Models.GCUnloadEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UnloadController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="ulid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UnloadController.Put(XHS.Build.Model.Models.GCUnloadEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UnloadController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.UserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UserController.GetList(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            用户列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UserController.Groups">
+            <summary>
+            用户列表分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UserController.Post(XHS.Build.Model.ModelDtos.UserAddInput)">
+            <summary>
+            添加
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UserController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UserController.Put(XHS.Build.Model.ModelDtos.UserAddInput)">
+            <summary>
+            修改信息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.UserController.GetInfoByToken">
+            <summary>
+            获取用户详情
+            【无权限】
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.WaterMeterController.List(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="groupid"></param>
+            <param name="keyword">搜索名称</param>
+            <param name="size"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.WaterMeterController.Groups">
+            <summary>
+            分组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.WaterMeterController.Post(XHS.Build.Model.Models.GCWaterMeterEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.WaterMeterController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="WMID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.WaterMeterController.Put(XHS.Build.Model.Models.GCWaterMeterEntity)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.WaterMeterController.Get(System.String)">
+            <summary>
+            获取详细
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Filters.ExceptionFilter">
+            <summary>
+            Admin异常错误过滤
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Filters.ExceptionFilter.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILogger{XHS.Build.Admin.Filters.ExceptionFilter})">
+            <summary>
+            异常
+            </summary>
+            <param name="env"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Filters.ExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Filters.ExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Filters.InternalServerErrorResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Admin.Logs.ILogHandler">
+            <summary>
+            操作日志处理接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Logs.ILogHandler.LogAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            写操作日志
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Admin.Logs.LogHandler">
+            <summary>
+            操作日志处理
+            </summary>
+        </member>
+    </members>
+</doc>

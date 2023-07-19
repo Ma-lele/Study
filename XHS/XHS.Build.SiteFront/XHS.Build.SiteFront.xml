@@ -1,0 +1,1337 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XHS.Build.SiteFront</name>
+    </assembly>
+    <members>
+        <member name="T:XHS.Build.SiteFront.Attributes.LoginAttribute">
+            <summary>
+            登录后不走权限
+            </summary>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Attributes.PermissionAttribute">
+            <summary>
+            启用权限
+            </summary>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Auth.IPermissionHandler">
+            <summary>
+            权限处理接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Auth.IPermissionHandler.ValidateAsync(System.String)">
+            <summary>
+            权限验证
+            </summary>
+            <param name="api"></param>
+            <param name="httpMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Auth.PermissionHandler">
+            <summary>
+            权限处理
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Auth.PermissionHandler.ValidateAsync(System.String)">
+            <summary>
+            权限验证
+            </summary>
+            <param name="api">接口路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Auth.ResponseAuthenticationHandler">
+            <summary>
+            响应认证处理器
+            </summary>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.AIHelmetController">
+            <summary>
+            人员安全帽未佩戴
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AIHelmetController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.Helmet.IHelmetService)">
+            <summary>
+            
+            </summary>
+            <param name="user"></param>
+            <param name="helmetService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AIHelmetController.GetAiHelmetRecordList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            安全帽未佩戴列表
+            </summary>
+            <param name="keyword">点位信息</param>
+            <param name="month">月份</param>
+            <param name="pageindex"></param>
+            <param name="pagesize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AIHelmetController.GetAiHelmetDataCompare">
+            <summary>
+            安全帽未佩戴数据对比
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AIHelmetController.GetAiHelmetDataCount(System.Int32)">
+            <summary>
+            安全帽未佩戴数据统计
+            </summary>
+            <param name="type">0:月统计;1:年统计</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AIHelmetController.GetAiHelmetDuringAnalysis(System.Int32)">
+            <summary>
+            安全帽未佩戴时段分析
+            </summary>
+            <param name="type">0:月统计;1:年统计</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AIHelmetController.GetAiHelmentLocationList">
+            <summary>
+            安全帽未佩戴位置列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.AirTightController">
+            <summary>
+            车辆密闭运输
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AirTightController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.AIAirTightAction.IAIAirTightService)">
+            <summary>
+            
+            </summary>
+            <param name="aIAirTightService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AirTightController.GetRecordList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            车辆密闭运输记录列表
+            </summary>
+            <param name="month">月份</param>
+            <param name="keyword">车牌号</param>
+            <param name="pageindex"></param>
+            <param name="pagesize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AirTightController.GetDataCompare">
+            <summary>
+            车辆密闭运输数据比对
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AirTightController.GetDataCount(System.Int32)">
+            <summary>
+            车辆密闭运输数据统计
+            </summary>
+            <param name="type">0:月统计;1:年统计</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AirTightController.GetDuringAnalysis(System.Int32)">
+            <summary>
+            车辆密闭运输时段分析
+            </summary>
+            <param name="type">0:月统计;1:年统计</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.AISoilController">
+            <summary>
+            裸土覆盖
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AISoilController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.AISoilAction.IAISoilService)">
+            <summary>
+            
+            </summary>
+            <param name="aiWashService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AISoilController.GetAiSoilRecordList(System.String,System.Int32,System.Int32)">
+            <summary>
+            裸土覆盖数据列表
+            </summary>
+            <param name="month">按月份筛选</param>
+            <param name="pageindex">分页</param>
+            <param name="pagesize">分页</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AISoilController.GetAiSoilDataCompare">
+            <summary>
+            裸土数据比对
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AISoilController.GetAiSoilDataCount(System.Int32)">
+            <summary>
+            裸土覆盖数据统计
+            </summary>
+            <param name="type">0:月统计;1:年统计</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AISoilController.GetAiSoilDuringAnalysis(System.Int32)">
+            <summary>
+            裸土覆盖时段分析
+            </summary>
+            <param name="type">0:月统计;1:年统计</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.AISparyController">
+            <summary>
+            喷淋AI监测
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AISparyController.GetAiSprayDataCount(System.Int32)">
+            <summary>
+            喷淋统计
+            </summary>
+            <param name="type">0:本月;1:上月</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.AISparyController.GetAiSprayDuringAnalysis(System.Int32)">
+            <summary>
+            喷淋统计
+            </summary>
+            <param name="type"></param>                                                                                                                   
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.CarWashController">
+            <summary>
+            车辆未冲洗
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.CarWashController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.AIWash.IAiWashService)">
+            <summary>
+            
+            </summary>
+            <param name="aiWashService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.CarWashController.GetRecordList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            车辆未冲洗列表
+            </summary>
+            <param name="month">月份</param>
+            <param name="platecolor">车牌颜色</param>
+            <param name="pageindex"></param>
+            <param name="pagesize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.CarWashController.GetDataCompare">
+            <summary>
+            车冲数据对比
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.CarWashController.GetDataCount(System.Int32)">
+            <summary>
+            车冲数据统计
+            </summary>
+            <param name="type">0:月统计;1:年统计</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.CarWashController.GetDuringAnalysis(System.Int32)">
+            <summary>
+            车冲时段分析
+            </summary>
+            <param name="type">0:月统计;1:年统计</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.DangerController">
+            <summary>
+            危大工程
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DangerController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.Danger.IDangerService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="user"></param>
+            <param name="dangerService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DangerController.List">
+            <summary>
+            危大工程-列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DangerController.File(System.String)">
+            <summary>
+            危大工程-文件
+            </summary>
+            <param name="SDID">危大工程ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DangerController.TypeStats">
+            <summary>
+            危大工程-类型统计分析
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DangerController.Trend(System.Int32)">
+            <summary>
+            危大工程-趋势
+            </summary>
+            <param name="days"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.DeepPitController">
+            <summary>
+            深基坑
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DeepPitController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.DeepPit.IDeepPitService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="user"></param>
+            <param name="deepPitService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DeepPitController.Total">
+            <summary>
+            深基坑-左上角统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DeepPitController.Select">
+            <summary>
+            深基坑-下拉框数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DeepPitController.Monitor(System.Int32,System.DateTime,System.DateTime,System.String,System.String)">
+            <summary>
+            深基坑-监控信息
+            </summary>
+            <param name="DPID">深基坑ID</param>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="monitorType">监控类型</param>
+            <param name="deviceid">设备ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DeepPitController.LiveData(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            深基坑-实时数据
+            </summary>
+            <param name="DPID">深基坑ID</param>
+            <param name="pageindex">页码</param>
+            <param name="pagesize">行数</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.DefenceController">
+            <summary>
+            临边围挡
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DefenceController.#ctor(XHS.Build.Services.Defence.IDefenceService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            ctor
+            </summary>
+            <param name="defenceService"></param>
+            <param name="user"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DefenceController.EquipmentStatistic(System.String,System.Int32,System.Int32)">
+            <summary>
+            临边围挡-设备统计列表
+            </summary>
+            <param name="keyword">关键词</param>
+            <param name="dfstatus">设备状态0:闭合 1::断线 2:拆除 3:主机拆除 4:围挡缺失</param>
+            <param name="bsheild">警戒状态0:撤防 1:布防</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.DefenceController.Total">
+            <summary>
+            临边围挡-左上角统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.EnvController">
+            <summary>
+            环境监测
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.EnvController.#ctor(XHS.Build.Services.Env.IEnvService,XHS.Build.Services.Site.ISiteService,XHS.Build.Services.Group.IGroupService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+            <param name="envService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.EnvController.GetPmSiteSubList">
+            <summary>
+            获取子监测点扬尘设备数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.EnvController.GetWarnLine">
+            <summary>
+            获取超标预警值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.EnvController.GetPmSiteRtdData(System.Int32,System.Int32)">
+            <summary>
+            获取监测点最新扬尘实时数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.EnvController.GetPmSiteChart(System.Int32,System.Int32)">
+            <summary>
+            获取监测点扬尘实时，小时，日均数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.EnvController.GetPmSiteDayWarnCount(System.Int32,System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            获取监测点超标告警统计
+            </summary>
+            <param name="PARENTSITEID"></param>
+            <param name="startdate">开始日期</param>
+            <param name="enddate">结束日期</param>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.EnvController.GetPmOnlineBarChart(System.Int32,System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            获取监测点离线柱状图
+            </summary>
+            <param name="PARENTSITEID"></param>
+            <param name="startdate">开始日期</param>
+            <param name="enddate">结束日期</param>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.EnvController.GetSiteDataHis(System.Int32,System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取监测点扬尘历史数据
+            </summary>
+            <param name="PARENTSITEID"></param>
+            <param name="startdate">开始日期</param>
+            <param name="enddate">结束日期</param>
+            <param name="datatype">1：分钟 2：小时 3：日均</param>
+            <param name="pageindex">页数</param>
+            <param name="pagesize">每页记录数</param>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.EnvController.GetSiteO3Chart">
+            <summary>
+            获取监测点臭氧图表数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.EnvController.GetSiteO3His(System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取监测点臭氧历史数据
+            </summary>
+            <param name="startdate">开始日期</param>
+            <param name="enddate">结束日期</param>
+            <param name="datatype">--1：分钟 2：小时 3：日均 4：8小时滑动平均 5：日评价</param>
+            <param name="pageindex">页数</param>
+            <param name="pagesize">每页记录数</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.FallProtectionController">
+            <summary>
+            临边防护
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.FallProtectionController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.FallProtection.IFallProtectionService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="user"></param>
+            <param name="fallProtectionService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.FallProtectionController.Total">
+            <summary>
+            临边防护-左上角统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.FallProtectionController.WarningType(System.DateTime,System.DateTime)">
+            <summary>
+            告警类型分析
+            </summary>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.FallProtectionController.DeviceStatistic(System.String,System.Int32,System.Int32)">
+            <summary>
+            设备统计
+            </summary>
+            <param name="keyword">关键词</param>
+            <param name="online">在线状态 -1:全部  0:离线  1:在线</param>
+            <param name="alarm">报警状态 -1:全部  0:正常  1:异常</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.HelmetLocationController">
+            <summary>
+            人员定位
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.HelmetLocationController.#ctor(XHS.Build.Common.Auth.XHSRealnameToken,XHS.Build.Services.SystemSetting.IHpSystemSetting)">
+            <summary>
+            
+            </summary>
+            <param name="jwtToken"></param>
+            <param name="hpSystemSetting"></param>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.HighFormworkController">
+            <summary>
+            高支模
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.HighFormworkController.#ctor(XHS.Build.Services.HighFormwork.IHighFormworkService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            ctor
+            </summary>
+            <param name="highFormworkService"></param>
+            <param name="user"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.HighFormworkController.Total">
+            <summary>
+            高支模-左上角统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.HighFormworkController.Select">
+            <summary>
+            高支模-下拉框数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.HighFormworkController.Monitor(System.String,System.Int32,System.String)">
+            <summary>
+            高支模-监控信息
+            </summary>
+            <param name="hfwcode">设备编号</param>
+            <param name="HFWAID">区域ID</param>
+            <param name="spotcode">点位编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.HighFormworkController.MonitorHistory(System.String,System.Int32,System.String,System.DateTime,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            高支模-监控信息-历史数据
+            </summary>
+            <param name="hfwcode">设备编号</param>
+            <param name="HFWAID">区域ID</param>
+            <param name="spotcode">点位编号</param>
+            <param name="startDate">查找开始日期</param>
+            <param name="endDate">查找结束日期</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">行数</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.IllegalCarController">
+            <summary>
+            非法车辆进入
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.IllegalCarController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.AIIllegalCarAction.IAIIllegalCarService)">
+            <summary>
+            
+            </summary>
+            <param name="aIIllegalCarService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.IllegalCarController.GetRecordList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            非法车辆进入列表
+            </summary>
+            <param name="month">月份</param>
+            <param name="keyword">车牌号</param>
+            <param name="pageindex">当前页</param>
+            <param name="pagesize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.IllegalCarController.GetDataCompare">
+            <summary>
+            非法车辆数据对比
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.IllegalCarController.GetDataCount(System.Int32)">
+            <summary>
+            非法车辆统计
+            </summary>
+            <param name="type">0:月统计;1:年统计</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.IllegalCarController.GetDuringAnalysis(System.Int32)">
+            <summary>
+            非法车辆时段分析
+            </summary>
+            <param name="type">0:月统计;1:年统计</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.InspectController">
+            <summary>
+            安全隐患-检查单
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.InspectController.InspectStats(System.DateTime,System.DateTime)">
+            <summary>
+            检查单-左上角统计
+            </summary>
+            <param name="startDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.InspectController.InspectDayCount(System.DateTime,System.DateTime)">
+            <summary>
+            智慧工地2.0项目端-检查单-每日次数统计
+            </summary>
+            <param name="startDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.InspectController.InspectTypeCount(System.DateTime,System.DateTime)">
+            <summary>
+            智慧工地2.0项目端-检查单-问题类型统计
+            </summary>
+            <param name="startDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.InspectController.InspectOne(System.String)">
+            <summary>
+            检查单-数据详情
+            </summary>
+            <param name="inspcode">检查单编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.InspectController.InspectList(System.Int32,System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            检查单-数据列表
+            </summary>
+            <param name="INSPID">一页最后一条数据的key</param>
+            <param name="processstatus">2：等待整改，3：等待确认，4：完成整改</param>
+            <param name="keyword">单号，模糊查询</param>
+            <param name="startDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.LoginController">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.LoginController.#ctor(XHS.Build.Common.Configs.JwtConfig,XHS.Build.Services.Site.ISiteService,XHS.Build.Common.Auth.IUserToken,XHS.Build.Services.UserService.IUserService,AutoMapper.IMapper,XHS.Build.Common.Cache.ICache,XHS.Build.Services.SystemSetting.IHpSystemSetting)">
+            <summary>
+            用户登录Controller
+            </summary>
+            <param name="siteService"></param>
+            <param name="userService"></param>
+            <param name="mapper"></param>
+            <param name="cache"></param>
+            <param name="hpSystemSetting"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.LoginController.Login(XHS.Build.Model.ModelDtos.LoginUserInput)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="input">登录信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.LoginController.SingleLogin(System.String)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="data">登录信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.LoginController.Refresh(System.String)">
+            <summary>
+            刷新Token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.LoginController.GetToken(XHS.Build.Model.ModelDtos.LoginUserOutput)">
+            <summary>
+            获得token
+            </summary>
+            <param name="output"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.LoginController.WsTest(System.String)">
+            <summary>
+            test
+            </summary>
+            <param name="devicecode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.MenuController">
+            <summary>
+            页面菜单接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.MenuController.#ctor(XHS.Build.Services.Menus.IMenuService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="menuService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.MenuController.GetMenu">
+            <summary>
+            获取菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.RealnameController">
+            <summary>
+            人员统计/人员二维码
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Common.Auth.XHSRealnameToken,XHS.Build.Services.SystemSetting.IHpSystemSetting,XHS.Build.Repository.Base.IBaseRepository{XHS.Build.Model.Base.BaseEntity})">
+            <summary>
+            
+            </summary> 
+            <param name="jwtToken"></param>
+            <param name="hpSystemSetting"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffApproach">
+            <summary>
+            在册，在岗人员统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffList(System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            人员列表
+            </summary>
+            <param name="keyword">姓名/身份证号/所属单位 模糊查</param>
+            <param name="province">省</param>
+            <param name="city">市</param>
+            <param name="township">区/县</param>
+            <param name="teamname">班组名称</param>
+            <param name="personstate">必须赋值 人员是否离场状态(1:在岗,0已退场,9全部)</param>
+            <param name="employeetype">必须赋值 人员类型：0表示管理人员，1表示普通工人 ,9全部</param>
+            <param name="worktype">工种类型</param>
+            <param name="pageindex">当前页 从1开始</param>
+            <param name="pagesize">每页记录数必填</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffInfo(System.String)">
+            <summary>
+            人员信息
+            </summary>
+            <param name="personId">人员编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffAttendance(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            人员考勤明细
+            </summary>
+            <param name="personId">人员编号</param>
+            <param name="month">按月份筛选</param>
+            <param name="pageindex">当前页 从1开始</param>
+            <param name="pagesize">每页记录数必填</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffCertificate(System.String)">
+            <summary>
+            人员证书信息
+            </summary>
+            <param name="personId">人员编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffEducation(System.String)">
+            <summary>
+            人员教育/培训记录
+            </summary>
+            <param name="personId">人员编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffEducationFile(System.String)">
+            <summary>
+            培训附件列表
+            </summary>
+            <param name="educationId">教育/培训编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetUnitList">
+            <summary>
+            单位列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetAttendanceCount(System.String,System.Int32)">
+            <summary>
+            施工/安管人员考勤统计
+            </summary>
+            <param name="EmployeeType">人员类型：0表示管理人员，1表示普通工人，9全部</param>
+            <param name="month">按月份筛选</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffPassOutData(System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            人员进出场数据列表
+            </summary>
+            <param name="keyword">姓名/身份证号/所属单位 模糊查</param>
+            <param name="province">省</param>
+            <param name="city">市</param>
+            <param name="township">区/县</param>
+            <param name="teamName">班组名称 模糊查</param>
+            <param name="employeetype">人员类型：0表示管理人员，1表示普通工人，9全部</param>
+            <param name="month">按月份筛选</param>
+            <param name="pageindex">当前页 从1开始</param>
+            <param name="pagesize">每页记录数必填</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffBehaviorCount">
+            <summary>
+            人员行为记录统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffBehaviorRecord(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            人员行为记录
+            </summary>
+            <param name="keyword">人员名称 模糊查</param>
+            <param name="worktype">工种类型</param>
+            <param name="actionyype">行为类型（1:良好记录，2:不良记录，9全部）</param>
+            <param name="pageindex">当前页 从1开始</param>
+            <param name="pagesize">每页记录数必填</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetTeamList(System.String,System.String)">
+            <summary>
+            班组列表展示
+            </summary>
+            <param name="unitcode">社会统一信用代码</param>
+            <param name="teamname">班组名称 模糊查</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetStaffCodeCount(System.Int32)">
+            <summary>
+            在岗人员二维码统计
+            </summary>
+            <param name="employeetype">人员类型：0表示管理人员，1表示普通工人，9全部</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetTeamsList">
+            <summary>
+            班组列表下拉框
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetWorkTypeList">
+            <summary>
+            工种列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetDataCount">
+            <summary>
+            当前用户下，所有工地的劳务人员总数、男女占比、各年龄段（34岁以下/35~44岁/45~54岁/55岁及以上）占比，各籍贯（省份）的占比，各工种的占比
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetteamCount">
+            <summary>
+            单个工地所有人员对应的各班组人数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetJobCount(System.Int32)">
+            <summary>
+            工种岗位统计
+            </summary>
+            <param name="type">0:施工;1:安管</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RealnameController.GetWorkTypeCount">
+            <summary>
+            单个工地工种数量统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.RoundController">
+            <summary>
+            随手拍
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RoundController.RoundStats(System.DateTime,System.DateTime)">
+            <summary>
+            随手拍-左上角统计
+            </summary>
+            <param name="startDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RoundController.RoundDayCount(System.DateTime,System.DateTime)">
+            <summary>
+            智慧工地2.0项目端-随手拍-每日次数统计
+            </summary>
+            <param name="startDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RoundController.RoundTypeCount(System.DateTime,System.DateTime)">
+            <summary>
+            智慧工地2.0项目端-随手拍-问题类型统计
+            </summary>
+            <param name="startDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RoundController.RoundOne(System.Int32)">
+            <summary>
+            随手拍-数据详情
+            </summary>
+            <param name="ROUNDID">编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.RoundController.RoundList(System.Int32,System.String,System.DateTime,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            随手拍-数据列表
+            </summary>
+            <param name="status">状态</param>
+            <param name="keyword">关键字</param>
+            <param name="startDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.SafetyTrainingController">
+            <summary>
+            教育培训
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SafetyTrainingController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Common.Auth.XHSRealnameToken,XHS.Build.Services.SystemSetting.IHpSystemSetting,XHS.Build.Repository.Base.IBaseRepository{XHS.Build.Model.Base.BaseEntity})">
+            <summary>
+            
+            </summary>
+            <param name="iuser"></param>
+            <param name="jwtToken"></param>
+            <param name="hpSystemSetting"></param>
+            <param name="baseServices"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SafetyTrainingController.GetEducationDataCount">
+            <summary>
+            在岗施工人员教育/培训数据统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SafetyTrainingController.GetEducationCount(System.String,System.String)">
+            <summary>
+            教育/培训统计
+            </summary>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SafetyTrainingController.GetStaffEducationList(System.String,System.Int32,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            人员教育/培训列表
+            </summary>
+            <param name="keyword">姓名/所属单位 模糊查</param>
+            <param name="employeetype">人员类型：0表示管理人员，1表示普通工人，9全部</param>
+            <param name="teamname">班组</param>
+            <param name="worktype">工种</param>
+            <param name="pageindex">当前页 从1开始</param>
+            <param name="pagesize">每页记录数必填</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SafetyTrainingController.GetWorkTypeList">
+            <summary>
+            工种列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SafetyTrainingController.GetTeamsList">
+            <summary>
+            班组列表下拉框
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.SecurityController">
+            <summary>
+            移动巡检
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SecurityController.Total">
+            <summary>
+            移动巡检-左上角统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SecurityController.Point">
+            <summary>
+            移动巡检-巡更点信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SecurityController.Line(System.DateTime,System.DateTime)">
+            <summary>
+            巡更次数统计
+            </summary>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SecurityController.History(System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            历史记录
+            </summary>
+            <param name="keyword">关键词</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <param name="SECURITYID">点位ID</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SecurityController.Image(System.Int32)">
+            <summary>
+            巡检图片
+            </summary>
+            <param name="SCHISID">巡检记录id</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.SiteController">
+            <summary>
+            项目管理
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SiteController.#ctor(XHS.Build.Services.Site.ISiteService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+            <param name="siteService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SiteController.GetSiteList">
+            <summary>
+            获取用户下监测点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SiteController.DeviceMap(System.Int32)">
+            <summary>
+            设备地图
+            </summary>
+            <param name="type">1 扬尘，2 摄像头，3 塔吊，4 升降机，5 卸料平台，6 深基坑，7 高支模，8 临边防护,9 实名制</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SiteController.SetSite(System.String)">
+            <summary>
+            切换监测点
+            </summary>
+            <param name="siteid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SiteController.GetSiteInfo">
+            <summary>
+            获取监测点详情
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SiteController.GetSiteFiveParts">
+            <summary>
+            获取监测点五方单位信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.SpecialController">
+            <summary>
+            特种设备
+            </summary>
+        </member>
+        <member name="F:XHS.Build.SiteFront.Controllers.SpecialController._specialEqpService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SpecialController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.SpecialEqp.ISpecialEqpService,XHS.Build.Services.SpecialEqpDoc.ISpecialEqpDocService,XHS.Build.Services.SpecialEqp.ISpecialEqpRecordService,XHS.Build.Services.SpecialEqp.ISpecialEqpAuthHisService,XHS.Build.Repository.Base.IMongoDBRepository{XHS.Build.Model.Models.SpecialEqpData})">
+            <summary>
+            
+            </summary>
+            <param name="user"></param>
+            <param name="specialEqpService"></param>
+            <param name="specialEqpDocService"></param>
+            <param name="specialEqpRecordService"></param>
+            <param name="specialEqpAuthHisService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SpecialController.GetAuthHis(System.String,System.DateTime)">
+            <summary>
+            智慧工地2.0项目端-特种设备-人脸识别数据
+            </summary>
+            <param name="secode">设备号</param>
+            <param name="billdate">月份筛选</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SpecialController.GetDataHis(System.String,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            智慧工地2.0项目端-特种设备-历史数据
+            </summary>
+            <param name="secode">设备号</param>
+            <param name="billdate">日期</param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SpecialController.GetCount(System.Int32)">
+            <summary>
+            智慧工地2.0项目端-特种设备-特种设备台数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SpecialController.GetEmpList(System.String)">
+            <summary>
+            智慧工地2.0项目端-特种设备-操作员列表
+            </summary>
+            <param name="secode">设备号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SpecialController.GetList(System.Int32)">
+            <summary>
+            智慧工地2.0项目端-特种设备-特种设备列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SpecialController.GetRecord(System.String)">
+            <summary>
+            智慧工地2.0项目端-特种设备-特种设备备案数据
+            </summary>
+            <param name="secode">设备号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SpecialController.GetRtd(System.String)">
+            <summary>
+            智慧工地2.0项目端-特种设备-特种设备最近一条实时数据
+            </summary>
+            <param name="secode">设备号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.SpecialController.GetRtdList(System.String)">
+            <summary>
+            智慧工地2.0项目端-特种设备-特种设备最近60条实时数据用于回放
+            </summary>
+            <param name="secode">设备号</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.UnloadController">
+            <summary>
+            卸料平台
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.UnloadController.UnloadStats">
+            <summary>
+            卸料平台-左上角统计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.UnloadController.UnloadSelect">
+            <summary>
+            卸料平台-下拉框监测数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.UnloadController.UnloadHistory(System.String,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            卸料平台-历史数据
+            </summary>
+            <param name="unloadid">设备id</param>
+            <param name="searchDate">查找日期</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">行数</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.VideoController">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.VideoController.#ctor(XHS.Build.Services.Video.IVideoService,XHS.Build.Services.Cameras.ICameraService,XHS.Build.Common.Auth.IUser)">
+            <summary>
+            
+            </summary>
+            <param name="videoService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.VideoController.GetCameraList">
+            <summary>
+            获取监测点下的摄像头列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.VideoController.GetCameraListByDevCode(System.String)">
+            <summary>
+            获取监测点下的摄像头列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.VideoController.GetRealUrl(XHS.Build.Model.ModelDtos.BnCamera)">
+            <summary>
+            获取摄像头直播流地址
+            </summary>
+            <param name="bc">摄像头信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.VideoController.Ptz(XHS.Build.Model.ModelDtos.BnCamera)">
+            <summary>
+            云台操作，对监控点云台方向，转动速度进行操作。
+            </summary>
+            <param name="bc">摄像头信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.VideoController.GetPlayBackUrl(XHS.Build.Model.ModelDtos.BnCamera)">
+            <summary>
+            获取摄像头回看流地址
+            </summary>
+            <param name="bc">摄像头信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.WarningController">
+            <summary>
+            告警分析
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WarningController.#ctor(XHS.Build.Common.Auth.IUser,XHS.Build.Services.Warning.IWarningService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="warningService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WarningController.WarningStatistic(System.DateTime,System.DateTime)">
+            <summary>
+            告警统计
+            </summary>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WarningController.WarningStatisticDaily(System.DateTime,System.DateTime)">
+            <summary>
+            告警分析-每日数据
+            </summary>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WarningController.WarningTypeDaily(System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            告警统计（每日，按设备类型分）
+            </summary>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="deviceType">1 扬尘，2 摄像头，3 塔吊，4 升降机，5 卸料平台，6 深基坑，7 高支模，8 临边围挡（旧）,9 实名制</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WarningController.LiveList(System.Int32,System.String,System.DateTime,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            通用告警-实时告警数据列表
+            </summary>
+            <param name="type">1 扬尘，2 摄像头，3 塔吊，4 升降机，5 卸料平台，6 深基坑，7 高支模，8 临边围挡（旧）,9 实名制</param>
+            <param name="keyword">设备编号、名称、所属区域</param>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WarningController.TypeStatistic(System.DateTime,System.DateTime)">
+            <summary>
+            告警分析-分类统计
+            </summary>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WarningController.WarnLiveSelect">
+            <summary>
+            告警分析-实时数据下拉框
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WarningController.WarnTypeLiveList(System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            告警分析-实时数据(按模块分)
+            </summary>
+            <param name="keyword">关键词(设备编号)</param>
+            <param name="MPID">模块ID</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WarningController.WarnTypeRank(System.DateTime,System.DateTime)">
+            <summary>
+            告警排行
+            </summary>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Controllers.WeatherController">
+            <summary>
+            天气接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WeatherController.#ctor(XHS.Build.Services.Weather.IWeatherService,XHS.Build.Common.Auth.IUser,XHS.Build.Services.Group.IGroupService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="weatherService"></param>
+            <param name="user"></param>
+            <param name="groupService"></param>
+            <param name="menuService"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Controllers.WeatherController.Weather">
+            <summary>
+            天气信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Filters.ExceptionFilter">
+            <summary>
+            SiteFront异常错误过滤
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Filters.ExceptionFilter.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILogger{XHS.Build.SiteFront.Filters.ExceptionFilter})">
+            <summary>
+            异常
+            </summary>
+            <param name="env"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Filters.ExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Filters.ExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Filters.InternalServerErrorResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Logs.ILogHandler">
+            <summary>
+            操作日志处理接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SiteFront.Logs.ILogHandler.LogAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            写操作日志
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SiteFront.Logs.LogHandler">
+            <summary>
+            操作日志处理
+            </summary>
+        </member>
+    </members>
+</doc>

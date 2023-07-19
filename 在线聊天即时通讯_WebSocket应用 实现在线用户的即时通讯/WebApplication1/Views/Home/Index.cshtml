@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>聊天主窗体【所有可以聊天的人员信息】</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            loademplist();
+
+
+        });
+
+
+
+        // 找出当前登录人可以聊天的用户并展示
+        function loademplist() {
+            // 找到当前用户ID
+            // sessionStorage.setItem("emp", res.Data); 
+
+            $.ajax({
+                url:'/Home/EmpList',
+                type: 'get',
+                dataType: 'json',
+                success: function (res) {
+
+                    $("#emplist").empty();
+
+                    $(res.Data).each(function (i, item) {
+                        var li = '<li><a href="/Home/SendMes?to_empid=' + item.ID + '&to_ename=' + item.EName +'">' + item.EName +'</a></li>';
+
+                        $("#emplist").append(li);   
+                    });
+                }
+            });
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div> 
+        <ul id="emplist">
+          
+        </ul>
+
+    </div>
+</body>
+</html>

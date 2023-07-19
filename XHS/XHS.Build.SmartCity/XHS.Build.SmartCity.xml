@@ -1,0 +1,928 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XHS.Build.SmartCity</name>
+    </assembly>
+    <members>
+        <member name="T:XHS.Build.SmartCity.Attributes.LoginAttribute">
+            <summary>
+            登录后不走权限
+            </summary>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Attributes.PermissionAttribute">
+            <summary>
+            启用权限
+            </summary>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Auth.IPermissionHandler">
+            <summary>
+            权限处理接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Auth.IPermissionHandler.ValidateAsync(System.String)">
+            <summary>
+            权限验证
+            </summary>
+            <param name="api"></param>
+            <param name="httpMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Auth.PermissionHandler">
+            <summary>
+            权限处理
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Auth.PermissionHandler.ValidateAsync(System.String)">
+            <summary>
+            权限验证
+            </summary>
+            <param name="api">接口路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Auth.ResponseAuthenticationHandler">
+            <summary>
+            响应认证处理器
+            </summary>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Controllers.BoardController">
+            <summary>
+            数据看板
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.#ctor(XHS.Build.Services.Board.IBoardService)">
+            <summary>
+            
+            </summary>
+            <param name="boardService"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.GetGroupList(System.Int32)">
+            <summary>
+            区分组列表，以及每个区的工地数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.GetGeneral(System.Int32)">
+            <summary>
+            左上角项目概况
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.GetDevSiteCount(System.Int32)">
+            <summary>
+            右上角工地数统计
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.GetGeneralList(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            项目概况点击以后的项目列表弹框
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="pageindex">当前第几页</param>
+            <param name="pagesize">每页几条</param>
+            <param name="keyword">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.GetMap(System.Int32)">
+            <summary>
+            中间地图 
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.GetDevSiteList(System.Int32,System.Int32)">
+            <summary>
+            右上角监测项目覆盖率点击后的弹框
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="type">1：扬尘 2：视频 3：冲洗 4：特设 5：临边 6：考勤</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.GetWeekWarn(System.Int32)">
+            <summary>
+            一周工地监测动态
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.GetWarn(System.Int32,System.Int32)">
+            <summary>
+            项目告警情况
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="type">1:今日，2：一周，3：一个月，4：一年</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.GetTopWeather(System.String)">
+            <summary>
+            头部天气预报
+            </summary>
+            <param name="city">市</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.BoardController.GetOnlineRank(System.Int32)">
+            <summary>
+            当前视频在线率
+            </summary>
+            <param name="GROUPID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Controllers.CompanyController">
+            <summary>
+            单位统计
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.CompanyController.#ctor(XHS.Build.Services.Company.ICompanyService,XHS.Build.Common.Auth.XHSRealnameToken,XHS.Build.Services.SystemSetting.IHpSystemSetting)">
+            <summary>
+            
+            </summary>
+            <param name="companyService"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.CompanyController.GetUnitStatistics(System.String,System.Int32,System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            单位统计详情
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <param name="keyword">查询内容</param>
+            <param name="pageindex">当前第几页</param>
+            <param name="pagesize">每页多少条</param>
+            <param name="companytype">单位类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.CompanyController.GetUnitInfo(System.String)">
+            <summary>
+            单位基本信息
+            </summary>
+            <param name="creditCode">统一信用码</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.CompanyController.GetPorjectInfo(System.String,System.String)">
+            <summary>
+            根据企业信息表ID和参建类型 获取项目信息
+            </summary>
+            <param name="id">企业信息表ID</param>
+            <param name="companyType">参建类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.CompanyController.GetrRelationProject(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            关联项目信息
+            </summary>
+            <param name="creditCode">统一信用代码</param>
+            <param name="keyword">查询内容</param>
+            <param name="pageindex">当前第几页</param>
+            <param name="pagesize">每页多少条</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.CompanyController.GetPunishInfo(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            处罚信息
+            </summary>
+            <param name="creditCode">统一信用代码</param>
+            <param name="keyword">查询内容</param>
+            <param name="pageindex">当前第几页</param>
+            <param name="pagesize">每页多少条</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.CompanyController.GetUnitCount(System.String,System.String)">
+            <summary>
+            单位对应数量
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.CompanyController.GetSite(System.String)">
+            <summary>
+            市平台单位统计画面
+            这个单位关联的所有项目的projectCode（逗号分隔）
+            </summary>
+            <param name="creditCode">单位统一信用代码</param>
+            <returns></returns>a
+        </member>
+        <member name="T:XHS.Build.SmartCity.Controllers.DangerController">
+            <summary>
+            危大工程
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.DangerController.#ctor(XHS.Build.Services.Danger.IDangerService)">
+            <summary>
+            
+            </summary>
+            <param name="dangerService"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.DangerController.GetSiteCount(System.Int32)">
+            <summary>
+            危大项目数量统计
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.DangerController.GetDevCount(System.Int32)">
+            <summary>
+            危大监测设备数量统计
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.DangerController.GetWarnCount(System.Int32,System.Int32)">
+            <summary>
+            告警统计
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="type">2：一周，3：一个月</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.DangerController.GetWarnRank(System.Int32,System.Int32)">
+            <summary>
+            危大告警设备排行
+            第一行:本周期；第二行:上周期
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="type">1:今日，2：一周，3：一个月，4：一年</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.DangerController.GetWarnAreaCount(System.Int32,System.Int32)">
+            <summary>
+            危大告警区域排行
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="type">1:今日，2：一周，3：一个月，4：一年</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.DangerController.GetDevList(System.Int32,System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            获取某种类型的危大设备列表
+            </summary>
+            <param name="GROUPID"></param>
+            <param name="type">1:塔吊 2:升降机 3:卸料平台 4:深基坑 5:高支模</param>
+            <param name="pageindex"></param>
+            <param name="pagesize"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Controllers.EnvController">
+            <summary>
+            环境监测
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.#ctor(XHS.Build.Services.Env.IEnvService)">
+            <summary>
+            
+            </summary>
+            <param name="envService"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetSiteCount(System.Int32)">
+            <summary>
+            安装各种监测设备的工地数量
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetWarnCount(System.Int32,System.Int32)">
+            <summary>
+            扬尘PM10监测告警分布图
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="type">1:今日，2：一周，3：一个月，4：一年</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetWarnCountTotal(System.Int32)">
+            <summary>
+            环境告警统计
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetWashCount(System.Int32,System.Int32)">
+            <summary>
+            车辆未冲洗统计[AI识别]
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="type">1:今日，2：一周，3：一个月，4：一年</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetAirTightCount(System.Int32,System.Int32)">
+            <summary>
+            车辆密闭统计[AI识别]
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="type">1:今日，2：一周，3：一个月，4：一年</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetSoilCount(System.Int32,System.Int32)">
+            <summary>
+            裸土覆盖统计[AI识别]
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="type">1:今日，2：一周，3：一个月，4：一年</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetSitePm(System.Int32)">
+            <summary>
+            制造项目管理
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetPmRtdRank(System.Int32)">
+            <summary>
+            环境监测 扬尘实时数据排行
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetPmHourRank(System.Int32)">
+            <summary>
+            --环境监测 扬尘小时均值排行
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetPmDailyRank(System.Int32)">
+            <summary>
+            --环境监测 扬尘日均值排行
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetPmDailyList(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            环境监测 扬尘每月日均值查询
+            </summary>
+            <param name="billdate">指定年月</param>
+            <param name="keyword">关键字</param>
+            <param name="pageindex">当前第几页</param>
+            <param name="pagesize">每页多少条</param>
+            <param name="GROUPID">0:市看区数据 1:区看工地数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetPmHourList(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            --环境监测 扬尘每日小时均值查询
+            </summary>
+            <param name="billdate">指定日期</param>
+            <param name="keyword">关键字</param>
+            <param name="pageindex">当前第几页</param>
+            <param name="pagesize">每页多少条</param>
+            <param name="GROUPID">0:市看区数据 1:区看工地数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.EnvController.GetEnvWarnList(System.Int32,System.Int32,System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            --告警数据查询
+            </summary>
+            <param name="GROUPID">指定日期</param>
+            <param name="SITEID">关键字</param>
+            <param name="startdate">关键字</param>
+            <param name="enddate">关键字</param>
+            <param name="type"> 1:扬尘，2：车冲，3：密闭，4：裸土</param>
+            <param name="pageindex">当前第几页</param>
+            <param name="pagesize">每页多少条</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Controllers.InspectController">
+            <summary>
+            安全排查
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.InspectController.#ctor(XHS.Build.Services.Inspection.IInspectionService,XHS.Build.Common.Auth.AqtToken)">
+            <summary>
+            
+            </summary>
+            <param name="iInspect"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.InspectController.GetCount(System.Int32,System.String)">
+            <summary>
+            安全排查 总数统计
+            </summary>
+            <param name="GROUPID">0:市；非0:区</param>
+            <param name="datamonth">年月</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.InspectController.GetMonthReview(System.Int32,System.Int32)">
+            <summary>
+            安全排查 月评数据分析
+            </summary>
+            <param name="GROUPID">0:市；非0:区</param>
+            <param name="datayear">年份</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.InspectController.GetRoundCount(System.Int32,System.String)">
+            <summary>
+            安全排查 企业检查情况
+            </summary>
+            <param name="GROUPID">0:市；非0:区</param>
+            <param name="yearmonth">年月</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.InspectController.GetSafetyStandard(System.Int32,System.Int32)">
+            <summary>
+            安全排查 安标考评结果分析
+            </summary>
+            <param name="GROUPID">0:市；非0:区</param>
+            <param name="datayear">年份</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.InspectController.GetSelfInspect(System.Int32,System.Int32)">
+            <summary>
+            安全排查 每月自查数据分析
+            </summary>
+            <param name="GROUPID">0:市；非0:区</param>
+            <param name="datayear">年份</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.InspectController.GetProjectSelfInspection(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取项目自查基本信息
+            </summary>
+            <param name="pageIndex">支持分页抓取 页码(从1开始)</param>
+            <param name="pageSize">每页抓取数据条数</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Controllers.PersonController">
+            <summary>
+            人员管控
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.#ctor(XHS.Build.Services.Board.IBoardService,XHS.Build.Common.Auth.XHSRealnameToken,XHS.Build.Services.SystemSetting.IHpSystemSetting)">
+            <summary>
+            
+            </summary>
+            <param name="personService"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetPayroll(System.String,System.String)">
+            <summary>
+            在册人员统计
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetPayrollApproach(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            在岗人员进场统计
+            </summary>
+            <param name="City">市名</param>
+            <param name="district">区名</param>
+            <param name="type">0:今天 1:昨天</param>
+            <param name="profession">0:施工人员 1:管理/监理</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetAgeSexstatistics(System.String,System.String)">
+            <summary>
+            年龄/性别统计
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetPersonstatistics(System.String,System.Int32,System.String)">
+            <summary>
+            人员处罚统计
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <param name="type">0:周统计 1:月统计</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetIllegalWorkers(System.String,System.Int32,System.String)">
+            <summary>
+            违规工种 TOP5
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <param name="type">0:周统计 1:月统计</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetPersoncensus(System.String,System.String)">
+            <summary>
+            人员户籍统计
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetContractPerson(System.String,System.String)">
+            <summary>
+            劳务人员工种统计
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetManagement(System.String,System.String)">
+            <summary>
+            管理人员岗位统计
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetViolationInfo(System.String,System.Int32,System.String)">
+            <summary>
+            违规工种人员信息
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <param name="count">取前多少条</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetPersonRewardpunish(System.String,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            指定行政区域内，指定时间区间，每天不良行为和良好行为次数统计
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <param name="startDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetPersonEducate(System.String,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            在岗人员教育培训统计
+            </summary>
+            <param name="city">市名</param>
+            <param name="district">区名</param>
+            <param name="startDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetRealNameUrl(System.Int32,System.Int32)">
+            <summary>
+            实名制单点登录url
+            </summary>
+            <param name="type">跳转页面类型(0:首页；1:教育；2:奖惩)</param>
+            <param name="groupid">跳转页面类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.PersonController.GetAttendBoardList(System.Int32)">
+            <summary>
+            实名制看板地址
+            </summary>
+            <param name="groupid">分组ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Controllers.ProjectController">
+            <summary>
+            数据统计项目管理
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.ProjectController.#ctor(XHS.Build.Services.Project.IProjectService)">
+            <summary>
+            
+            </summary>
+            <param name="projectService"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.ProjectController.GetAnalyseCount(System.Int32)">
+            <summary>
+            1.今日统计
+            projstatus：1待审、2在建、3停工、4终止安监、5竣工
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.ProjectController.GetAnalyseOver90(System.Int32)">
+            <summary>
+            超90天未竣工
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.ProjectController.GetAnalyseTypeCount(System.Int32)">
+            <summary>
+            项目类型统计
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.ProjectController.GetAnalyseYearCount(System.Int32,System.Int32)">
+            <summary>
+            每月项目新增数统计
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="datayear">年</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.ProjectController.GetGetList(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            【项目管理 列表】
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="pageindex">当前第几页</param>
+            <param name="pagesize">每页几条</param>
+            <param name="keyword">关键字</param>
+            <param name="company">公司名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.ProjectController.GetDevList(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            【项目管理 监测设备列表】
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="pageindex">当前第几页</param>
+            <param name="pagesize">每页几条</param>
+            <param name="keyword">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.ProjectController.GettAnalyseSiteList(System.Int32)">
+            <summary>
+            分析网站列表
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.ProjectController.GetAnalyseSiteListByType(System.Int32,System.Int32)">
+            <summary>
+            超90天未竣工
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="type">0:全部，1: 待审, 2: 在建, 3: 停工, 4: 终止安监, 5: 竣工 6:本月标化考评项目 7:超90天未竣工项目</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.ProjectController.GetIntegratorList(System.Int32,System.DateTime,System.DateTime,System.Int32,System.Int32,System.String)">
+            <summary>
+            获取集成商在线率列表
+            </summary>
+            <param name="GROUPID"></param>
+            <param name="startdate"></param>
+            <param name="enddate"></param>
+            <param name="pageindex"></param>
+            <param name="pagesize"></param>
+            <param name="keyword"></param>
+            <param name=""></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Controllers.SuperDangerController">
+            <summary>
+            超危项目
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperDangerController.#ctor(XHS.Build.Services.SuperDanger.ISuperDanger)">
+            <summary>
+            
+            </summary>
+            <param name="superDangerService"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperDangerController.GetList(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            超危项目统计详情
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <param name="pageindex">支持分页抓取 页码(从1开始)</param>
+            <param name="pagesize">每页抓取数据条数</param>
+            <param name="keyword">内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperDangerController.GetFile(System.String)">
+            <summary>
+            文件内容
+            </summary>
+            <param name="SDID">SDID</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperDangerController.GetOne(System.String)">
+            <summary>
+            模块详情
+            </summary>
+            <param name="SDID">SDID</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperDangerController.GetCount(System.Int32)">
+            <summary>
+            超危项目统计
+            </summary>
+            <param name="REGIONID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperDangerController.GetTypeCount(System.Int32)">
+            <summary>
+            超危项目类型统计
+            </summary>
+            <param name="REGIONID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperDangerController.GetStatusCount(System.Int32)">
+            <summary>
+            超危项目状态统计
+            </summary>
+            <param name="REGIONID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperDangerController.GetSiteList(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            获取有超危工程的项目列表
+            </summary>
+            <param name="REGIONID"></param>
+            <param name="pageindex"></param>
+            <param name="pagesize"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperDangerController.GetBySite(System.String)">
+            <summary>
+            获取单个项目的超危工程
+            </summary>
+            <param name="siteajcode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Controllers.SuperviseController">
+            <summary>
+            监督业务
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperviseController.#ctor(XHS.Build.Services.Supervise.ISupervise)">
+            <summary>
+            
+            </summary>
+            <param name="superDangerService"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperviseController.GetCloseCount(System.Int32,System.Int32)">
+            <summary>
+            --监督业务 整改效率统计
+            </summary>
+            <param name="GROUPID">0:市；非0:区</param>
+            <param name="datayear">年份</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperviseController.GetCloseCountList(System.String,System.Int32)">
+            <summary>
+            --监督业务 整改情况
+            </summary>
+            <param name="yearmonth">--年月</param>
+            <param name="GROUPID">0:市；非0:区</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperviseController.GetGetCount(System.String,System.Int32)">
+            <summary>
+            --监督业务 总数统计
+            </summary>
+            <param name="datamonth">年月</param>
+            <param name="GROUPID">0:市；非0:区</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperviseController.GetTypeCount(System.Int32,System.Int32)">
+            <summary>
+            --监督业务 检查单类型分析
+            </summary>
+            <param name="GROUPID">0:市；非0:区</param>
+            <param name="datayear">年份</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.SuperviseController.GetTypeRank(System.Int32,System.String)">
+            <summary>
+            --监督业务 检查用语排名
+            </summary>
+            <param name="GROUPID">0:市；非0:区</param>
+            <param name="yearmonth">年月</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Controllers.VideoController">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.VideoController.#ctor(XHS.Build.Services.Video.IVideoService)">
+            <summary>
+            
+            </summary>
+            <param name="videoService"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Controllers.VideoController.GetList(System.Int32)">
+            <summary>
+            已安装监控的项目/视频
+            </summary>
+            <param name="GROUPID">0:市 非0:区编号</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Filters.ExceptionFilter">
+            <summary>
+            SmartCity异常错误过滤
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Filters.ExceptionFilter.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILogger{XHS.Build.SmartCity.Filters.ExceptionFilter})">
+            <summary>
+            异常
+            </summary>
+            <param name="env"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Filters.ExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Filters.ExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Filters.InternalServerErrorResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Logs.ILogHandler">
+            <summary>
+            操作日志处理接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.SmartCity.Logs.ILogHandler.LogAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            写操作日志
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.SmartCity.Logs.LogHandler">
+            <summary>
+            操作日志处理
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Admin.Controllers.LoginController">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.#ctor(XHS.Build.Services.CtUser.ICtUserService,XHS.Build.Common.Configs.JwtConfig,XHS.Build.Common.Auth.IUserToken,XHS.Build.Common.Auth.IUser,AutoMapper.IMapper,XHS.Build.Services.RoleRight.IRoleRightService,XHS.Build.Common.Cache.ICache,XHS.Build.Services.SystemSetting.IHpSystemSetting)">
+            <summary>
+            
+            </summary>
+            <param name="ctUserService"></param>
+            <param name="jwtConfig"></param>
+            <param name="userToken"></param>
+            <param name="user"></param>
+            <param name="mapper"></param>
+            <param name="roleRightService"></param>
+            <param name="cache"></param>
+            <param name="hpSystemSetting"></param>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.VerifyCode(XHS.Build.Model.ModelDtos.LoginUserInput)">
+            <summary>
+             发送前端用户登录验证码
+            </summary>
+            <param name="input">登录信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.Login(XHS.Build.Model.ModelDtos.LoginUserInput)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="input">登录信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.SingleLogin(System.String)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="data">登录信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.getLoginTitle">
+            <summary>
+            获得登录标题
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.Refresh(System.String)">
+            <summary>
+            刷新Token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.GetToken(XHS.Build.Model.Models.CTUserEntity)">
+            <summary>
+            获得token
+            </summary>
+            <param name="output"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Admin.Controllers.LoginController.ResetPassword(XHS.Build.Model.Models.CTUserPwd)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:xhs.build.SmartCity.Controllers.SettingController">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="M:xhs.build.SmartCity.Controllers.SettingController.GetList">
+            <summary>
+            配置
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

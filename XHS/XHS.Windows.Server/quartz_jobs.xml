@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+    <job>
+      <name>OneMinJob</name>
+      <group>RequestGroup</group>
+      <description>一分钟定时请求任务</description>
+      <job-type>XHS.Windows.Server.OneMinJob,XHS.Windows.Server</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>OneMinJobTrigger</name>
+        <group>RequestTrigger</group>
+        <job-name>OneMinJob</job-name>
+        <job-group>RequestGroup</job-group>
+        <start-time>2020-10-10T00:00:00+08:00</start-time>
+        <cron-expression>0 */1 * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+    <job>
+      <name>TenMinJob</name>
+      <group>RequestGroup</group>
+      <description>十分钟定时请求任务任务</description>
+      <job-type>XHS.Windows.Server.TenMinJob,XHS.Windows.Server</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>TenMinJobTrigger</name>
+        <group>RequestTrigger</group>
+        <job-name>TenMinJob</job-name>
+        <job-group>RequestGroup</job-group>
+        <start-time>2020-10-10T00:00:00+08:00</start-time>
+        <cron-expression>0 */10 * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+    <job>
+      <name>OneHourJob</name>
+      <group>RequestGroup</group>
+      <description>一小时定时请求任务任务</description>
+      <job-type>XHS.Windows.Server.OneHourJob,XHS.Windows.Server</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>OneHourJobTrigger</name>
+        <group>RequestTrigger</group>
+        <job-name>OneHourJob</job-name>
+        <job-group>RequestGroup</job-group>
+        <start-time>2020-10-10T00:00:00+08:00</start-time>
+        <cron-expression>0 0 */1 * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>

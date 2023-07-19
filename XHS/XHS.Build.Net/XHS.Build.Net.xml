@@ -1,0 +1,902 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XHS.Build.Net</name>
+    </assembly>
+    <members>
+        <member name="T:XHS.Build.Net.Attributes.PermissionAttribute">
+            <summary>
+            启用权限
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Auth.IPermissionHandler.ValidateAsync(System.String,System.String)">
+            <summary>
+            接口权限验证
+            </summary>
+            <param name="api"></param>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Auth.PermissionHandler.ValidateAsync(System.String,System.String)">
+            <summary>
+            api接口权限验证
+            </summary>
+            <param name="api">接口路径</param>
+            <param name="ip">请求ip</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.AccessController">
+            <summary>
+            登录认证
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AccessController.Token(System.String,System.String)">
+            <summary>
+            获取accesstoken
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AccessController.Refresh(System.String)">
+            <summary>
+            刷新token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.AIController">
+            <summary>
+            AI数据 实时入库
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AIController.#ctor(XHS.Build.Services.AIAirTightAction.IAIAirTightService,XHS.Build.Services.AIIllegalCarAction.IAIIllegalCarService,XHS.Build.Services.AISoilAction.IAISoilService,XHS.Build.Services.AISprayAction.IAISprayService,XHS.Build.Services.Site.ISiteService,XHS.Build.Services.SystemSetting.IHpSystemSetting,AutoMapper.IMapper)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AIController.PostAirTight(XHS.Build.Services.AIAirTightAction.Dtos.AirTightInputDto)">
+            <summary>
+            密闭运输
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AIController.PostIllegalCar(XHS.Build.Services.AIIllegalCarAction.Dtos.IllegalCarInputDto)">
+            <summary>
+            非法车辆进入
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AIController.PostSoil(XHS.Build.Services.AISoilAction.Dtos.AISoilInputDto)">
+            <summary>
+            黄土裸露
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AIController.PostSpary(XHS.Build.Services.AISprayAction.Dtos.AISparyInputDto)">
+            <summary>
+            雾炮喷淋
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.AmDiscloseController">
+            <summary>
+            晨会交底
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AmDiscloseController.Post(XHS.Build.Model.Models.GCAmDiscloseEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.AttendController">
+            <summary>
+            实名考勤
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AttendController.Employee(XHS.Build.Model.NetModels.Dtos.EmployeeInput)">
+            <summary>
+            同步人员基本信息
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AttendController.EmployeePass(XHS.Build.Model.NetModels.Dtos.EmployeePassHisInsertInput)">
+            <summary>
+            同步进出场实时记录
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.AttendController.EmployeeSite(XHS.Build.Model.Models.GCEmployeeSiteEntity)">
+            <summary>
+            用户站点信息
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.CarWashController">
+            <summary>
+            车辆冲洗
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.CarWashController.AlarmOffline(System.String,System.String)">
+            <summary>
+            车辆冲洗设备下线报警
+            </summary>
+            <param name="parkkey">停车场编号</param>
+            <param name="gatename">车道名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.CarWashController.AlarmUnWashed(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            车辆未冲洗报警
+            </summary>
+            <param name="parkkey">停车场编号</param>
+            <param name="gatename">车道名称</param>
+            <param name="carno">车牌</param>
+            <param name="img">照片地址</param>
+            <param name="video">视频地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.CarWashController.Wash(XHS.Build.Model.ModelDtos.CarWashInsertDto)">
+            <summary>
+            车辆冲洗
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.CarWashController.AlarmOfflineTimeout2(System.String,System.String)">
+            <summary>
+            车辆冲洗设备下线超时2级报警
+            </summary>
+            <param name="parkkey">停车场编号</param>
+            <param name="gatename">车道名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.CarWashController.AlarmOfflineTimeout3(System.String,System.String)">
+            <summary>
+            车辆冲洗设备下线超时3级报警
+            </summary>
+            <param name="parkkey">停车场编号</param>
+            <param name="gatename">车道名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.DeepPitController">
+            <summary>
+            深基坑信息接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeepPitController.DeepPit(XHS.Build.Model.NetModels.Dtos.DeepPitInput)">
+            <summary>
+            深基坑结构物数据上传
+            </summary>
+            <param name="dto">深基坑结构物Dto</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeepPitController.DeepPitHistory(XHS.Build.Model.ModelDtos.DeepPitRtdDto)">
+            <summary>
+            深基坑实时数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="deviceId">设备监测编号 (即deviceId)</param>
+            <param name="collectionTime">采集时间</param>
+            <param name="monitorType">监测项</param>
+            <param name="warnValue">预警阀值</param>
+            <param name="alarmValue">报警阀值</param>
+            <param name="data">数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeepPitController.DeepPitAlarmInfo(XHS.Build.Model.ModelDtos.DeepPitAlarmInfoDto)">
+            <summary>
+            深基坑预警数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="deviceId">设备监测编号 (即deviceId)</param>
+            <param name="warnExplain">报警类型(电量、温度、立杆轴力、水平倾角、立杆倾角、水平位移、模板沉降等)</param>
+            <param name="warnContent">预警内容</param>
+            <param name="happenTime">发生时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeepPitController.DeppPitBoard(XHS.Build.Model.NetModels.Dtos.UploadBoardDto)">
+            <summary>
+            深基坑设备信息看板上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="uploadBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.DefenceController">
+            <summary>
+            高处作业临边防护接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DefenceController.FenceAlarmInfo(XHS.Build.Model.NetModels.Dtos.FenceAlarmInfoDto)">
+            <summary>
+            3.5.1缺失记录上传（可选） 
+            3.5.2恢复记录上传
+            </summary>
+            <param name="warnNumber">设备监测编号 (即deviceId)</param>
+            <param name="defectPosition">缺失位置</param>
+            <param name="defectWarnNumber">缺失预警模块编号（备用）</param>
+            <param name="defectDate">发生时间（2020-01-10 10:00:00）</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.DeviceBindController">
+            <summary>
+            同步设备信息
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceBindController.Special(System.DateTime)">
+            <summary>
+            获取特种设备信息列表
+            </summary>
+            <param name="operatedate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceBindController.Site(System.DateTime)">
+            <summary>
+            获取其他设备信息列表（特种设备以外）
+            </summary>
+            <param name="operatedate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceBindController.Invade(System.DateTime)">
+            <summary>
+            区域入侵
+            </summary>
+            <param name="operatedate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceBindController.Unload(System.DateTime)">
+            <summary>
+            卸料平台
+            </summary>
+            <param name="operatedate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceBindController.DeepPit(System.DateTime)">
+            <summary>
+            深基坑
+            </summary>
+            <param name="operatedate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceBindController.HighFormwork(System.DateTime)">
+            <summary>
+            高支模
+            </summary>
+            <param name="operatedate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceBindController.ElecMeter(System.DateTime)">
+            <summary>
+            智慧电表
+            </summary>
+            <param name="operatedate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.DeviceController">
+            <summary>
+            扬尘设备
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceController.SetRtdData(XHS.Build.Model.NetModels.Dtos.DeviceRtdDataInput)">
+            <summary>
+            上传实时数据
+            </summary>
+            <param name="input">json数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceController.Offline(System.String)">
+            <summary>
+            离线
+            </summary>
+            <param name="devicecode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceController.VideoOnline(System.String)">
+            <summary>
+            视频上线
+            </summary>
+            <param name="deviceId">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceController.VideoOffline(System.String)">
+            <summary>
+            视频离线
+            </summary>
+            <param name="deviceId">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceController.AddDeviceFacture(XHS.Build.Model.ModelDtos.DeviceDto)">
+            <summary>
+            5.2	设备信息上传
+            </summary>
+            <param name="dto">设备信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.DeviceController.DeleteDeviceFacture(XHS.Build.Model.ModelDtos.DeviceDto)">
+            <summary>
+            5.2	设备信息删除
+            </summary>
+            <param name="dto">设备信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.ElectricController.RtdData(XHS.Build.Model.NetModels.Dtos.EmeterDataInput)">
+            <summary>
+            上传实时数据
+            </summary>
+            <param name="input">json数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.ElectricController.WarnData(XHS.Build.Model.ModelDtos.EmeterWarnDataInput)">
+            <summary>
+            上传告警数据
+            </summary>
+            <param name="input">json数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.ElevatorController">
+            <summary>
+            升降机
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.ElevatorController.Online(System.String)">
+            <summary>
+            设备上线
+            </summary>
+            <param name="secode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.ElevatorController.Offline(System.String)">
+            <summary>
+            设备下线
+            </summary>
+            <param name="secode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.ElevatorController.RealData(XHS.Build.Model.NetModels.Dtos.ElevatorRealDataInput)">
+            <summary>
+            实时数据
+            </summary>
+            <param name="input">实时数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.ElevatorController.ParamsData(XHS.Build.Model.NetModels.Dtos.ElevatorParamsDataInput)">
+            <summary>
+            设备参数数据
+            </summary>
+            <param name="input">参数数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.ElevatorController.AuthData(XHS.Build.Model.Models.AuthData)">
+            <summary>
+            人员上机下机刷脸认证
+            </summary>
+            <param name="authData"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.EventController">
+            <summary>
+            事件接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.EventController.GetEventList(System.String,System.Int32,System.Int32,System.Nullable{System.DateTime})">
+            <summary>
+            事件数据取得接口
+            </summary>
+            <param name="recordNumber"></param>
+            <param name="warnlevel"></param>
+            <param name="status"></param>
+            <param name="operatedate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.EventController.AddEvent(XHS.Build.Model.NetModels.Dtos.EventDataInput)">
+            <summary>
+            事件追加接口
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.EventController.CloseEvent(XHS.Build.Model.NetModels.Dtos.EventDataInput)">
+            <summary>
+            事件关闭接口
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.EventController.Penalty(XHS.Build.Model.NetModels.Dtos.PenaltyDataInput)">
+            <summary>
+            行政处罚数据上传接口
+            </summary>
+            <param name="recordNumber"></param>
+            <param name="warnlevel"></param>
+            <param name="status"></param>
+            <param name="operatedate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.EventController.BidDataPush(XHS.Build.Model.NetModels.Dtos.BidDataInput)">
+            <summary>
+            标前标后人员对比数据上传接口
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.FallProtectionController">
+            <summary>
+            新临边防护数据
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.FallProtectionController.ReviceEquipmentData(XHS.Build.Model.ModelDtos.AlertInputDto)">
+            <summary>
+            接收临边设备数据推送
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.FallProtectionController.ReviceEquipmentStatus(XHS.Build.Model.ModelDtos.FallProtectionStatusDto)">
+            <summary>
+            接收临边设备状态推送
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.FogController">
+            <summary>
+            雾炮喷淋
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.FogController.TurnOn(XHS.Build.Common.Helps.HpFog.BnCmd)">
+            <summary>
+            雾泡喷淋开启
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.FogController.TurnOff(XHS.Build.Common.Helps.HpFog.BnCmd)">
+            <summary>
+            雾泡喷淋关闭
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.FogController.Online(System.String)">
+            <summary>
+            雾泡喷淋设备上线
+            </summary>
+            <param name="fogcode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.FogController.Offline(System.String)">
+            <summary>
+            雾泡喷淋设备下线
+            </summary>
+            <param name="fogcode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.HighFormworkController">
+            <summary>
+            同步设备信息
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.HighFormworkController.HighFormworkHistory(XHS.Build.Model.Models.HighFormworkData)">
+            <summary>
+            3.6.1 高支模实时数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="deviceId">设备监测编号 (即deviceId)</param>
+            <param name="collectionTime">收集时间</param>
+            <param name="Power">电量(%)</param>
+            <param name="temperature">温度（℃）</param>
+            <param name="load">立杆轴力(KN)</param>
+            <param name="horizontalAngle">水平倾角（°）</param>
+            <param name="coordinate">立杆倾角（°）</param>
+            <param name="translation">水平位移（mm）</param>
+            <param name="settlement">模板沉降（mm）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.HighFormworkController.HighFormworkAlarmInfo(XHS.Build.Model.ModelDtos.HighFormworkAlarmInfoDto)">
+            <summary>
+            3.6.2 高支模预警数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="deviceId">设备监测编号 (即deviceId)</param>
+            <param name="warnExplain">报警类型(电量、温度、立杆轴力、水平倾角、立杆倾角、水平位移、模板沉降等)</param>
+            <param name="warnContent">预警内容</param>
+            <param name="happenTime">发生时间</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.InspectionController">
+            <summary>
+            《智慧工地对接智慧监管平台标准V1.0》
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.InspectionController.InspectContentInfo(XHS.Build.Model.ModelDtos.InspectContentInfoDto)">
+            <summary>
+            3.2.1检查单数据上传接口
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="checkNumber">检查单编号</param>
+            <param name="checkDate">检查时间，例如：2019-4-07 11:32:12</param>
+            <param name="checkPerson">检查人姓名，多人用;隔开</param>
+            <param name="idCard">检查人身份证号</param>
+            <param name="checkNumType">检查单类型：1：检查记录单 2：一般隐患单 3：严重隐患单</param>
+            <param name="checkLists">检查单内容列表</param>
+            <param name="IsProvinStand">是否符合省标准，0:否 1:是</param>
+            <param name="itemId">检查项唯一id</param>
+            <param name="checkContent">检查内容</param>
+            <param name="rectifyPerson">整改负责人</param>
+            <param name="isRectify">是否需要整改：(1:是、0:否)</param>
+            <param name="rectifyDate">计划整改完成时间， 需要整改时必传</param>
+            <param name="remark">检查单备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.InspectionController.RectifyContentInfo(XHS.Build.Model.ModelDtos.RectifyContentInfoDto)">
+            <summary>
+            3.2.2检查单整改完成数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="checkNumber">检查单编号</param>
+            <param name="rectifyContents">整改内容</param>
+            <param name="itemId">检查项唯一id</param>
+            <param name="finalRectifyDate">整改完成时间</param>
+            <param name="rectifyApprover">整改审批人</param>
+            <param name="rectifyRemark">整改备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.InspectionController.InspectionPoint(XHS.Build.Model.ModelDtos.InspectionPointDto)">
+            <summary>
+            3.2.4巡检点数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="inspectionId">巡检点id（唯一标识）</param>
+            <param name="site">巡检地点描述</param>
+            <param name="building">楼栋号</param>
+            <param name="floor">楼层号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.InspectionController.InspectionPointContent(XHS.Build.Model.ModelDtos.InspectionPointContentDto)">
+            <summary>
+            3.2.5巡检内容数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="inspectionId">巡检点id（唯一标识）</param>
+            <param name="inspectionContentId">巡检记录id</param>
+            <param name="checkPerson">检查人姓名</param>
+            <param name="checkPersonId">检查人身份证id</param>
+            <param name="checkContent">巡检描述</param>
+            <param name="urls">巡检照片</param>
+            <param name="inspectionTime">巡检时间（2019-07-07 12:24:34）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.InspectionController.FreeToShoot(XHS.Build.Model.ModelDtos.FreeToShootDto)">
+            <summary>
+            3.2.6 随手拍数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="checkNumber">随手拍唯一编号</param>
+            <param name="shootPerson">拍摄人</param>
+            <param name="shootTime">拍摄时间</param>
+            <param name="phoneNumber">手机号</param>
+            <param name="CheckContent">隐患描述内容</param>
+            <param name="url">照片全路径，必须可访问</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.InspectionController.FreeToShootRectify(XHS.Build.Model.ModelDtos.FreeToShootRectifyDto)">
+            <summary>
+            3.2.7 随手拍完成数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="checkNumber">随手拍唯一编号</param>
+            <param name="rectifyTime">完成时间</param>
+            <param name="rectifyPerson">整改负责人</param>
+            <param name="rectifyRemark">备注</param>
+            <param name="url">照片全路径，必须可访问</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.ScreenController">
+            <summary>
+            大屏
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.ScreenController.GetNotice(System.String)">
+            <summary>
+            获取公告
+            </summary>
+            <param name="screencode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.ScreenController.SyncNotice(XHS.Build.Model.NetModels.Dtos.ScreenSyncNoticeInput)">
+            <summary>
+            同步公告
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.SiteController">
+            <summary>
+            检测对象
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.SiteController.GetList(System.Int32,System.Int32)">
+            <summary>
+            获取监测对象列表
+            </summary>
+            <param name="index"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.SiteController.GetListForUser(System.Int32)">
+            <summary>
+            获取用户下监测对象列表
+            </summary>
+            <param name="userid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.SiteController.GetUserList(System.Int32)">
+            <summary>
+            获取检测点下的用户
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.SiteController.GetSiteRtdData(System.Int32,System.Int32)">
+            <summary>
+            获取当前监测对象的扬尘实时数据
+            </summary>
+            <param name="index"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.SiteController.GetRtdOneHourData(System.Int32)">
+            <summary>
+            获取1小时内实时扬尘数据
+            </summary>
+            <param name="SITEID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.SiteController.GetGroupBoard">
+            <summary>
+            获取分组首页Url
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.SiteController.AddSite(XHS.Build.Model.ModelDtos.SiteDto)">
+            <summary>
+            5.1	项目信息上传接口
+            </summary>
+            <param name="dto">项目信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.SwaggerController.ExportWord(System.String,System.String)">
+            <summary>
+            导出文件
+            </summary>
+            <param name="type">文件类型</param>
+            <param name="version">版本号V1</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.TowerCraneController">
+            <summary>
+            塔吊
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.TowerCraneController.#ctor(XHS.Build.Services.Elevator.ISpecialEqp,XHS.Build.Services.Elevator.IElevatorService,Microsoft.Extensions.Configuration.IConfiguration,XHS.Build.Services.SystemSetting.IHpSystemSetting,AutoMapper.IMapper,XHS.Build.Services.SpecialEqp.ISpecialEqpService,XHS.Build.Services.SpecialEqp.ISpecialEqpAuthHisService,XHS.Build.Services.File.IHpFileDoc,XHS.Build.Common.Fleck.IFleckSpecial,XHS.Build.Services.OperateLogS.IOperateLogService,Microsoft.Extensions.Logging.ILogger{XHS.Build.Net.Controllers.TowerCraneController},XHS.Build.Services.Employee.IEmployeeCareerService,XHS.Build.Services.SpecialEqp.ISpecialEqpWorkDataService)">
+            <summary>
+            
+            </summary>
+            <param name="specialEqp"></param>
+            <param name="elevatorService"></param>
+            <param name="configuration"></param>
+            <param name="hpSystemSetting"></param>
+            <param name="mapper"></param>
+            <param name="specialEqpService"></param>
+            <param name="specialEqpAuthHisService"></param>
+            <param name="hpFileDoc"></param>
+            <param name="operateLogService"></param>
+            <param name="logger"></param>
+            <param name="employeeCareerService"></param>
+            <param name="specialEqpWorkDataService"></param>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.TowerCraneController.Online(System.String)">
+            <summary>
+            设备上线
+            </summary>
+            <param name="secode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.TowerCraneController.Offline(System.String)">
+            <summary>
+            设备下线
+            </summary>
+            <param name="secode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.TowerCraneController.RealData(XHS.Build.Model.NetModels.Dtos.TowerCraneRealDataInput)">
+            <summary>
+            实时数据
+            </summary>
+            <param name="input">实时数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.TowerCraneController.AlarmData(XHS.Build.Model.NetModels.Dtos.TowerCraneAlarmInput)">
+            <summary>
+            报警数据(废弃)
+            </summary>
+            <param name="alarmData">报警数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.TowerCraneController.ParamsData(XHS.Build.Model.NetModels.Dtos.TowerCraneParamsDataInput)">
+            <summary>
+            设备参数数据
+            </summary>
+            <param name="input">参数数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.TowerCraneController.TipOverData(XHS.Build.Model.NetModels.Dtos.TipOverDataInput)">
+            <summary>
+            防倾翻报警诊断
+            </summary>
+            <param name="tipOverData">防倾翻报警诊断数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.TowerCraneController.AuthData(XHS.Build.Model.Models.AuthData)">
+            <summary>
+            人员上机下机刷脸认证
+            </summary>
+            <param name="authData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.TowerCraneController.WorkData(XHS.Build.Model.NetModels.Dtos.TowerCraneWorkDataInput)">
+            <summary>
+            工作循环
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.UnloadController">
+            <summary>
+            卸料平台
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.UnloadController.RealData(XHS.Build.Model.NetModels.Dtos.UnloadInput)">
+            <summary>
+            实时数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.UnloadController.Warn(XHS.Build.Model.NetModels.Dtos.UnloadWarnInput)">
+            <summary>
+            报警数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.UserController">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.UserController.GetList(System.Nullable{System.DateTime})">
+            <summary>
+            用户同步
+            </summary>
+            <param name="updatetime"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Net.Controllers.WarningController">
+            <summary>
+            报警
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.Helmet(XHS.Build.Model.NetModels.Dtos.WarnHelmetInput)">
+            <summary>
+            安全帽未佩戴
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.Stranger(XHS.Build.Model.NetModels.Dtos.WarnStrangerInput)">
+            <summary>
+            陌生人
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.Trespasser(XHS.Build.Model.NetModels.Dtos.WarnTrespasserInput)">
+            <summary>
+            车道识别
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.Fire(XHS.Build.Model.NetModels.Dtos.WarnFireInput)">
+            <summary>
+            火警
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.smoke(XHS.Build.Model.NetModels.Dtos.SmokeInput)">
+            <summary>
+            烟雾
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.Overload(XHS.Build.Model.NetModels.Dtos.WarnOverloadInput)">
+            <summary>
+            5.5	升降机人数超载
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.Invade(XHS.Build.Model.ModelDtos.InvadeWarnInsertInput)">
+            <summary>
+            区域入侵
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.ReflectiveVest(XHS.Build.Model.NetModels.Dtos.WarnReflectiveVestInput)">
+            <summary>
+            反光衣
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.GetWarnCountList(System.Int32,System.DateTime)">
+            <summary>
+            获取某日报警数
+            </summary>
+            <param name="siteid">监测点ID</param>
+            <param name="date">日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.GetListType(System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            获取某天报警数据
+            </summary>
+            <param name="SITEID">监测点ID</param>
+            <param name="type">种类(0：全部,1:扬尘离线报警,2:扬尘超标报警,3:车辆冲洗报警,4:特种设备报警,5:临边围挡报警,61:安全帽未佩戴,62:陌生人进场识别,63:人车分流识别,64:火警,65:区域闯入,66:黄土裸露,67:密闭运输,68:反光衣)</param>
+            <param name="date">日期（yyyy-MM-dd）</param>
+            <returns>预警信息数据集</returns>
+        </member>
+        <member name="M:XHS.Build.Net.Controllers.WarningController.GetListByDeviceCode(System.String,System.Int32,System.DateTime)">
+            <summary>
+            获取设备某天报警数据
+            </summary>
+            <param name="devicecode">设备编号</param>
+            <param name="type">种类(0：全部,1:扬尘离线报警,2:扬尘超标报警,3:车辆冲洗报警,4:特种设备报警,5:临边围挡报警,61:安全帽未佩戴,62:陌生人进场识别,63:人车分流识别,64:火警,65:区域闯入,66:黄土裸露,67:密闭运输,68:反光衣)</param>
+            <param name="date">日期（yyyy-MM-dd）</param>
+            <returns>预警信息数据集</returns>
+        </member>
+        <member name="M:XHS.Build.Net.Helper.SpireDocHelper.SwaggerConversHtml(System.String,System.String,System.String@)">
+            <summary>
+            静态页面转文件
+            </summary>
+            <param name="html">静态页面html</param>
+            <param name="type">文件类型</param>
+            <param name="contenttype">上下文类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Net.Helper.SpireDocHelper.BytesToStream(System.Byte[])">
+            将 byte[] 转成 Stream
+        </member>
+        <member name="T:xhs.build.Net.Controllers.VideoController">
+            <summary>
+            摄像头实时操作
+            </summary>
+        </member>
+        <member name="M:xhs.build.Net.Controllers.VideoController.#ctor(XHS.Build.Services.Video.IVideoService)">
+            <summary>
+            摄像头实时操作
+            </summary>
+        </member>
+        <member name="M:xhs.build.Net.Controllers.VideoController.GetRealUrl(XHS.Build.Model.ModelDtos.BnCamera)">
+            <summary>
+            获取摄像头直播流地址
+            </summary>
+            <param name="bc">摄像头信息</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

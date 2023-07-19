@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Quartz" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XHS.Build.Common\XHS.Build.Common.csproj" />
+    <ProjectReference Include="..\XHS.Build.Model\XHS.Build.Model.csproj" />
+    <ProjectReference Include="..\XHS.Build.Repository\XHS.Build.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

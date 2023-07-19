@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+
+    <script>
+
+
+
+
+        function login() {
+            //收集信息
+            var ename = $("#ename").val();
+            var pwd = $("#pwd").val();
+
+            $.ajax({
+                url: '/Login/Lgoin',
+                type:'get',
+                data: { ename: ename, pwd: pwd },
+                dataType: 'json',
+                success: function (res) {
+
+                    console.log(res);
+                    if (res.Code == 200) {
+
+                        //保存当前登录人信息到【客户端的会话中】
+                        var str = JSON.stringify(res.Data);
+                        sessionStorage.setItem("emp", str);   /// 保存了重要信息用于跨页面传值
+                        location.href = "/Home/Index";
+
+                    }
+
+
+                }
+
+            });
+
+
+        }
+    </script>
+
+
+
+</head>
+<body>
+    <div>
+        <input type="text" id="ename" /><br />
+        <input type="password" id="pwd" /><br />
+        <input type="button" value="Login" onclick="login()" /><br />
+
+    </div>
+</body>
+</html>

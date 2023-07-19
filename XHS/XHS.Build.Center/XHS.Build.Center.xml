@@ -1,0 +1,608 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XHS.Build.Center</name>
+    </assembly>
+    <members>
+        <member name="T:XHS.Build.Center.Attributes.PermissionAttribute">
+            <summary>
+            启用权限
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Auth.IPermissionHandler.ValidateAsync(System.String,System.String)">
+            <summary>
+            接口权限验证
+            </summary>
+            <param name="api"></param>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Auth.NetToken.Token(System.String,System.String)">
+            <summary>
+            各个用户自己net的token
+            </summary>
+            <param name="domain"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Auth.NetToken.Refresh(System.String,System.String,System.String)">
+            <summary>
+            各个用户自己net的token
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Auth.NetToken.CenterToken(System.String,System.String)">
+            <summary>
+            center请求net的token
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Auth.NetToken.CenterRefresh(System.String,System.String,System.String)">
+            <summary>
+            center请求net的token
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Auth.PermissionHandler.ValidateAsync(System.String,System.String)">
+            <summary>
+            api接口权限验证
+            </summary>
+            <param name="api">接口路径</param>
+            <param name="ip">请求ip</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.AccessController.Token(System.String,System.String)">
+            <summary>
+            获取accesstoken
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.AccessController.Refresh(System.String)">
+            <summary>
+            刷新token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.AIController.PostAirTight(XHS.Build.Services.AIAirTightAction.Dtos.AirTightInputDto)">
+            <summary>
+            密闭运输
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.AIController.PostSoil(XHS.Build.Services.AISoilAction.Dtos.AISoilInputDto)">
+            <summary>
+            黄土裸露
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.AIController.PostSpary(XHS.Build.Services.AISprayAction.Dtos.AISparyInputDto)">
+            <summary>
+            雾炮喷淋
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.AmDiscloseController.Post(XHS.Build.Model.Models.GCAmDiscloseEntity)">
+            <summary>
+            新增
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.AttendController.Employee(XHS.Build.Model.NetModels.Dtos.EmployeeInput)">
+            <summary>
+            同步人员基本信息
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.AttendController.EmployeePass(XHS.Build.Model.NetModels.Dtos.EmployeePassHisInsertInput)">
+            <summary>
+            同步进出场实时记录
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.AttendController.EmployeeSite(XHS.Build.Model.Models.GCEmployeeSiteEntity)">
+            <summary>
+            用户站点信息
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.CarWashController.AlarmOffline(System.String,System.String)">
+            <summary>
+            车辆冲洗设备下线报警
+            </summary>
+            <param name="parkkey">停车场编号</param>
+            <param name="gatename">车道名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.CarWashController.AlarmUnWashed(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            车辆未冲洗报警
+            </summary>
+            <param name="parkkey">停车场编号</param>
+            <param name="gatename">车道名称</param>
+            <param name="carno">车牌</param>
+            <param name="img">照片地址</param>
+            <param name="video">视频地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.CarWashController.Wash(XHS.Build.Model.ModelDtos.CarWashInsertDto)">
+            <summary>
+            车辆冲洗
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.CarWashController.AlarmOfflineTimeout2(System.String,System.String)">
+            <summary>
+            车辆冲洗设备下线超时2级报警
+            </summary>
+            <param name="parkkey">停车场编号</param>
+            <param name="gatename">车道名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.CarWashController.AlarmOfflineTimeout3(System.String,System.String)">
+            <summary>
+            车辆冲洗设备下线超时3级报警
+            </summary>
+            <param name="parkkey">停车场编号</param>
+            <param name="gatename">车道名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Center.Controllers.DeepPitController">
+            <summary>
+            深基坑信息接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.DeepPitController.DeepPit(XHS.Build.Model.NetModels.Dtos.DeepPitInput)">
+            <summary>
+            深基坑结构物数据上传
+            </summary>
+            <param name="dto">深基坑结构物Dto</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.DeepPitController.DeepPitHistory(XHS.Build.Model.ModelDtos.DeepPitRtdDto)">
+            <summary>
+            深基坑实时数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="deviceId">设备监测编号 (即deviceId)</param>
+            <param name="collectionTime">采集时间</param>
+            <param name="monitorType">监测项</param>
+            <param name="warnValue">预警阀值</param>
+            <param name="alarmValue">报警阀值</param>
+            <param name="data">数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.DeepPitController.DeepPitAlarmInfo(XHS.Build.Model.ModelDtos.DeepPitAlarmInfoDto)">
+            <summary>
+            深基坑预警数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="deviceId">设备监测编号 (即deviceId)</param>
+            <param name="warnExplain">报警类型(电量、温度、立杆轴力、水平倾角、立杆倾角、水平位移、模板沉降等)</param>
+            <param name="warnContent">预警内容</param>
+            <param name="happenTime">发生时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.DeviceController.SetRtdData(XHS.Build.Model.NetModels.Dtos.DeviceRtdDataInput)">
+            <summary>
+            上次实时数据
+            </summary>
+            <param name="input">json数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.DeviceController.Offline(System.String)">
+            <summary>
+            离线
+            </summary>
+            <param name="devicecode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ElectricController.RtdData(XHS.Build.Model.NetModels.Dtos.EmeterDataInput)">
+            <summary>
+            上传实时数据
+            </summary>
+            <param name="input">json数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ElectricController.WarnData(XHS.Build.Model.ModelDtos.EmeterWarnDataInput)">
+            <summary>
+            上传告警数据
+            </summary>
+            <param name="input">json数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ElevatorController.Online(System.String)">
+            <summary>
+            设备上线
+            </summary>
+            <param name="secode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ElevatorController.Offline(System.String)">
+            <summary>
+            设备下线
+            </summary>
+            <param name="secode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ElevatorController.RealData(XHS.Build.Model.NetModels.Dtos.ElevatorRealDataInput)">
+            <summary>
+            实时数据
+            </summary>
+            <param name="input">实时数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ElevatorController.ParamsData(XHS.Build.Model.NetModels.Dtos.ElevatorParamsDataInput)">
+            <summary>
+            设备参数数据
+            </summary>
+            <param name="input">参数数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ElevatorController.AuthData(XHS.Build.Model.Models.AuthData)">
+            <summary>
+            人员上机下机刷脸认证
+            </summary>
+            <param name="authData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.FileController.Post(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="formFile">文件对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.FileController.HttpPost(System.String)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="fileUrl">文件地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.FileController.deleteFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="fileId">文件UUID</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.FogController.TurnOn(XHS.Build.Common.Helps.HpFog.BnCmd)">
+            <summary>
+            雾泡喷淋开启
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.FogController.TurnOff(XHS.Build.Common.Helps.HpFog.BnCmd)">
+            <summary>
+            雾泡喷淋关闭
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.FogController.Online(System.String)">
+            <summary>
+            雾泡喷淋设备上线
+            </summary>
+            <param name="fogcode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.FogController.Offline(System.String)">
+            <summary>
+            雾泡喷淋设备下线
+            </summary>
+            <param name="fogcode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ScreenController.GetNotice(System.String)">
+            <summary>
+            大屏
+            </summary>
+            <param name="screencode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ScreenController.SyncNotice(XHS.Build.Model.NetModels.Dtos.ScreenSyncNoticeInput)">
+            <summary>
+            大屏
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ServerAppVerController.GetAppVersion(System.String,System.String)">
+            <summary>
+            获取app版本信息
+            </summary>
+            <param name="domain">域名</param>
+            <param name="type">手机类型（ios：苹果；android：安卓）</param>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.ServerAppVerController.GetIosCheckVersion">
+            <summary>
+            获取ios版本审核信息
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Center.Controllers.TasksQzController">
+            <summary>
+            控制服务开关
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TasksQzController.StartJob(System.Int32)">
+            <summary>
+            启动计划任务
+            </summary>
+            <param name="jobId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TasksQzController.StopJob(System.Int32)">
+            <summary>
+            停止一个计划任务
+            </summary>
+            <param name="jobId"></param>
+            <returns></returns>        
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TasksQzController.ReCovery(System.Int32)">
+            <summary>
+            重启一个计划任务
+            </summary>
+            <param name="jobId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TowerCraneController.Online(System.String)">
+            <summary>
+            设备上线
+            </summary>
+            <param name="secode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TowerCraneController.Offline(System.String)">
+            <summary>
+            设备下线
+            </summary>
+            <param name="secode">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TowerCraneController.RealData(XHS.Build.Model.NetModels.Dtos.TowerCraneRealDataInput)">
+            <summary>
+            实时数据
+            </summary>
+            <param name="realData">实时数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TowerCraneController.AlarmData(XHS.Build.Model.NetModels.Dtos.TowerCraneAlarmInput)">
+            <summary>
+            报警数据
+            </summary>
+            <param name="alarmData">报警数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TowerCraneController.ParamsData(XHS.Build.Model.NetModels.Dtos.TowerCraneParamsDataInput)">
+            <summary>
+            设备参数数据
+            </summary>
+            <param name="paramsData">参数数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TowerCraneController.TipOverData(XHS.Build.Model.NetModels.Dtos.TipOverDataInput)">
+            <summary>
+            防倾翻报警诊断
+            </summary>
+            <param name="tipOverData">防倾翻报警诊断数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TowerCraneController.AuthData(XHS.Build.Model.Models.AuthData)">
+            <summary>
+            人员上机下机刷脸认证
+            </summary>
+            <param name="authData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.TowerCraneController.WorkData(XHS.Build.Model.NetModels.Dtos.TowerCraneWorkDataInput)">
+            <summary>
+            工作循环
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.WarningController.Helmet(XHS.Build.Model.NetModels.Dtos.WarnHelmetInput)">
+            <summary>
+            安全帽未佩戴
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.WarningController.Stranger(XHS.Build.Model.NetModels.Dtos.WarnStrangerInput)">
+            <summary>
+            陌生人
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.WarningController.Trespasser(XHS.Build.Model.NetModels.Dtos.WarnTrespasserInput)">
+            <summary>
+            车道识别
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.WarningController.Fire(XHS.Build.Model.NetModels.Dtos.WarnFireInput)">
+            <summary>
+            火警
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.WarningController.Overload(XHS.Build.Model.NetModels.Dtos.WarnOverloadInput)">
+            <summary>
+            卸料平台
+            </summary>
+            <param name="jsonData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.WarningController.Invade(XHS.Build.Model.ModelDtos.InvadeWarnInsertInput)">
+            <summary>
+            区域入侵
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Controllers.WarningController.ReflectiveVest(XHS.Build.Model.NetModels.Dtos.WarnReflectiveVestInput)">
+            <summary>
+            反光衣
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Helper.SpireDocHelper.SwaggerConversHtml(System.String,System.String,System.String@)">
+            <summary>
+            静态页面转文件
+            </summary>
+            <param name="html">静态页面html</param>
+            <param name="type">文件类型</param>
+            <param name="contenttype">上下文类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Helper.SpireDocHelper.BytesToStream(System.Byte[])">
+            将 byte[] 转成 Stream
+        </member>
+        <member name="T:XHS.Build.Center.Jobs.ISchedulerCenter">
+            <summary>
+            服务调度接口
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.ISchedulerCenter.StartScheduleAsync">
+            <summary>
+            开启任务调度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.ISchedulerCenter.StopScheduleAsync">
+            <summary>
+            停止任务调度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.ISchedulerCenter.AddScheduleJobAsync(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            
+            </summary>
+            <param name="sysSchedule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.ISchedulerCenter.StopScheduleJobAsync(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            停止一个任务
+            </summary>
+            <param name="sysSchedule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.ISchedulerCenter.ResumeJob(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            恢复一个任务
+            </summary>
+            <param name="sysSchedule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.ISchedulerCenter.GetJobState(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            某个任务状态
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.JobBase.ExecuteJob(Quartz.IJobExecutionContext,System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            执行指定任务
+            </summary>
+            <param name="context"></param>
+            <param name="action"></param>
+        </member>
+        <member name="F:XHS.Build.Center.Jobs.JobFactory._serviceProvider">
+            <summary>
+            注入反射获取依赖对象
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.JobFactory.NewJob(Quartz.Spi.TriggerFiredBundle,Quartz.IScheduler)">
+            <summary>
+            实现接口Job
+            </summary>
+            <param name="bundle"></param>
+            <param name="scheduler"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Center.Jobs.JobSetup">
+            <summary>
+            任务调度 启动服务
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Center.Jobs.QuartzJobMildd">
+            <summary>
+            Quartz 启动服务
+            </summary>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.SchedulerCenter.StartScheduleAsync">
+            <summary>
+            开启任务调度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.SchedulerCenter.StopScheduleAsync">
+            <summary>
+            停止任务调度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.SchedulerCenter.AddScheduleJobAsync(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            添加一个计划任务（映射程序集指定IJob实现类）
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="tasksQz"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.SchedulerCenter.StopScheduleJobAsync(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            暂停一个指定的计划任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.SchedulerCenter.ResumeJob(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            恢复指定的计划任务
+            </summary>
+            <param name="tasksQz"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.SchedulerCenter.CreateSimpleTrigger(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            创建SimpleTrigger触发器（简单触发器）
+            </summary>
+            <param name="sysSchedule"></param>
+            <param name="starRunTime"></param>
+            <param name="endRunTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.SchedulerCenter.CreateCronTrigger(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            创建类型Cron的触发器
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.Center.Jobs.SchedulerCenter.GetJobState(XHS.Build.Model.TaskJobs.TasksQz)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.Center.JobQuartzInvade">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XHS.Build.Center.JobQuartzMongoLogDelete">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

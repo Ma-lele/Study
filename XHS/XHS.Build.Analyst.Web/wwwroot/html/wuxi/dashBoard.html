@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+		<title></title>
+		<!-- 引入全局样式 -->
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<!-- 引入elementui样式库 -->
+		<link rel="stylesheet" type="text/css" href="../css/elementui.css">
+		<link rel="stylesheet" href="../css/iconfont.css">
+		
+		<script src="../js/axios.min.js"></script>
+		<script src="../js/vue-2.6.12.min.js"></script>
+		<!-- 引入elementui组件库 -->
+		<script src="../js/elementui.js"></script>
+		<!-- 引入echarts组件库 -->
+		<script src="../js/echarts.js"></script>
+	</head>
+	<style type="text/css">
+		.container{width: 100%;height: 100%;overflow: hidden;/* background: rgba(10, 47, 90, 0.72); */}
+		.container *{box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+		.container-left{width: 26%;float: left;}
+		.container-center{width: 48%;float: left;padding: 0 10px;}
+		.container-right{width: 26%;float: right;}
+		.boxPartBg{height: 290px;background: rgba(4, 46, 97, 0.72);}
+		.boxPart-head{width: 100%;height: 38px;background: url(../images/bg_wuxi_title.png) repeat-x;background-size: 100% 100%;padding: 0 10px;}
+		.boxPart-head h3{float: left;height: 38px;line-height: 38px;color: #fff;font-size: 16px;}
+		.boxPart-head span{float: right;color: #4BCAFF;line-height: 1.8;}
+		.echarts-line{height: 222px;margin-top: 20px;}
+		
+		.el-table,.el-table tr,.el-table th.el-table__cell,.el-table__empty-text{background: none;color: #fff;font-weight: normal;}
+		.el-table th.el-table__cell.is-leaf{border-bottom: 1px solid #2182FF;}
+		.el-table::before{display: none;}
+		.el-table td.el-table__cell{border-bottom: 1px dashed #2182FF;}
+		.el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell{background: none;}
+		::-webkit-scrollbar{width: 10px;height: 16px;}  
+		::-webkit-scrollbar-track{border-radius: 10px;background-color: rgba(255,255,255,0.1)}  
+		::-webkit-scrollbar-thumb{border-radius: 10px;background-color: rgba(255,255,255,0.1)}
+	</style>
+	<body>
+		<div id="app">
+			<div class="container clearfix">
+				<div class="container-left">
+					<div class="boxPartBg">
+						<div class="boxPart-head clearfix">
+							<h3>【无锡市】区域当前风险</h3>
+						</div>
+						 <el-table :data="tableData1" height="252px">
+		<!-- 					<el-table-column label="排名" align="center" min-width="1">
+								<template slot-scope="{$index}">
+									{{$index+1}}
+								</template>
+							</el-table-column> -->
+							<el-table-column prop="name" label="区级名称" min-width="3" show-overflow-tooltip>
+								<template slot-scope="{row}">
+									【{{row.name}}】
+								</template>
+							</el-table-column>
+							<el-table-column prop="cg" label="超高" align="center" min-width="2"></el-table-column>
+							<el-table-column prop="g" label="高" align="center" min-width="2"></el-table-column>
+							<el-table-column prop="z" label="中" align="center" min-width="2"></el-table-column>
+							<el-table-column prop="d" label="低" align="center" min-width="2"></el-table-column>
+							<el-table-column prop="level" label="项目风险" align="center" min-width="3">
+								<template slot-scope={row}>
+								  <span style="color: #FF3355" v-if="row.level == '超高'">{{row.level}}</span>
+								  <span style="color: #FF9900" v-if="row.level == '高'">{{row.level}}</span>
+								  <span style="color: #8C45FF" v-if="row.level == '中'">{{row.level}}</span>
+								  <span style="color: #1FE2A8" v-if="row.level == '低'">{{row.level}}</span>
+								</template>
+							</el-table-column>
+						</el-table>
+					</div>
+				</div>
+				<div class="container-center">
+					<div class="boxPartBg">
+						<div class="boxPart-head clearfix">
+							<h3>【无锡市】项目风险统计</h3>
+							<span>近30天</span>
+						</div>
+						<div id="echarts-line" class="echarts-line"></div>
+					</div>
+				</div>
+				<div class="container-right">
+					<div class="boxPartBg">
+						<div class="boxPart-head clearfix">
+							<h3>【无锡市】项目风险对比</h3>
+						</div>
+						 <el-table :data="tableData2" height="252px">
+							<el-table-column prop="level" label="风险级别" align="center" min-width="2">
+								<template slot-scope="{row}">
+									{{row.level}}风险
+								</template>
+							</el-table-column>
+							<el-table-column prop="zr" label="昨日项目" align="center" min-width="2" show-overflow-tooltip></el-table-column>
+							<el-table-column prop="jr" label="当前项目" align="center" min-width="2" ></el-table-column>
+							<el-table-column label="对比昨日" align="center" min-width="2" >
+								<template slot-scope="{row}">
+								  <div v-if="row.jr - row.zr == 0">0</div>
+								  <div v-else>
+									 <span>{{row.jr - row.zr > 0 ? "+" + (row.jr - row.zr) : row.jr - row.zr}}</span>
+									 <i :class="'iconfont '+(row.jr - row.zr > 0 ? 'icon-xiangshang':'icon-xiangxia')"
+										:style="'color: '+(row.jr - row.zr >= 0 ? '#FF3355':'#1FE2A8')"></i>
+								  </div>
+								</template>
+							</el-table-column>
+						</el-table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var app = new Vue({
+			el: "#app",
+			data: {
+				currentDays: 0,
+				tableData1:[{
+					name: "惠山区",
+					project: "和顺苑农民集中居住区项目",
+					cg: 20,
+					g: 23,
+					z: 34,
+					d: 12,
+					level: "超高"
+				},{
+					name: "江阴市",
+					project: "和顺苑农民集中居住区项目",
+					cg: 16,
+					g: 11,
+					z: 26,
+					d: 18,
+					level: "超高"
+				},{
+					name: "锡山区",
+					project: "天荣广场地下室，天荣广场商业楼",
+					cg: 0,
+					g: 13,
+					z: 34,
+					d: 9,
+					level: "高"
+				},{
+					name: "梁溪区",
+					project: "水沐云顶花园3、5、6、10、11、12、13、14",
+					cg: 0,
+					g: 0,
+					z: 34,
+					d: 11,
+					level: "中"
+				},{
+					name: "滨湖区",
+					project: "潮都望庄A地块一标段",
+					cg: 0,
+					g: 0,
+					z: 0,
+					d: 14,
+					level: "低"
+				},{
+					name: "新吴区",
+					project: "和韵苑二期农民集中居住区",
+					cg: 0,
+					g: 0,
+					z: 0,
+					d: 12,
+					level: "低"
+				}],
+				tableData2:[{
+					zr: 40,
+					jr: 36,
+					level: "超高"
+				},{
+					zr: 30,
+					jr: 47,
+					level: "高"
+				},{
+					zr: 130,
+					jr: 128,
+					level: "中"
+				},{
+					zr: 56,
+					jr: 76,
+					level: "低"
+				}]
+			},
+			mounted() {
+				this.currentDays = this.mGetDate();
+				this.initChart();
+			},
+			methods: {
+				getOne() {
+					axios({
+						// baseURL: "http://test.hb.xhs-sz.com",
+						baseURL: "",
+						timeout: 10000,
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+						},
+						method: "post",
+						url: "/handler/njjy/HNjjySiteSecurity.ashx?Action=getone",
+						data: formData,
+					}).then((response) => {
+						
+					});
+				},
+				mGetDate(){//获取上月天数
+				  var date = new Date();
+				  var year = date.getFullYear();
+				  var month = date.getMonth() == 0 ?  12 : date.getMonth();
+				  var d = new Date(year, month, 0);
+				  return d.getDate();
+				},
+				getRecentDays(){
+					//获取当前时间
+					let myDate = new Date();
+					let recDate = new Date(myDate - 1000 * 60 * 60 * 24 * 30);//前30天
+					let today = myDate.getDate();
+					let lastEnd = recDate.getDate();
+					let arr = [];
+					if(today < 30){
+						for(let i = lastEnd;i<this.mGetDate()+1;i++){
+							arr.push(i)
+						}
+					};
+					for(let i=1;i<today+1;i++){
+						arr.push(i);
+					};
+					return arr;
+				},
+				initChart(){
+					let dom = document.getElementById("echarts-line");
+					let myChart = echarts.init(dom);
+					window.addEventListener("resize", () => {
+					  myChart.resize();
+					});
+					let arr = [];
+					let arr1 = [],
+					  arr2 = [],
+					  arr3 = [],
+					  arr4 = [];
+					this.getRecentDays() && this.getRecentDays().forEach((item,index)=>{
+						let num1 = parseInt(Math.random() * 120);
+						let num2 = parseInt(Math.random() * 120);
+						let num3 = parseInt(Math.random() * 120);
+						let num4 = parseInt(Math.random() * 120);
+						arr.push(item);
+						arr1.push(num1);
+						arr2.push(num2);
+						arr3.push(num3);
+						arr4.push(num4);
+					});
+					let option = {
+						  tooltip: {
+							 show: true,
+							 trigger: "axis",
+						  },
+						  color: ["#ff3355", "#f7b500", "#8C45FF", "#00ffda"],
+						  legend: {
+							 icon: "roundRect",
+							 data: ["超高", "高", "中", "低"],
+							 textStyle: {
+								color: "#fff",
+							 },
+							 itemWidth: 15,
+							 itemHeight: 15,
+							 itemGap: 30,
+						  },
+						  grid: {
+							 containLabel: true,
+							 left: "20",
+							 right: "20",
+							 top: "30",
+							 bottom: "20",
+						  },
+						  xAxis: {
+							 type: "category",
+							 data: arr,
+							 axisLine: {
+								show: true,
+								lineStyle: {
+								  color: "rgba(96, 124, 201, 0.2)",
+								},
+							 },
+							 boundaryGap: false,
+							 axisLabel: {
+								color: "#999999",
+							 },
+							 axisTick: {
+								inside: false,
+								show: false,
+								alignWithLabel: true,
+								length: 10,
+								lineStyle: {
+								  color: "#ffffff",
+								},
+							 },
+							 splitLine: {
+								show: false,
+							 },
+						  },
+						  yAxis: {
+							 type: "value",
+							 axisLine: {
+								show: true,
+								lineStyle: {
+								  color: "rgba(96, 124, 201, 0.2)",
+								},
+							 },
+							 axisTick: {
+								inside: false,
+								alignWithLabel: false,
+								length: 10,
+								lineStyle: {
+								  color: "#ffffff",
+								},
+							 },
+							 axisLabel: {
+								color: "#999999",
+							 },
+							 splitLine: {
+								show: true,
+								lineStyle: {
+								  color: "rgba(96, 124, 201, 0.2)",
+								},
+							 },
+							 splitNumber: 5,
+						  },
+						  series: [
+							 {
+								name: "超高",
+								data: arr1,
+								type: "line",
+								smooth: true,
+								symbol: "none",
+							 },
+							 {
+								name: "高",
+								data: arr2,
+								type: "line",
+								smooth: true,
+								symbol: "none",
+							 },
+							 {
+								name: "中",
+								data: arr3,
+								type: "line",
+								smooth: true,
+								symbol: "none",
+							 },
+							 {
+								name: "低",
+								data: arr4,
+								type: "line",
+								smooth: true,
+								symbol: "none",
+							 },
+					  ],
+					};
+					myChart.setOption(option);
+				}
+			},
+		});
+	</script>
+</html>

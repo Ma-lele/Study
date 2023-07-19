@@ -1,0 +1,1679 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XHS.Build.City</name>
+    </assembly>
+    <members>
+        <member name="T:XHS.Build.City.Attributes.PermissionAttribute">
+            <summary>
+            启用权限
+            </summary>
+        </member>
+        <member name="M:XHS.Build.City.Auth.IPermissionHandler.ValidateAsync(System.String,System.String)">
+            <summary>
+            接口权限验证
+            </summary>
+            <param name="api"></param>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Auth.PermissionHandler.ValidateAsync(System.String,System.String)">
+            <summary>
+            api接口权限验证
+            </summary>
+            <param name="api">接口路径</param>
+            <param name="ip">请求ip</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.City.Controllers.DataGetController">
+            <summary>
+            《各级智慧监管平台数据抓取标准V1.0》
+            </summary>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.getToken(XHS.Build.City.Dtos.AccountDto)">
+            <summary>
+            3.1 鉴权接口
+            </summary>
+            <param name="account">account值</param>
+            <param name="password">password值（MD5加密，32位大写）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.GetSiteCurrentManagerInfo(System.String)">
+            <summary>
+            获取特种人员信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="highFormworkBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.GetProjectSelfInspectionCount(System.DateTime,System.Nullable{System.DateTime},System.String)">
+            <summary>
+            获取当前机构下的项目自查数
+            </summary>
+            <param name="beginTime">开始时间</param>
+            <param name="endTime">结束时间(非必传，传null为截至到当前时间)</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.GetProjectSelfInspection(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取项目自查基本信息
+            </summary>
+            <param name="pageIndex">支持分页抓取 页码(从1开始)</param>
+            <param name="pageSize">每页抓取数据条数</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.GetSelfInspectionContent(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取项目自查内容看板
+            </summary>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="recordNumber">安全监督备案号</param>
+            <param name="checkFormNumber">检查单编号</param>
+            <param name="type">检查类型（省标/项目内部/JGJ59/扬尘）检查</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.GetMonthReviewCount(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            获取项目月评总数
+            </summary>
+            <param name="beginTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.GetMonthReviewResults(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取项目每月自评状态及结果
+            </summary>
+            <param name="year">年</param>
+            <param name="month">月份（传0获取全年数据）</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.GetSafetyStandardResults(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取项目安标考评结果
+            </summary>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="pageIndex">支持分页抓取 页码(从1开始)</param>
+            <param name="pageSize">每页抓取数据条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.GetMachineryInfos(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取机械设备基本信息
+            </summary>
+            <param name="pageIndex">支持分页抓取 页码(从1开始)</param>
+            <param name="pageSize">每页抓取数据条数</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.ViewMachineryInfo(System.String)">
+            <summary>
+            获取机械设备信息看板
+            </summary>
+            <param name="propertyRightsRecordNo">设备信息号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.GetSuperScaleDangerList(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取项目危大工程基本信息
+            </summary>
+            <param name="pageIndex">支持分页抓取 页码(从1开始)</param>
+            <param name="pageSize">每页抓取数据条数</param>
+            <param name="belongedTo">所属机构编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.ViewScreenSuperScaleDanger(System.String,System.String)">
+            <summary>
+            获取项目超规模危大工程资料看板
+            </summary>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="recordNumber">安全监督备案号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataGetController.getVideoRealUrl(System.String)">
+            <summary>
+            获取视频实时流地址
+            </summary>
+            <param name="videoId">视频地址的唯一id</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.City.Controllers.DataUploadController">
+            <summary>
+            《各级智慧监管平台数据上传标准V1.0》
+            </summary>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.getToken(XHS.Build.City.Dtos.AccountDto)">
+            <summary>
+            3.1 鉴权接口
+            </summary>
+            <param name="account">account值</param>
+            <param name="password">password值（MD5加密，32位大写）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.Companies(XHS.Build.City.Dtos.CompaniesDto)">
+            <summary>
+            3.2 上传项目劳务单位基本信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="unifiedSocialCreditcode">统一社会信用代码</param>
+            <param name="companyName">企业名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.Workers(XHS.Build.City.Dtos.WorkersDto)">
+            <summary>
+            3.3 上传项目劳务人员基本信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="unifiedSocialCreditcode">统一社会信用代码</param>
+            <param name="workerName">人员姓名</param>
+            <param name="idNumber">身份证号</param>
+            <param name="workType">工种类型</param>
+            <param name="securityJob">安管职位 (项目经理、执行经理、安全人员)</param>
+            <param name="isResign">是否离职（0否，1是）</param>
+            <param name="entryDate">进场时间（2019-04-18）</param>
+            <param name="exitDate">离职时间（2019-05-05）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.EducationInfos(XHS.Build.City.Dtos.EducationInfosDto)">
+            <summary>
+            3.4 上传项目劳务人员安全教育信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="unifiedSocialCreditcode">统一社会信用代码</param>
+            <param name="workerIdNumber">身份证号</param>
+            <param name="educationContent">教育内容</param>
+            <param name="educationType">教育类型(安全教育,入场教育,退场教育,技能培训,班前教育,VR安全教育,其它)</param>
+            <param name="educationLocation">教育地点</param>
+            <param name="educationDate">教育日期（2019-04-18）</param>
+            <param name="educationDuration">教育时长(分钟)</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.RewardPunishments(XHS.Build.City.Dtos.RewardPunishmentsDto)">
+            <summary>
+            3.5 上传项目劳务人员奖惩信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="unifiedSocialCreditcode">统一社会信用代码</param>
+            <param name="workerIdNumber">身份证号</param>
+            <param name="eventContent">奖惩内容</param>
+            <param name="eventType">奖惩类型（0奖励，1惩罚）</param>
+            <param name="eventDate">奖惩日期（2019-04-18）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.Attendances(XHS.Build.City.Dtos.AttendancesDto)">
+            <summary>
+            3.6上传项目每小时场内人员进出数
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="recordDate">记录日期（2019-04-18）</param>
+            <param name="recordHour">记录小时（0-23）</param>
+            <param name="inPeople">进场人数</param>
+            <param name="outPeople">出场人数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.PeoplesBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.7上传浏览人员信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="peoplesBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.PeopleBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.8 上传浏览指定人员基本信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="peopleBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.StereotacticBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.9 上传浏览项目当前立体定位看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="stereotacticBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.PeopleTypeCount(XHS.Build.City.Dtos.PeopleTypeCountDto)">
+            <summary>
+            3.10 上传项目当前场内人员不同工种数量
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="workTypeDic">键为工种代码,值为人数</param>
+            <param name="recordDate">记录时间（2019-04-18）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.Checklist(XHS.Build.City.Dtos.ChecklistDto)">
+            <summary>
+            3.11 上传检查单信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="checkNumber">检查单编号</param>
+            <param name="IsProvinStand">是否符合省标准，0:否 1:是</param>
+            <param name="checkDate">检查时间（2019-07-07 10:22:22）</param>
+            <param name="isNeedToRectify">是否需要整改</param>
+            <param name="recommendFinishDate">建议整改完成时间（2019-07-07 10:22:22）</param>
+            <param name="checkComment">检查备注</param>
+            <param name="checkPeople">检查人姓名 多人用,隔开</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.CheckPoints(XHS.Build.City.Dtos.CheckPointsDto)">
+            <summary>
+            3.12 上传移动巡检点
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="checkPointId">巡检点id（唯一标识）</param>
+            <param name="summary">巡检地点描述</param>
+            <param name="building">楼栋号</param>
+            <param name="floor">楼层号 默认0</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.MobileCheck(XHS.Build.City.Dtos.MobileCheckDto)">
+            <summary>
+            3.13 上传移动巡检信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="checkPointId">巡检点id（唯一标识）</param>
+            <param name="checkPeople">检查人姓名</param>
+            <param name="checkContent">巡检描述</param>
+            <param name="picUrls">巡检照片 多张用,隔开</param>
+            <param name="checkDate">巡检时间（2019-07-07 12:24:34）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.DustDeviceInfo(XHS.Build.City.Dtos.DeviceInfoDto)">
+            <summary>
+            3.14 上传扬尘设备信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="deviceId">设备唯一id</param>
+            <param name="deviceName">设备名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.DayDustInfo(XHS.Build.City.Dtos.DayDustInfoDto)">
+            <summary>
+            3.15 上传扬尘日监测数据
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="deviceId">设备唯一id</param>
+            <param name="temperature">温度</param>
+            <param name="humidity">湿度</param>
+            <param name="windSpeed">风速</param>
+            <param name="windDirection">风向</param>
+            <param name="pm2dot5">pm2.5</param>
+            <param name="pm10">pm10</param>
+            <param name="noise">噪音</param>
+            <param name="moniterTime">监测日期，例如：2019-01-24</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.DustInfoBoard(XHS.Build.City.Dtos.DustInfoBoardDto)">
+            <summary>
+            3.16 上传扬尘信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="dustBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.UploadVideo(XHS.Build.City.Dtos.VideoDto)">
+            <summary>
+            3.17 上传视频监控点信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="videoId">视频地址的唯一id</param>
+            <param name="type">视频类型（0：扬尘监控，1：塔吊监控，2：其它）</param>
+            <param name="site">安装位置</param>
+            <param name="url">视频跳转url</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.UploadSpecialOperationPersonnel(XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto)">
+            <summary>
+            3.18 上传塔吊司机信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="propertyRightsRecordNo">设备信息号</param>
+            <param name="PersonName">人员姓名</param>
+            <param name="Sex">性别 0：男，1:女</param>
+            <param name="Type">传固定值2（代表使用人员）</param>
+            <param name="workTypeCode">工种(详见工种字典)</param>
+            <param name="idCard">身份证号码</param>
+            <param name="remark">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.UploadMachineryInfos(XHS.Build.City.Dtos.UploadMachineryInfosDto)">
+            <summary>
+            3.19 上传塔吊基本信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="machineryModel">机械型号</param>
+            <param name="machineryType">机械类型：塔式起重机 = 0,施工升降机 = 1,货运施工升降机 = 2,桥式起重机 = 3,门式起重机 = 4</param>
+            <param name="propertyRightsRecordNo">设备信息号</param>
+            <param name="machineryCheckState">检测状态 未检测 = 0, 非我所检测 = 4, 检测中 = 5, 检测合格 = 6,检测不合格 = 7,复检中 = 17,复检合格 = 18,复检不合格 = 19</param>
+            <param name="checkState">机械状态：未安装告知 = 0,安装告知审核中 = 1,安装告知审核通过 = 2,安装告知审核不通过 = 3,检测合格 = 6,办理使用登记审核中 = 8,办理使用登记未通过 = 9,办理使用登记通过 = 10,拆卸告知审核中 = 11,拆卸告知审核通过 = 12,拆卸告知审核不通过 = 13,使用登记注销审核中 = 14, 使用登记注销审核通过 = 15,使用登记注销审核不通过 = 16</param>
+            <param name="reCheckReviewDate">检测合格日期</param>
+            <param name="oem">生产厂家</param>
+             <param name="leaveTheFactoryNo">生产编号</param>
+             <param name="propertyEntCode">产权单位-社会统一信用代码</param>
+             <param name="propertyEntName">产权单位-名称</param>
+             <param name="userEntCode">使用单位-社会统一信用代码</param>
+             <param name="userEntName">使用单位-名称</param>
+             <param name="checkUrl">检测报告文件路径</param>
+             <param name="useRecordNo">使用登记证编号</param>
+             <param name="useRecordNoUrl">使用登记证文件全路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.CraneBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.20 上传塔吊信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="craneBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.HoistBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.23 上传升降机信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="hoistBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.UploadDeviceInfo(XHS.Build.City.Dtos.DeviceInfoDto)">
+            <summary>
+            3.24 上传卸料平台基本信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="deviceId">设备唯一id</param>
+            <param name="deviceName">设备名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.UploadBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.25 上传卸料平台信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="uploadBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.DeppPitDeviceInfo(XHS.Build.City.Dtos.DeviceInfoDto)">
+            <summary>
+            3.26 上传深基坑设备基本信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="deviceId">设备唯一id</param>
+            <param name="deviceName">设备名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.DeppPitBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.27 上传深基坑设备信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="deppPitBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.HighFormworkDeviceInfo(XHS.Build.City.Dtos.DeviceInfoDto)">
+            <summary>
+            3.28 上传高支模设备基本信息
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="deviceId">设备唯一id</param>
+            <param name="deviceName">设备名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.HighFormworkBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.29 上传高支模设备信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="highFormworkBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.DataUploadController.SmartSupervisionBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.30 上传智慧监管整体看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="belongedTo">所属机构编号</param>
+            <param name="highFormworkBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.City.Controllers.SmartDataUploadController">
+            <summary>
+            《智慧工地对接智慧监管平台标准V1.0》
+            </summary>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.getToken(System.String,System.String)">
+            <summary>
+            3.1 鉴权接口
+            </summary>
+            <param name="appkey">平台分配的AppKey</param>
+            <param name="appsecret">平台分配的AppSecret</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.InspectContentInfo(XHS.Build.Model.ModelDtos.InspectContentInfoDto)">
+            <summary>
+            3.2.1检查单数据上传接口
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="checkNumber">检查单编号</param>
+            <param name="checkDate">检查时间，例如：2019-4-07 11:32:12</param>
+            <param name="checkPerson">检查人姓名，多人用;隔开</param>
+            <param name="idCard">检查人身份证号</param>
+            <param name="checkNumType">检查单类型：1：检查记录单 2：一般隐患单 3：严重隐患单</param>
+            <param name="checkLists">检查单内容列表</param>
+            <param name="IsProvinStand">是否符合省标准，0:否 1:是</param>
+            <param name="itemId">检查项唯一id</param>
+            <param name="checkContent">检查内容</param>
+            <param name="rectifyPerson">整改负责人</param>
+            <param name="isRectify">是否需要整改：(1:是、0:否)</param>
+            <param name="rectifyDate">计划整改完成时间， 需要整改时必传</param>
+            <param name="remark">检查单备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.RectifyContentInfo(XHS.Build.Model.ModelDtos.RectifyContentInfoDto)">
+            <summary>
+            3.2.2检查单整改完成数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="checkNumber">检查单编号</param>
+            <param name="rectifyContents">整改内容</param>
+            <param name="itemId">检查项唯一id</param>
+            <param name="finalRectifyDate">整改完成时间</param>
+            <param name="rectifyApprover">整改审批人</param>
+            <param name="rectifyRemark">整改备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.InspectBoard(XHS.Build.City.Dtos.InspectBoardDto)">
+            <summary>
+            3.2.3检查单数据看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="checkNumber">检查单编号</param>
+            <param name="stereotacticBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.InspectionPoint(XHS.Build.Model.ModelDtos.InspectionPointDto)">
+            <summary>
+            3.2.4巡检点数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="inspectionId">巡检点id（唯一标识）</param>
+            <param name="site">巡检地点描述</param>
+            <param name="building">楼栋号</param>
+            <param name="floor">楼层号</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.InspectionPointContent(XHS.Build.Model.ModelDtos.InspectionPointContentDto)">
+            <summary>
+            3.2.5巡检内容数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="inspectionId">巡检点id（唯一标识）</param>
+            <param name="inspectionContentId">巡检记录id</param>
+            <param name="checkPerson">检查人姓名</param>
+            <param name="checkPersonId">检查人身份证id</param>
+            <param name="checkContent">巡检描述</param>
+            <param name="urls">巡检照片</param>
+            <param name="inspectionTime">巡检时间（2019-07-07 12:24:34）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.FreeToShoot(XHS.Build.Model.ModelDtos.FreeToShootDto)">
+            <summary>
+            3.2.6 随手拍数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="checkNumber">随手拍唯一编号</param>
+            <param name="shootPerson">拍摄人</param>
+            <param name="shootTime">拍摄时间</param>
+            <param name="phoneNumber">手机号</param>
+            <param name="CheckContent">隐患描述内容</param>
+            <param name="url">照片全路径，必须可访问</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.FreeToShootRectify(XHS.Build.Model.ModelDtos.FreeToShootRectifyDto)">
+            <summary>
+            3.2.7 随手拍完成数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="checkNumber">随手拍唯一编号</param>
+            <param name="rectifyTime">完成时间</param>
+            <param name="rectifyPerson">整改负责人</param>
+            <param name="rectifyRemark">备注</param>
+            <param name="url">照片全路径，必须可访问</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.StereotacticBoard(XHS.Build.City.Dtos.StereotacticBoardDto)">
+            <summary>
+            3.3.1 上传立体定位看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="stereotacticBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.UploadVideo(XHS.Build.City.Dtos.UploadVideoDto)">
+            <summary>
+            3.4.1 视频信息数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="videoId">视频地址的唯一id，在集成服务商系统中唯一，方便重复上传时做更新操作</param>
+            <param name="type">视频类型（0：扬尘监控，1：塔吊监控，2：其它）</param>
+            <param name="site">安装位置</param>
+            <param name="url">视频跳转url</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.FenceAlarmInfo(XHS.Build.City.Dtos.FenceAlarmInfoDto)">
+            <summary>
+            3.5.1缺失记录上传（可选） 
+            3.5.2恢复记录上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="warnNumber">设备监测编号 (即deviceId)</param>
+            <param name="defectPosition">缺失位置</param>
+            <param name="defectWarnNumber">缺失预警模块编号（备用）</param>
+            <param name="defectDate">发生时间（2020-01-10 10:00:00）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.HighFormworkHistory(XHS.Build.Model.Models.HighFormworkData)">
+            <summary>
+            3.6.1 高支模实时数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="deviceId">设备监测编号 (即deviceId)</param>
+            <param name="collectionTime">收集时间</param>
+            <param name="Power">电量(%)</param>
+            <param name="temperature">温度（℃）</param>
+            <param name="load">立杆轴力(KN)</param>
+            <param name="horizontalAngle">水平倾角（°）</param>
+            <param name="coordinate">立杆倾角（°）</param>
+            <param name="translation">水平位移（mm）</param>
+            <param name="settlement">模板沉降（mm）</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.HighFormworkAlarmInfo(XHS.Build.Model.ModelDtos.HighFormworkAlarmInfoDto)">
+            <summary>
+            3.6.2 高支模预警数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="deviceId">设备监测编号 (即deviceId)</param>
+            <param name="warnExplain">报警类型(电量、温度、立杆轴力、水平倾角、立杆倾角、水平位移、模板沉降等)</param>
+            <param name="warnContent">预警内容</param>
+            <param name="happenTime">发生时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.HighFormworkBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.6.3 上传高支模设备信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="uploadBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.DeepPitHistory(XHS.Build.Model.ModelDtos.DeepPitRtdDto)">
+            <summary>
+            3.6.4 深基坑实时数据上传
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="deviceId">设备监测编号 (即deviceId)</param>
+            <param name="collectionTime">采集时间</param>
+            <param name="monitorType">监测项</param>
+            <param name="warnValue">预警阀值</param>
+            <param name="alarmValue">报警阀值</param>
+            <param name="data">数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.DeppPitBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.6.5 上传深基坑设备信息看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="uploadBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:XHS.Build.City.Controllers.SmartDataUploadController.SmartSupervisionBoard(XHS.Build.City.Dtos.UploadBoardDto)">
+            <summary>
+            3.7.1上传智慧监管整体看板
+            </summary>
+            <param name="recordNumber">监督备案号</param>
+            <param name="uploadBoardUrl">看板地址</param>
+            <returns></returns>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.AccountDto">
+            <summary>
+            账户信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.AccountDto.account">
+            <summary>
+            account值
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.AccountDto.password">
+            <summary>
+            password值
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.AttendancesDto">
+            <summary>
+            场内人员进出数信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.AttendancesDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.AttendancesDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.AttendancesDto.recordDate">
+            <summary>
+            记录日期（2019-04-18）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.AttendancesDto.recordHour">
+            <summary>
+            记录小时（0-23）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.AttendancesDto.inPeople">
+            <summary>
+            进场人数
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.AttendancesDto.outPeople">
+            <summary>
+            出场人数
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.ChecklistDto">
+            <summary>
+            检查单信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.ChecklistDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.ChecklistDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.ChecklistDto.checkNumber">
+            <summary>
+            检查单编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.ChecklistDto.IsProvinStand">
+            <summary>
+            是否符合省标准，0:否 1:是
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.ChecklistDto.checkDate">
+            <summary>
+            检查时间（2019-07-07 10:22:22）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.ChecklistDto.isNeedToRectify">
+            <summary>
+            是否需要整改（是，否）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.ChecklistDto.recommendFinishDate">
+            <summary>
+            建议整改完成时间（2019-07-07 10:22:22）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.ChecklistDto.checkComment">
+            <summary>
+            检查备注
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.ChecklistDto.checkPeople">
+            <summary>
+            检查人姓名 多人用,隔开
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.CheckPointsDto">
+            <summary>
+            移动巡检点信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CheckPointsDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CheckPointsDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CheckPointsDto.checkPointId">
+            <summary>
+            巡检点id（唯一标识）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CheckPointsDto.summary">
+            <summary>
+            巡检地点描述
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CheckPointsDto.building">
+            <summary>
+            楼栋号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CheckPointsDto.floor">
+            <summary>
+            楼层号 默认0
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.CompaniesDto">
+            <summary>
+            劳务单位基本信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CompaniesDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CompaniesDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CompaniesDto.unifiedSocialCreditcode">
+            <summary>
+            统一社会信用代码
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CompaniesDto.companyName">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.CraneBoardDto">
+            <summary>
+            塔吊信息看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CraneBoardDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CraneBoardDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.CraneBoardDto.craneBoardUrl">
+            <summary>
+            看板地址
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.DayDustInfoDto">
+            <summary>
+            扬尘日监测数据Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.deviceId">
+            <summary>
+            设备唯一id
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.temperature">
+            <summary>
+            温度
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.humidity">
+            <summary>
+            湿度
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.windSpeed">
+            <summary>
+            风速
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.windDirection">
+            <summary>
+            风向
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.pm2dot5">
+            <summary>
+            pm2.5
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.pm10">
+            <summary>
+            pm10
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.noise">
+            <summary>
+            噪音
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DayDustInfoDto.moniterTime">
+            <summary>
+            监测日期，例如：2019-01-24
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.DeppPitBoardDto">
+            <summary>
+            深基坑设备看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitBoardDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitBoardDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitBoardDto.deppPitBoardUrl">
+            <summary>
+            看板地址
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.DeppPitDto">
+            <summary>
+            深基坑设备看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitDto.deviceId">
+            <summary>
+            设备监测编号 (即deviceId)
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitDto.collectionTime">
+            <summary>
+            采集时间
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitDto.monitorType">
+            <summary>
+            监测项
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitDto.warnValue">
+            <summary>
+            预警阀值
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitDto.alarmValue">
+            <summary>
+            报警阀值
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitDto.data">
+            <summary>
+            监测项
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitData.watchPoint">
+            <summary>
+            监测点
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitData.watchPointValue">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeppPitData.watchPointYValue">
+            <summary>
+            Y值
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.DeviceInfoDto">
+            <summary>
+            设备基本信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeviceInfoDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeviceInfoDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeviceInfoDto.deviceId">
+            <summary>
+            设备唯一id
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DeviceInfoDto.deviceName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.DustInfoBoardDto">
+            <summary>
+            扬尘信息看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DustInfoBoardDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DustInfoBoardDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.DustInfoBoardDto.dustBoardUrl">
+            <summary>
+            看板地址
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.EducationInfosDto">
+            <summary>
+            劳务人员安全教育信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.EducationInfosDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.EducationInfosDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.EducationInfosDto.unifiedSocialCreditcode">
+            <summary>
+            统一社会信用代码
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.EducationInfosDto.workerIdNumber">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.EducationInfosDto.educationContent">
+            <summary>
+            教育内容
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.EducationInfosDto.educationType">
+            <summary>
+            教育类型(安全教育,入场教育,退场教育,技能培训,班前教育,VR安全教育,其它)
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.EducationInfosDto.educationLocation">
+            <summary>
+            教育地点
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.EducationInfosDto.educationDate">
+            <summary>
+            教育日期（2019-04-18）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.EducationInfosDto.educationDuration">
+            <summary>
+            教育时长(分钟)
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.FenceAlarmInfoDto">
+            <summary>
+            视频信息数据Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.FenceAlarmInfoDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.FenceAlarmInfoDto.warnNumber">
+            <summary>
+            视频地址的唯一id
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.FenceAlarmInfoDto.defectPosition">
+            <summary>
+            缺失位置
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.FenceAlarmInfoDto.defectWarnNumber">
+            <summary>
+            缺失预警模块编号（备用）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.FenceAlarmInfoDto.defectDate">
+            <summary>
+            发生时间（2020-01-10 10:00:00）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.FenceAlarmInfoDto.recoveryDate">
+            <summary>
+            发生时间（2020-01-10 10:00:00）
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.HighFormworkBoardDto">
+            <summary>
+            高支模设备信息看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkBoardDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkBoardDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkBoardDto.highFormworkBoardUrl">
+            <summary>
+            看板地址
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.HighFormworkDto">
+            <summary>
+            高支模实时数据Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkDto.deviceId">
+            <summary>
+            设备监测编号 (即deviceId)
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkDto.collectionTime">
+            <summary>
+            收集时间
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkDto.power">
+            <summary>
+            电量(%)
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkDto.temperature">
+            <summary>
+            温度（℃）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkDto.load">
+            <summary>
+            立杆轴力(KN)
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkDto.horizontalAngle">
+            <summary>
+            水平倾角（°）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkDto.coordinate">
+            <summary>
+            立杆倾角（°）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkDto.translation">
+            <summary>
+            水平位移（mm）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HighFormworkDto.settlement">
+            <summary>
+            模板沉降（mm）
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.HoistBoardDto">
+            <summary>
+            升降机信息看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HoistBoardDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HoistBoardDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.HoistBoardDto.hoistBoardUrl">
+            <summary>
+            看板地址
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.InspectBoardDto">
+            <summary>
+            检查单数据看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.InspectBoardDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.InspectBoardDto.checkNumber">
+            <summary>
+            检查单编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.InspectBoardDto.stereotacticBoardUrl">
+            <summary>
+            看板地址
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.MobileCheckDto">
+            <summary>
+            移动巡检数据Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.MobileCheckDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.MobileCheckDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.MobileCheckDto.checkPointId">
+            <summary>
+            巡检点id（唯一标识）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.MobileCheckDto.checkPeople">
+            <summary>
+            检查人姓名
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.MobileCheckDto.checkContent">
+            <summary>
+            巡检描述
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.MobileCheckDto.picUrls">
+            <summary>
+            巡检照片 多张用,隔开
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.MobileCheckDto.checkDate">
+            <summary>
+            巡检时间（2019-07-07 12:24:34）
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.PeopleBoardDto">
+            <summary>
+            指定人员基本信息看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.PeopleBoardDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.PeopleBoardDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.PeopleBoardDto.peopleBoardUrl">
+            <summary>
+            看板地址
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.PeoplesBoardDto">
+            <summary>
+            人员信息看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.PeoplesBoardDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.PeoplesBoardDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.PeoplesBoardDto.peoplesBoardUrl">
+            <summary>
+            看板地址
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.PeopleTypeCountDto">
+            <summary>
+            场内人员不同工种数量Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.PeopleTypeCountDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.PeopleTypeCountDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.PeopleTypeCountDto.workTypeDic">
+            <summary>
+            键为工种代码,值为人数
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.PeopleTypeCountDto.recordDate">
+            <summary>
+            记录时间（2019-04-18)
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.RewardPunishmentsDto">
+            <summary>
+            劳务人员奖惩信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.RewardPunishmentsDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.RewardPunishmentsDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.RewardPunishmentsDto.unifiedSocialCreditcode">
+            <summary>
+            统一社会信用代码
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.RewardPunishmentsDto.workerIdNumber">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.RewardPunishmentsDto.eventContent">
+            <summary>
+            奖惩内容
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.RewardPunishmentsDto.eventType">
+            <summary>
+            奖惩类型（奖励，惩罚）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.RewardPunishmentsDto.eventDate">
+            <summary>
+            奖惩日期（2019-04-18）
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.StereotacticBoardDto">
+            <summary>
+            立体定位看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.StereotacticBoardDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.StereotacticBoardDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.StereotacticBoardDto.stereotacticBoardUrl">
+            <summary>
+            看板地址
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.UploadBoardDto">
+            <summary>
+            信息看板Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadBoardDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadBoardDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadBoardDto.uploadBoardUrl">
+            <summary>
+            看板地址
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.UploadMachineryInfosDto">
+            <summary>
+            塔吊基本信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.machineryModel">
+            <summary>
+            机械型号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.machineryType">
+            <summary>
+            机械类型：塔式起重机 = 0,施工升降机 = 1,货运施工升降机 = 2,桥式起重机 = 3,门式起重机 = 4
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.propertyRightsRecordNo">
+            <summary>
+            设备信息号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.machineryCheckState">
+            <summary>
+            检测状态 未检测 = 0, 非我所检测 = 4, 检测中 = 5, 检测合格 = 6,检测不合格 = 7,复检中 = 17,复检合格 = 18,复检不合格 = 19
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.checkState">
+            <summary>
+            机械状态：未安装告知 = 0,安装告知审核中 = 1,安装告知审核通过 = 2,安装告知审核不通过 = 3,检测合格 = 6,
+            办理使用登记审核中 = 8,办理使用登记未通过 = 9,办理使用登记通过 = 10,拆卸告知审核中 = 11,拆卸告知审核通过 = 12,
+            拆卸告知审核不通过 = 13,使用登记注销审核中 = 14, 使用登记注销审核通过 = 15,使用登记注销审核不通过 = 16
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.reCheckReviewDate">
+            <summary>
+            检测合格日期
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.oem">
+            <summary>
+            生产厂家
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.leaveTheFactoryNo">
+            <summary>
+            生产编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.propertyEntCode">
+            <summary>
+            产权单位-社会统一信用代码
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.propertyEntName">
+            <summary>
+            产权单位-名称
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.userEntCode">
+            <summary>
+            使用单位-社会统一信用代码
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.userEntName">
+            <summary>
+            使用单位-名称
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.checkUrl">
+            <summary>
+            检测报告文件路径
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.useRecordNo">
+            <summary>
+            使用登记证编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadMachineryInfosDto.useRecordNoUrl">
+            <summary>
+            使用登记证文件全路径
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto">
+            <summary>
+            司机信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto.propertyRightsRecordNo">
+            <summary>
+            设备信息号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto.PersonName">
+            <summary>
+            人员姓名
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto.Sex">
+            <summary>
+            性别 0：男，1:女
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto.Type">
+            <summary>
+            传固定值2（代表使用人员）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto.workTypeCode">
+            <summary>
+            详见工种字典
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto.idCard">
+            <summary>
+            身份证号码
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadSpecialOperationPersonnelDto.remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.UploadVideoDto">
+            <summary>
+            视频信息数据Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadVideoDto.recordNumber">
+            <summary>
+            安全监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadVideoDto.videoId">
+            <summary>
+            视频地址的唯一id
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadVideoDto.type">
+            <summary>
+            视频类型（0：扬尘监控，1：塔吊监控，2：其它）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadVideoDto.site">
+            <summary>
+            安装位置
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.UploadVideoDto.url">
+            <summary>
+            视频跳转url
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.VideoDto">
+            <summary>
+            视频监控点信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.VideoDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.VideoDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.VideoDto.videoId">
+            <summary>
+            视频地址的唯一id
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.VideoDto.type">
+            <summary>
+            视频类型（0：扬尘监控，1：塔吊监控，2：其它）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.VideoDto.site">
+            <summary>
+            安装位置
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.VideoDto.url">
+            <summary>
+            视频跳转url
+            </summary>
+        </member>
+        <member name="T:XHS.Build.City.Dtos.WorkersDto">
+            <summary>
+            劳务人员基本信息Dto
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.WorkersDto.recordNumber">
+            <summary>
+            监督备案号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.WorkersDto.belongedTo">
+            <summary>
+            所属机构编号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.WorkersDto.unifiedSocialCreditcode">
+            <summary>
+            统一社会信用代码
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.WorkersDto.workerName">
+            <summary>
+            人员姓名
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.WorkersDto.idNumber">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.WorkersDto.workType">
+            <summary>
+            工种类型
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.WorkersDto.securityJob">
+            <summary>
+            安管职位 (项目经理、执行经理、安全人员)
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.WorkersDto.isResign">
+            <summary>
+            是否离职（0否，1是）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.WorkersDto.entryDate">
+            <summary>
+            进场时间（2019-04-18）
+            </summary>
+        </member>
+        <member name="P:XHS.Build.City.Dtos.WorkersDto.exitDate">
+            <summary>
+            离职时间（2019-05-05）
+            </summary>
+        </member>
+    </members>
+</doc>
